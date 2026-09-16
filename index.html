@@ -5,61 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شنو جان کی جوانی</title>
     <style>
-        body, html { margin: 0; padding: 0; background-color: #111; color: #fff; font-family: Arial, sans-serif; direction: rtl; }
-        .header-area { background: #222; padding: 15px; text-align: center; border-bottom: 2px solid #ffcc00; position: sticky; top: 0; z-index: 100; }
-        h1 { color: #ffcc00; font-size: 24px; margin: 0 0 5px 0; }
-        .sub-text { font-size: 12px; color: #aaa; margin: 0; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #000; 
+            color: #fff; 
+            font-family: Arial, sans-serif; 
+            direction: rtl; 
+        }
+        .header-area { 
+            background: #111; 
+            padding: 20px; 
+            text-align: center; 
+            border-bottom: 2px solid #ffcc00; 
+        }
+        h1 { color: #ffcc00; font-size: 26px; margin: 0 0 5px 0; }
+        .sub-text { font-size: 13px; color: #aaa; margin: 0; }
         
-        .story-list { display: flex; flex-direction: column; gap: 10px; padding: 15px; max-width: 600px; margin: 0 auto; }
-        .story-link { display: block; padding: 15px; background: #333; color: #fff; text-decoration: none; border-radius: 5px; font-size: 16px; border-right: 5px solid #ffcc00; text-align: right; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
-        .story-link:hover { background: #444; }
+        /* کہانیوں کا مین ڈبہ */
+        .blog-container { 
+            max-width: 600px; 
+            margin: 30px auto; 
+            padding: 0 15px; 
+        }
         
-        /* کہانی کھلنے کا فریم جو اب نیچے فل اسکرین پر آئے گا */
-        .content-area { max-width: 800px; margin: 20px auto; padding: 0 15px; min-height: 500px; }
-        iframe { width: 100%; height: 600px; border: none; background: #1a1a1a; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        /* ہر کہانی کا الگ کارڈ/باکس (جیسا آپ کے اسکرین شاٹ میں تھا) */
+        .story-card { 
+            background: #111; 
+            border: 2px solid #ff007f; /* گلابی چمکتی ہوئی باؤنڈری */
+            border-radius: 12px; 
+            padding: 15px; 
+            margin-bottom: 25px; 
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+        }
+        
+        .story-title { 
+            color: #ffcc00; 
+            font-size: 20px; 
+            margin-top: 0; 
+            margin-bottom: 15px; 
+        }
+        
+        /* تصویر اور تھوڑی سی کہانی کا ڈیزائن */
+        .story-preview-box { 
+            display: flex; 
+            gap: 15px; 
+            align-items: flex-start; 
+        }
+        .story-thumb { 
+            width: 100px; 
+            height: 100px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+        }
+        .story-excerpt { 
+            font-size: 15px; 
+            color: #ddd; 
+            line-height: 1.6; 
+            flex: 1;
+        }
+        
+        /* ریڈ مور بٹن کا ڈیزائن */
+        .read-more-btn { 
+            display: inline-block; 
+            margin-top: 15px; 
+            padding: 8px 20px; 
+            background-color: #00b4d8; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            font-size: 14px;
+        }
+        .read-more-btn:hover { background-color: #0077b6; }
     </style>
 </head>
 <body>
 
-    <!-- اوپر کا ہیڈر حصہ جہاں نام آئے گا -->
+    <!-- اوپر کا ہیڈر حصہ -->
     <div class="header-area">
         <h1>شنو جان کی جوانی</h1>
         <p class="sub-text">تمام ناولز اور کہانیاں چوری سے محفوظ ہیں</p>
     </div>
 
-    <!-- کہانیوں کی لسٹ جو اب ترتیب سے نیچے آئے گی -->
-    <div class="story-list">
-        <a class="story-link" href="papa-ke-guzarne-ke-baad.html" target="story-frame">۱. پاپا کے گزرنے کے بعد</a>
+    <!-- بلاگ کی کہانیوں کی لسٹ -->
+    <div class="blog-container">
         
-        <!-- آئندہ جب نئی کہانی ڈالیں گے تو بس اس کے نیچے لنک ایڈ کرتے جائیں گے -->
-    </div>
+        <!-- ۱۔ پہلی کہانی کا کارڈ -->
+        <div class="story-card">
+            <h2 class="story-title">۱. پاپا کے گزرنے کے بعد</h2>
+            <div class="story-preview-box">
+                <!-- تصویر کا لنک -->
+                <img class="story-thumb" src="https://postimg.cc" alt="Thumbnail">
+                <!-- کہانی کی شروعات کی صرف دو لائنیں -->
+                <p class="story-excerpt">میرے پاپا کے گزرنے کے ایک مہینہ بعد ایک شام ممی اپنے ساتھ ایک انکل کو لائی ممی انکل کو اپنے روم لے کر چلی گئی...</p>
+            </div>
+            <!-- ریڈ مور کا بٹن جو اصل کہانی پر لے جائے گا -->
+            <a href="papa-ke-guzarne-ke-baad.html" class="read-more-btn">READ MORE</a>
+        </div>
 
-    <!-- نیچے وہ فریم جہاں کہانی صاف کھلے گی -->
-    <div class="content-area">
-        <iframe name="story-frame" src="papa-ke-guzarne-ke-baad.html" id="myFrame"></iframe>
+        <!-- ۲۔ مستقبل میں دوسری کہانی کا کارڈ آپ بالکل ایسے ہی نیچے جوڑیں گے -->
+        <!-- 
+        <div class="story-card">
+            <h2 class="story-title">۲. دوسری کہانی کا نام</h2>
+            <div class="story-preview-box">
+                <img class="story-thumb" src="دوسری_تصویر_کا_لنک" alt="Thumbnail">
+                <p class="story-excerpt">دوسری کہانی کی شروعات کی دو لائنیں یہاں آئیں گی...</p>
+            </div>
+            <a href="kahani2.html" class="read-more-btn">READ MORE</a>
+        </div> 
+        -->
+
     </div>
 
     <script>
-        // رائٹ کلک اور کاپی بند کرنے کا کوڈ
+        // ہوم پیج پر بھی رائٹ کلک اور کاپی بند
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.onkeydown = function(e) {
-            if(e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83)) return false;
-        };
-
-        // فریم کے اندر کاپی بند کرنے کا خودکار نظام
-        var iframe = document.getElementById('myFrame');
-        iframe.onload = function() {
-            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            iframeDoc.addEventListener('contextmenu', event => event.preventDefault());
-            iframeDoc.body.style.webKitUserSelect = "none";
-            iframeDoc.body.style.MozUserSelect = "none";
-            iframeDoc.body.style.userSelect = "none";
-            iframeDoc.body.style.color = "#ffffff";
-            iframeDoc.body.style.backgroundColor = "#1a1a1a";
-            iframeDoc.body.style.direction = "rtl";
-            iframeDoc.body.style.padding = "20px";
-            iframeDoc.body.style.fontSize = "18px";
-            iframeDoc.body.style.lineHeight = "1.8";
+            if(e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85)) return false;
         };
     </script>
 
