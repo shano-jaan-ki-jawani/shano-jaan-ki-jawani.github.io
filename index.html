@@ -1,88 +1,71 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شنو جان کی جوانی - نایاب کہانیاں</title>
-    
+    <title>شانو جان کی کہانیاں</title>
     <style>
-        body {
-            font-family: 'Noto Nastaliq Urdu', 'Urdu Typesetting', Tahoma, sans-serif;
-            background-color: #f7f9fa;
-            color: #1a1a1a;
-            margin: 0;
-            padding: 20px;
-            font-size: 20px;
-            line-height: 1.8;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        h1 {
-            color: #cc0000;
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-        }
-        .story-text {
-            text-align: justify;
-            white-space: pre-line;
-        }
-        .ad-space {
-            margin: 25px 0;
-            text-align: center;
-            background: #fafafa;
-            border: 1px dashed #ddd;
-            padding: 10px;
-        }
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #111; color: #fff; font-family: Arial, sans-serif; direction: rtl; }
+        .sidebar { width: 300px; height: 100%; background: #222; position: fixed; right: 0; top: 0; overflow-y: auto; padding: 20px; box-sizing: border-box; border-left: 2px solid #ffcc00; }
+        .main-content { margin-right: 300px; height: 100%; position: relative; }
+        h1 { text-align: center; color: #ffcc00; font-size: 22px; margin-bottom: 20px; }
+        .story-link { display: block; margin: 10px 0; padding: 12px; background: #333; color: #fff; text-decoration: none; border-radius: 5px; font-size: 16px; border-right: 4px solid #ffcc00; text-align: right; }
+        .story-link:hover { background: #444; }
+        
+        /* یہ وہ فریم ہے جہاں کہانی کھلے گی اور اس کی کاپی بند ہوگی */
+        iframe { width: 100%; height: 100%; border: none; background: #1a1a1a; }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
     </style>
-
-    <script type="text/javascript">
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.onkeydown = function(e) {
-            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 83)) {
-                return false;
-            }
-        };
-    </script>
 </head>
-<script type="text/javascript">
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.onkeydown = function(e) {
-        if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 83)) {
-            return false;
-        }
-    };
-</script>
-
 <body>
 
-<div class="container">
-
-    <h1>شنو جان کی جوانی</h1>
-
-    <div class="ad-space">
+    <!-- دائیں طرف کہانیوں کی لسٹ (مینیو) -->
+    <div class="sidebar">
+        <h1>شانو جان کی کہانیاں</h1>
+        <p style="font-size:12px; color:#aaa; text-align:center;">تمام ناولز چوری سے محفوظ ہیں</p>
+        
+        <div class="story-list">
+            <!-- کہانیوں کے لنکس (جب نئی کہانی ڈالیں تو بس یہاں ایک لائن بڑھا دیں) -->
+            <a class="story-link" href="papa-ke-guzarne-ke-baad.html" target="story-frame">۱. پاپا کے گزرنے کے بعد</a>
+            
+            <!-- مثال کے طور پر اگلی کہانی ایسے آئے گی: -->
+            <!-- <a class="story-link" href="kahani2.html" target="story-frame">۲. دوسری کہانی کا نام</a> -->
+        </div>
     </div>
 
-    <div class="story-text">
+    <!-- بائیں طرف کہانی پڑھنے کی جگہ -->
+    <div class="main-content">
+        <iframe name="story-frame" src="papa-ke-guzarne-ke-baad.html" id="myFrame"></iframe>
+        <div class="overlay"></div>
     </div>
 
-    <div class="ad-space">
-    </div>
+    <script>
+        // پورے ہوم پیج پر رائٹ کلک بند کرنے کا کوڈ
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        
+        // کی بورڈ سے کاپی (Ctrl+C اور Ctrl+U) بند کرنے کا کوڈ
+        document.onkeydown = function(e) {
+            if(e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83)) return false;
+        };
 
-</div>
+        // فریم کے اندر بھی رائٹ کلک اور کاپی بند کرنے کا خودکار نظام
+        var iframe = document.getElementById('myFrame');
+        iframe.onload = function() {
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDoc.addEventListener('contextmenu', event => event.preventDefault());
+            iframeDoc.body.style.webKitUserSelect = "none";
+            iframeDoc.body.style.MozUserSelect = "none";
+            iframeDoc.body.style.msUserSelect = "none";
+            iframeDoc.body.style.userSelect = "none";
+            iframeDoc.body.style.color = "#ffffff";
+            iframeDoc.body.style.backgroundColor = "#1a1a1a";
+            iframeDoc.body.style.fontFamily = "Arial, sans-serif";
+            iframeDoc.body.style.direction = "rtl";
+            iframeDoc.body.style.padding = "30px";
+            iframeDoc.body.style.fontSize = "18px";
+            iframeDoc.body.style.lineHeight = "1.8";
+        };
+    </script>
 
 </body>
-<script src="https://avegogglerequest.com/64/28/c1/6428c13ee51a451d414ba722ae120e6e.js"></script>
 </html>
