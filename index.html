@@ -5,60 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شنو جان کی جوانی</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #111; color: #fff; font-family: Arial, sans-serif; direction: rtl; }
-        .sidebar { width: 300px; height: 100%; background: #222; position: fixed; right: 0; top: 0; overflow-y: auto; padding: 20px; box-sizing: border-box; border-left: 2px solid #ffcc00; }
-        .main-content { margin-right: 300px; height: 100%; position: relative; }
-        h1 { text-align: center; color: #ffcc00; font-size: 22px; margin-bottom: 20px; }
-        .story-link { display: block; margin: 10px 0; padding: 12px; background: #333; color: #fff; text-decoration: none; border-radius: 5px; font-size: 16px; border-right: 4px solid #ffcc00; text-align: right; }
+        body, html { margin: 0; padding: 0; background-color: #111; color: #fff; font-family: Arial, sans-serif; direction: rtl; }
+        .header-area { background: #222; padding: 15px; text-align: center; border-bottom: 2px solid #ffcc00; position: sticky; top: 0; z-index: 100; }
+        h1 { color: #ffcc00; font-size: 24px; margin: 0 0 5px 0; }
+        .sub-text { font-size: 12px; color: #aaa; margin: 0; }
+        
+        .story-list { display: flex; flex-direction: column; gap: 10px; padding: 15px; max-width: 600px; margin: 0 auto; }
+        .story-link { display: block; padding: 15px; background: #333; color: #fff; text-decoration: none; border-radius: 5px; font-size: 16px; border-right: 5px solid #ffcc00; text-align: right; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
         .story-link:hover { background: #444; }
         
-        /* یہ وہ فریم ہے جہاں کہانی کھلے گی اور اس کی کاپی بند ہوگی */
-        iframe { width: 100%; height: 100%; border: none; background: #1a1a1a; }
-        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+        /* کہانی کھلنے کا فریم جو اب نیچے فل اسکرین پر آئے گا */
+        .content-area { max-width: 800px; margin: 20px auto; padding: 0 15px; min-height: 500px; }
+        iframe { width: 100%; height: 600px; border: none; background: #1a1a1a; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body>
 
-    <!-- دائیں طرف کہانیوں کی لسٹ (مینیو) -->
-    <div class="sidebar">
+    <!-- اوپر کا ہیڈر حصہ جہاں نام آئے گا -->
+    <div class="header-area">
         <h1>شنو جان کی جوانی</h1>
-        <p style="font-size:12px; color:#aaa; text-align:center;">تمام ناولز چوری سے محفوظ ہیں</p>
-        
-        <div class="story-list">
-            <!-- کہانیوں کے لنکس (جب نئی کہانی ڈالیں تو بس یہاں ایک لائن بڑھا دیں) -->
-            <a class="story-link" href="papa-ke-guzarne-ke-baad.html" target="story-frame">۱. پاپا کے گزرنے کے بعد</a>
-        </div>
+        <p class="sub-text">تمام ناولز اور کہانیاں چوری سے محفوظ ہیں</p>
     </div>
 
-    <!-- بائیں طرف کہانی پڑھنے کی جگہ -->
-    <div class="main-content">
+    <!-- کہانیوں کی لسٹ جو اب ترتیب سے نیچے آئے گی -->
+    <div class="story-list">
+        <a class="story-link" href="papa-ke-guzarne-ke-baad.html" target="story-frame">۱. پاپا کے گزرنے کے بعد</a>
+        
+        <!-- آئندہ جب نئی کہانی ڈالیں گے تو بس اس کے نیچے لنک ایڈ کرتے جائیں گے -->
+    </div>
+
+    <!-- نیچے وہ فریم جہاں کہانی صاف کھلے گی -->
+    <div class="content-area">
         <iframe name="story-frame" src="papa-ke-guzarne-ke-baad.html" id="myFrame"></iframe>
-        <div class="overlay"></div>
     </div>
 
     <script>
-        // پورے ہوم پیج پر رائٹ کلک بند کرنے کا کوڈ
+        // رائٹ کلک اور کاپی بند کرنے کا کوڈ
         document.addEventListener('contextmenu', event => event.preventDefault());
-        
-        // کی بورڈ سے کاپی (Ctrl+C اور Ctrl+U) بند کرنے کا کوڈ
         document.onkeydown = function(e) {
             if(e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83)) return false;
         };
 
-        // فریم کے اندر بھی رائٹ کلک اور کاپی بند کرنے کا خودکار نظام
+        // فریم کے اندر کاپی بند کرنے کا خودکار نظام
         var iframe = document.getElementById('myFrame');
         iframe.onload = function() {
             var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
             iframeDoc.addEventListener('contextmenu', event => event.preventDefault());
             iframeDoc.body.style.webKitUserSelect = "none";
             iframeDoc.body.style.MozUserSelect = "none";
-            iframeDoc.body.style.msUserSelect = "none";
             iframeDoc.body.style.userSelect = "none";
             iframeDoc.body.style.color = "#ffffff";
             iframeDoc.body.style.backgroundColor = "#1a1a1a";
-            iframeDoc.body.style.fontFamily = "Arial, sans-serif";
             iframeDoc.body.style.direction = "rtl";
-            iframeDoc.body.style.padding = "30px";
+            iframeDoc.body.style.padding = "20px";
             iframeDoc.body.style.fontSize = "18px";
             iframeDoc.body.style.lineHeight = "1.8";
         };
