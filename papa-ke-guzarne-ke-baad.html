@@ -1,60 +1,60 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پاپا کے گزرنے کے بعد</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f7f9fa;
-            color: #333;
-            margin: 0;
-            padding: 15px;
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #1a1a1a; 
+            color: #ffffff; 
+            direction: rtl; 
+            padding: 20px; 
+            line-height: 1.8; 
+            font-size: 18px;
+            /* ٹیکسٹ کاپی اور سلیکٹ بند کرنے کے لیے */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-        .container {
-            max-width: 650px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .thumbnail {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        h1 {
-            font-size: 32px;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            text-align: right;
-        }
-        .content {
-            font-size: 26px;
-            line-height: 1.8;
-            text-align: right;
-            white-space: pre-line;
-        }
+        .container { max-width: 700px; margin: 0 auto; background: #222; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .thumbnail-container { text-align: center; margin-bottom: 25px; }
+        .thumbnail-container img { width: 100%; max-width: 500px; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.4); }
+        h1 { text-align: center; color: #ffcc00; font-size: 26px; margin-top: 0; }
+        .content { text-align: right; white-space: pre-line; margin-top: 20px; }
     </style>
+    <script>
+        // رائٹ کلک اور کی بورڈ سے کاپی لاک کرنے کا اسکرپٹ
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if(e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83)) return false;
+        };
+    </script>
 </head>
 <body>
+
 <div class="container">
-    
-    <img class="thumbnail" src="https://postimg.cc" alt="Thumbnail">
-    
-    <h1>پاپا کے گزرنے کے بعد</h1>
-    
-    <div class="content">
-    میرے پاپا کے گزرنے کے ایک مہینہ بعد ایک شام ممی اپنے ساتھ ایک انکل کو لائی ممی انکل کو اپنے روم لے کر چلی گئی مجھے تو کچھ پتا نہیں تھا پہلے تو اکثر ممی فون پر انکل سے باتیں کیا کرتی تھی اس ایک شام کے بعد انکل روز رات کو ہمارے گھر آجاتا اور ممی انکل کو اپنے روم میں ٹھہراتی تھی تیسرے دن دونوں شاپنگ کرنے گئے اس کے بعد دوستوں ہمارے گھر کا ماحول بدلنے لگا ممی گھر میں بہت زیادہ ہی چھوٹے چھوٹے اور پتلے کپڑے اور پتلی چڈی پہننے لگی اس سے ممی کا سارا بدن صاف نظر آتا مطلب یہ کے ممی ایک تو ممی صحت مند ھے دوسرا یہ کے ممی کے بڑے ممے ہیں جب پتلے چھوٹے کپڑے پہنتی تو ممی کے ممے صاف نظر آتے یہاں تک کے ممی کے مموں کی پنک نپلز بھی نظر آتی یہاں تک کے ممی کا گول اور بڑا نچلا حصہ بھی صاف نظر آتا تھا۔
+
+    <!-- آپ کی تھمب نیل تصویر کا لنک یہاں بالکل سیٹ کر دیا ہے -->
+    <div class="thumbnail-container">
+        <img src="https://i.postimg.cc/nL5P7zNQ/mt2pf8xzoypkku.jpg" alt="Thumbnail">
     </div>
-    
+
+    <h1>پاپا کے گزرنے کے بعد</h1>
+
+    <div class="content">
+        میرے پاپا کے گزرنے کے ایک مہینہ بعد ایک شام ممی اپنے ساتھ ایک انکل کو لائی ممی انکل کو اپنے روم لے کر چلی گئی مجھے تو کچھ پتا نہیں تھا پہلے تو اکثر ممی فون پر انکل سے باتیں کیا کرتی تھی اس ایک شام کے بعد انکل روز رات کو ہمارے گھر آجاتا اور ممی انکل کو اپنے روم میں ٹھہراتی تھی تیسرے دن دونوں شاپنگ کرنے گئے اس کے بعد دوستوں ہمارے گھر کا ماحول بدلنے لگا ممی گھر میں بہت زیادہ ہی چھوٹے چھوٹے اور پتلے کپڑے اور پتلی چڈی پہننے لگی اس سے ممی کا سارا بدن صاف نظر آتا مطلب یہ کے ممی ایک تو ممی صحت مند ھے دوسرا یہ کے ممی کے بڑے ممے ہیں جب پتلے چھوٹے کپڑے پہنتی تو ممی کے ممے صاف نظر آتے یہاں تک کے ممی کے مموں کی پنک نپلز بھی نظر آتی یہاں تک کے ممی کا گول اور بڑا نچلا حصہ بھی صاف نظر آتا تھا۔
+    </div>
+
 </div>
+
 </body>
 </html>
 
+    میرے پاپا کے گزرنے کے ایک مہینہ بعد ایک شام ممی اپنے ساتھ ایک انکل کو لائی ممی انکل کو اپنے روم لے کر چلی گئی مجھے تو کچھ پتا نہیں تھا پہلے تو اکثر ممی فون پر انکل سے باتیں کیا کرتی تھی اس ایک شام کے بعد انکل روز رات کو ہمارے گھر آجاتا اور ممی انکل کو اپنے روم میں ٹھہراتی تھی تیسرے دن دونوں شاپنگ کرنے گئے اس کے بعد دوستوں ہمارے گھر کا ماحول بدلنے لگا ممی گھر میں بہت زیادہ ہی چھوٹے چھوٹے اور پتلے کپڑے اور پتلی چڈی پہننے لگی اس سے ممی کا سارا بدن صاف نظر آتا مطلب یہ کے ممی ایک تو ممی صحت مند ھے دوسرا یہ کے ممی کے بڑے ممے ہیں جب پتلے چھوٹے کپڑے پہنتی تو ممی کے ممے صاف نظر آتے یہاں تک کے ممی کے مموں کی پنک نپلز بھی نظر آتی یہاں تک کے ممی کا گول اور بڑا نچلا حصہ بھی صاف نظر آتا تھا۔
+   
 ‎
 ‎میرے پاپا کے گزرنے کے ایک مہینہ بعد ایک شام ممی اپنے ساتھ ایک انکل کو لائی ممی انکل کو اپنے روم لے کر چلی گئی مجھے تو کچھ پتا نہیں تھا پہلے تو اکثر ممی فون پر انکل سے باتیں کیا کرتی تھی اس ایک شام کے بعد انکل روز رات کو ہمارے گھر آجاتا اور ممی انکل کو اپنے روم میں ٹھیراتی تھی تیسرے دن دونوں شاپنگ کرنے گئے اس کے بعد دوستوں ہمارے گھر کا ماحول 
 ‎
