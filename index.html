@@ -22,17 +22,15 @@
         h1 { color: #ffcc00; font-size: 26px; margin: 0 0 5px 0; }
         .sub-text { font-size: 13px; color: #aaa; margin: 0; }
         
-        /* کہانیوں کا مین ڈبہ */
         .blog-container { 
             max-width: 600px; 
             margin: 30px auto; 
             padding: 0 15px; 
         }
         
-        /* ہر کہانی کا الگ کارڈ/باکس (جیسا آپ کے اسکرین شاٹ میں تھا) */
         .story-card { 
             background: #111; 
-            border: 2px solid #ff007f; /* گلابی چمکتی ہوئی باؤنڈری */
+            border: 2px solid #ff007f; 
             border-radius: 12px; 
             padding: 15px; 
             margin-bottom: 25px; 
@@ -46,17 +44,17 @@
             margin-bottom: 15px; 
         }
         
-        /* تصویر اور تھوڑی سی کہانی کا ڈیزائن */
         .story-preview-box { 
             display: flex; 
             gap: 15px; 
-            align-items: flex-start; 
+            align-items: center; 
         }
         .story-thumb { 
             width: 100px; 
             height: 100px; 
             object-fit: cover; 
             border-radius: 8px; 
+            border: 1px solid #ffcc00;
         }
         .story-excerpt { 
             font-size: 15px; 
@@ -65,7 +63,6 @@
             flex: 1;
         }
         
-        /* ریڈ مور بٹن کا ڈیزائن */
         .read-more-btn { 
             display: inline-block; 
             margin-top: 15px; 
@@ -82,45 +79,27 @@
 </head>
 <body>
 
-    <!-- اوپر کا ہیڈر حصہ -->
     <div class="header-area">
         <h1>شنو جان کی جوانی</h1>
         <p class="sub-text">تمام ناولز اور کہانیاں چوری سے محفوظ ہیں</p>
     </div>
 
-    <!-- بلاگ کی کہانیوں کی لسٹ -->
     <div class="blog-container">
         
         <!-- ۱۔ پہلی کہانی کا کارڈ -->
         <div class="story-card">
             <h2 class="story-title">۱. پاپا کے گزرنے کے بعد</h2>
             <div class="story-preview-box">
-                <!-- تصویر کا لنک -->
-                <<img class="story-thumb" src="https://postimg.cc" alt="Thumbnail">
-
-                <!-- کہانی کی شروعات کی صرف دو لائنیں -->
+                <!-- تصویر کا درست ڈائریکٹ لنک یہاں لگا دیا گیا ہے -->
+                <img class="story-thumb" src="https://postimg.cc" alt="Thumbnail">
                 <p class="story-excerpt">میرے پاپا کے گزرنے کے ایک مہینہ بعد ایک شام ممی اپنے ساتھ ایک انکل کو لائی ممی انکل کو اپنے روم لے کر چلی گئی...</p>
             </div>
-            <!-- ریڈ مور کا بٹن جو اصل کہانی پر لے جائے گا -->
             <a href="papa-ke-guzarne-ke-baad.html" class="read-more-btn">READ MORE</a>
         </div>
-
-        <!-- ۲۔ مستقبل میں دوسری کہانی کا کارڈ آپ بالکل ایسے ہی نیچے جوڑیں گے -->
-        <!-- 
-        <div class="story-card">
-            <h2 class="story-title">۲. دوسری کہانی کا نام</h2>
-            <div class="story-preview-box">
-                <img class="story-thumb" src="دوسری_تصویر_کا_لنک" alt="Thumbnail">
-                <p class="story-excerpt">دوسری کہانی کی شروعات کی دو لائنیں یہاں آئیں گی...</p>
-            </div>
-            <a href="kahani2.html" class="read-more-btn">READ MORE</a>
-        </div> 
-        -->
 
     </div>
 
     <script>
-        // ہوم پیج پر بھی رائٹ کلک اور کاپی بند
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.onkeydown = function(e) {
             if(e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85)) return false;
