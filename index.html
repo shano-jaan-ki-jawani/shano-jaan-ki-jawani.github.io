@@ -149,7 +149,52 @@
 </a>
 <!-- Telegram Button End -->
 
+<!-- FINAL - Top + Card Dono Jagah Views -->
+<style>
+  .site-top-views{
+    display:block; text-align:center; margin:8px auto;
+    background:#111; border:1.8px solid #00ff88;
+    color:#00ff88; font-weight:bold; font-size:15px;
+    padding:5px 18px; border-radius:25px; width:fit-content;
+  }
+  .card-top-views{
+    display:block; text-align:center; margin:0 auto 10px auto;
+    background:#111; border:1.8px solid #ffcc00;
+    color:#ff4500; font-weight:bold; font-size:13px;
+    padding:4px 14px; border-radius:20px; width:fit-content;
+  }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  function getFixed(key){
+    var s=localStorage.getItem('views_'+key);
+    if(s) return s;
+    var v=Math.floor(Math.random()*(15000-7000+1))+7000;
+    localStorage.setItem('views_'+key, v);
+    return v;
+  }
 
+  // 1. سب سے ٹاپ پر - سائٹ کا ٹائٹل ڈھونڈو
+  var siteTitle = document.querySelector('h1');
+  if(siteTitle && !document.querySelector('.site-top-views')){
+    var total = Number(getFixed('site_total')).toLocaleString();
+    siteTitle.insertAdjacentHTML('afterend', '<div class="site-top-views">👁️ '+total+' لوگ پڑھ چکے ہیں</div>');
+  }
+
+  // 2. ہر پوسٹ کے بالکل اوپر - تصویر سے بھی اوپر
+  document.querySelectorAll('img').forEach(function(img, i){
+    var card = img.closest('div');
+    if(!card) return;
+    if(card.querySelector('.card-top-views')) return;
+    // صرف کہانی والے کارڈ
+    if(card.innerText.includes('READ MORE') || card.innerText.includes('پڑھیں')){
+      var key = 'card_'+i+'_'+(card.innerText.substring(0,10));
+      var v = Number(getFixed(key)).toLocaleString();
+      img.insertAdjacentHTML('beforebegin', '<div class="card-top-views">Views | 🔥 Trending '+v+' 👁️</div>');
+    }
+  });
+});
+</script>
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
