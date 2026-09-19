@@ -149,23 +149,35 @@
 </a>
 <!-- Telegram Button End -->
 
-<!-- Views Wala Code V2 Start -->
+<!-- Auto Views For All Posts -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // ہر کہانی کے باکس میں ویوز لگائے گا
+  function getViews(){ return Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000; }
+
+  // سائٹ کے سارے کارڈ ڈھونڈو جن میں تصویر ہے
   var cards = document.querySelectorAll('div');
   cards.forEach(function(card){
-    if(card.innerText && card.innerText.includes('مکمل کہانی پڑھیں')){
-       if(card.querySelector('.my-views')) return;
-       var randomViews = Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000;
-       var html = '<div class="my-views" style="text-align:center; margin-bottom:8px; font-weight:bold; color:#ff4500; font-size:14px;">👁️ '+randomViews.toLocaleString()+' Views</div>';
-       var btn = card.querySelector('a');
-       if(btn) btn.insertAdjacentHTML('beforebegin', html);
+    // کارڈ میں تصویر ہو اور بٹن ہو
+    var hasImg = card.querySelector('img');
+    var hasBtn = card.innerText.includes('READ MORE') || card.innerText.includes('مکمل کہانی');
+    
+    if(hasImg && hasBtn){
+      if(card.querySelector('.auto-views')) return; // پہلے سے ہے تو دوبارہ نہیں
+
+      var v = getViews().toLocaleString();
+      var viewDiv = '<div class="auto-views" style="text-align:center; margin:10px auto; color:#ff4500; font-weight:bold; background:#222; border:1px solid #ffcc00; padding:5px 12px; border-radius:20px; width:fit-content; font-size:14px;">👁️ '+v+' Views | 🔥 Trending</div>';
+      
+      // تصویر کے فوراً بعد یا سب سے اوپر لگا دو
+      var img = card.querySelector('img');
+      if(img){
+        img.insertAdjacentHTML('beforebegin', viewDiv);
+      } else {
+        card.insertAdjacentHTML('afterbegin', viewDiv);
+      }
     }
   });
 });
 </script>
-<!-- Views Wala Code V2 End -->
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
