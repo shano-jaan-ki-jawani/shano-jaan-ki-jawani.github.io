@@ -148,24 +148,33 @@
 ✈️ Join Telegram
 </a>
 <!-- Telegram Button End -->
-<!-- FINAL 3 Posts Fix -->
+<!-- FINAL Views - Text Khrab Nahi Karega -->
+<style>
+  .my-views-badge{
+    display:block; text-align:center; margin:8px auto;
+    color:#ff4500; background:#111; border:1.5px solid #ffcc00;
+    padding:4px 14px; border-radius:20px; font-weight:bold;
+    font-size:14px; width:fit-content;
+  }
+</style>
 <script>
-document.addEventListener("DOMContentLoaded",function(){
-  function getFixed(k){let s=localStorage.getItem('views_'+k);if(s) return s;let v=Math.floor(Math.random()*(15000-7000+1))+7000;localStorage.setItem('views_'+k,v);return v;}
-  
-  // ہر کارڈ ڈھونڈو جس میں READ MORE یا Join Telegram ہو
-  document.querySelectorAll('div').forEach(function(card, i){
-    if(card.innerText.includes('READ MORE') || card.innerText.includes('Join Telegram')){
-      // چیک کرو کہ اس کارڈ میں پہلے سے بیج تو نہیں
-      if(card.querySelector('.card-top-views')) return;
-      let img = card.querySelector('img');
-      if(img){
-        let k='post_all_'+i;
-        let v=Number(getFixed(k)).toLocaleString();
-        img.insertAdjacentHTML('beforebegin','<div class="card-top-views" style="display:block;text-align:center;margin:0 auto 10px auto;background:#111;border:1.8px solid #ffcc00;color:#ff4500;font-weight:bold;padding:4px 14px;border-radius:20px;width:fit-content;font-size:13px;">👁️ Views | 🔥 Trending '+v+'</div>');
-      }
+document.addEventListener("DOMContentLoaded", function() {
+  function getV(){ return Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000; }
+
+  // ہوم پیج پر - صرف ٹائٹل کے نیچے ویوز
+  document.querySelectorAll('h2, h3').forEach(function(title){
+    if(title.innerText.length > 3 && !title.nextElementSibling?.classList.contains('my-views-badge')){
+       var v = getV().toLocaleString();
+       title.insertAdjacentHTML('afterend', '<div class="my-views-badge">👁️ '+v+' Views | 🔥 Trending</div>');
     }
   });
+
+  // کہانی کے اندر والا پیج - h1 کے نیچے
+  var h1 = document.querySelector('h1');
+  if(h1 && !document.querySelector('.inside-badge')){
+    var v2 = getV().toLocaleString();
+    h1.insertAdjacentHTML('afterend', '<div class="inside-badge my-views-badge" style="border-color:#00ff88; color:#00ff88;">👁️ '+v2+' لوگ پڑھ چکے ہیں</div>');
+  }
 });
 </script>
 </body>
