@@ -149,35 +149,7 @@
 </a>
 <!-- Telegram Button End -->
 
-<!-- Auto Views For All Posts -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  function getViews(){ return Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000; }
 
-  // سائٹ کے سارے کارڈ ڈھونڈو جن میں تصویر ہے
-  var cards = document.querySelectorAll('div');
-  cards.forEach(function(card){
-    // کارڈ میں تصویر ہو اور بٹن ہو
-    var hasImg = card.querySelector('img');
-    var hasBtn = card.innerText.includes('READ MORE') || card.innerText.includes('مکمل کہانی');
-    
-    if(hasImg && hasBtn){
-      if(card.querySelector('.auto-views')) return; // پہلے سے ہے تو دوبارہ نہیں
-
-      var v = getViews().toLocaleString();
-      var viewDiv = '<div class="auto-views" style="text-align:center; margin:10px auto; color:#ff4500; font-weight:bold; background:#222; border:1px solid #ffcc00; padding:5px 12px; border-radius:20px; width:fit-content; font-size:14px;">👁️ '+v+' Views | 🔥 Trending</div>';
-      
-      // تصویر کے فوراً بعد یا سب سے اوپر لگا دو
-      var img = card.querySelector('img');
-      if(img){
-        img.insertAdjacentHTML('beforebegin', viewDiv);
-      } else {
-        card.insertAdjacentHTML('afterbegin', viewDiv);
-      }
-    }
-  });
-});
-</script>
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
