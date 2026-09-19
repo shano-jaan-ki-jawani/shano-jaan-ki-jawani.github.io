@@ -149,26 +149,7 @@
 </a>
 <!-- Telegram Button End -->
 
-<!-- FIXED Views - Number Change Nahi Hoga -->
-<style>.my-views-badge{display:block;text-align:center;margin:8px auto;color:#ff4500;background:#111;border:1.5px solid #ffcc00;padding:4px 14px;border-radius:20px;font-weight:bold;font-size:14px;width:fit-content}</style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  function getFixedViews(key){
-    var saved = localStorage.getItem('views_'+key);
-    if(saved) return saved;
-    var v = Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000;
-    localStorage.setItem('views_'+key, v);
-    return v;
-  }
-  document.querySelectorAll('h2, h3').forEach(function(title, index){
-    if(title.innerText.length > 3 && !title.nextElementSibling?.classList.contains('my-views-badge')){
-       var key = title.innerText.trim().substring(0,20) || 'post_'+index;
-       var v = Number(getFixedViews(key)).toLocaleString();
-       title.insertAdjacentHTML('afterend', '<div class="my-views-badge">👁️ '+v+' Views | 🔥 Trending</div>');
-    }
-  });
-});
-</script>
+
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
