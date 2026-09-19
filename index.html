@@ -148,31 +148,7 @@
 ✈️ Join Telegram
 </a>
 <!-- Telegram Button End -->
-<!-- FINAL FIXED VIEWS - Top + Card -->
-<style>
-.site-top-views{display:block;text-align:center;margin:12px auto;background:#111;border:1.8px solid #00ff88;color:#00ff88;font-weight:bold;padding:6px 20px;border-radius:25px;width:fit-content}
-.card-top-views{display:block;text-align:center;margin:8px auto;background:#111;border:1.8px solid #ffcc00;color:#ff4500;font-weight:bold;padding:4px 14px;border-radius:20px;width:fit-content;font-size:13px}
-</style>
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-  document.querySelectorAll('.site-top-views,.card-top-views,.my-views-badge,.top-views-badge').forEach(e=>e.remove());
-  function getFixed(k){let s=localStorage.getItem('views_'+k);if(s) return s;let v=Math.floor(Math.random()*(15000-7000+1))+7000;localStorage.setItem('views_'+k,v);return v;}
-  let h1=document.querySelector('h1');
-  if(h1){
-    let t=Number(getFixed('site_total_final')).toLocaleString();
-    h1.insertAdjacentHTML('afterend','<div class="site-top-views">👁️ '+t+' لوگ پڑھ چکے ہیں</div>');
-  }
-  document.querySelectorAll('h2,h3').forEach(function(title,i){
-    if(title.innerText.length>3){
-      let k=title.innerText.trim().substring(0,15)||'post_'+i;
-      let v=Number(getFixed(k)).toLocaleString();
-      if(!title.nextElementSibling||!title.nextElementSibling.classList.contains('card-top-views')){
-        title.insertAdjacentHTML('afterend','<div class="card-top-views">Views | 🔥 Trending '+v+' 👁️</div>');
-      }
-    }
-  });
-});
-</script>
+
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
