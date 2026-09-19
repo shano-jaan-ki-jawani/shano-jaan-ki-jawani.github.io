@@ -149,35 +149,7 @@
 </a>
 <!-- Telegram Button End -->
 
-<!-- FINAL Views - Text Khrab Nahi Karega -->
-<style>
-  .my-views-badge{
-    display:block; text-align:center; margin:8px auto;
-    color:#ff4500; background:#111; border:1.5px solid #ffcc00;
-    padding:4px 14px; border-radius:20px; font-weight:bold;
-    font-size:14px; width:fit-content;
-  }
-</style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  function getV(){ return Math.floor(Math.random() * (15000 - 5000 + 1)) + 5000; }
 
-  // ہوم پیج پر - صرف ٹائٹل کے نیچے ویوز
-  document.querySelectorAll('h2, h3').forEach(function(title){
-    if(title.innerText.length > 3 && !title.nextElementSibling?.classList.contains('my-views-badge')){
-       var v = getV().toLocaleString();
-       title.insertAdjacentHTML('afterend', '<div class="my-views-badge">👁️ '+v+' Views | 🔥 Trending</div>');
-    }
-  });
-
-  // کہانی کے اندر والا پیج - h1 کے نیچے
-  var h1 = document.querySelector('h1');
-  if(h1 && !document.querySelector('.inside-badge')){
-    var v2 = getV().toLocaleString();
-    h1.insertAdjacentHTML('afterend', '<div class="inside-badge my-views-badge" style="border-color:#00ff88; color:#00ff88;">👁️ '+v2+' لوگ پڑھ چکے ہیں</div>');
-  }
-});
-</script>
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
