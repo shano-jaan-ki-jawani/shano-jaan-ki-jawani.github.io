@@ -148,7 +148,26 @@
 ✈️ Join Telegram
 </a>
 <!-- Telegram Button End -->
-
+<!-- FINAL 3 Posts Fix -->
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  function getFixed(k){let s=localStorage.getItem('views_'+k);if(s) return s;let v=Math.floor(Math.random()*(15000-7000+1))+7000;localStorage.setItem('views_'+k,v);return v;}
+  
+  // ہر کارڈ ڈھونڈو جس میں READ MORE یا Join Telegram ہو
+  document.querySelectorAll('div').forEach(function(card, i){
+    if(card.innerText.includes('READ MORE') || card.innerText.includes('Join Telegram')){
+      // چیک کرو کہ اس کارڈ میں پہلے سے بیج تو نہیں
+      if(card.querySelector('.card-top-views')) return;
+      let img = card.querySelector('img');
+      if(img){
+        let k='post_all_'+i;
+        let v=Number(getFixed(k)).toLocaleString();
+        img.insertAdjacentHTML('beforebegin','<div class="card-top-views" style="display:block;text-align:center;margin:0 auto 10px auto;background:#111;border:1.8px solid #ffcc00;color:#ff4500;font-weight:bold;padding:4px 14px;border-radius:20px;width:fit-content;font-size:13px;">👁️ Views | 🔥 Trending '+v+'</div>');
+      }
+    }
+  });
+});
+</script>
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
