@@ -149,7 +149,34 @@
 </a>
 <!-- Telegram Button End -->
 
+<!-- FINAL TOP Views Design -->
+<style>
+  .top-views-badge{
+    display:block; text-align:center; margin:10px auto;
+    background:#111; border:1.8px solid #ffcc00;
+    color:#ff4500; font-weight:bold; font-size:14px;
+    padding:5px 16px; border-radius:25px; width:fit-content;
+  }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  function getFixedViews(key){
+    var saved = localStorage.getItem('views_'+key);
+    if(saved) return saved;
+    var v = Math.floor(Math.random() * (12000 - 6000 + 1)) + 6000;
+    localStorage.setItem('views_'+key, v);
+    return v;
+  }
 
+  document.querySelectorAll('h2, h3').forEach(function(title, i){
+    if(title.innerText.length > 4 && !title.nextElementSibling?.classList.contains('top-views-badge')){
+       var key = title.innerText.trim().substring(0,15) || 'post_'+i;
+       var v = Number(getFixedViews(key)).toLocaleString();
+       title.insertAdjacentHTML('afterend', '<div class="top-views-badge">Views | 🔥 Trending '+v+' 👁️</div>');
+    }
+  });
+});
+</script>
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
