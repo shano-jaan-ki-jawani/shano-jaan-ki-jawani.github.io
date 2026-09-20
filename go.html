@@ -3,25 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loading...</title>
+<title>Advertisement</title>
 <script src="https://fpyf8.com/88/tag.min.js" data-zone="194546" async data-cfasync="false"></script>
+<style>
+body{margin:0;font-family:sans-serif;background:#fff;text-align:center}
+.top{padding:15px;background:#f0f0f0;font-size:14px}
+#timer{font-size:22px;font-weight:bold;color:green;margin:20px}
+.ad-box{min-height:250px;display:flex;align-items:center;justify-content:center;background:#fafafa;border:1px dashed #ccc;margin:10px}
+</style>
 </head>
-<body style="text-align:center; font-family:sans-serif; padding-top:80px;">
+<body>
 
-<h3>کہانی لوڈ ہو رہی ہے... </h3>
-<p>کہانی پڑھنے کے لیے نیچے بٹن دبائیں</p>
+<div class="top">اشتہار ختم ہونے کے بعد کہانی خود کھل جائے گی</div>
 
-<button id="btn" style="padding:15px 35px; font-size:20px; background:#25D366; color:white; border:none; border-radius:12px;">کہانی پڑھیں</button>
+<div class="ad-box">
+  <!-- یہاں تمہارا Pop ایڈ خود لوڈ ہوگا -->
+  <p>اشتہار لوڈ ہو رہا ہے...</p>
+</div>
+
+<div id="timer">کہانی 5 سیکنڈ میں کھلے گی...</div>
 
 <script>
-const urlParams = new URLSearchParams(window.location.search);
-const story = urlParams.get('s');
+const s = new URLSearchParams(window.location.search).get('s');
+const storyUrl = "https://shano-jaan-ki-jawani.github.io/" + s;
+let sec = 5;
+const t = document.getElementById('timer');
 
-document.getElementById('btn').onclick = function(){
-  if(story){
-    window.location.href = "https://shano-jaan-ki-jawani.github.io/" + story;
+const interval = setInterval(()=>{
+  sec--;
+  t.innerHTML = "کہانی " + sec + " سیکنڈ میں کھلے گی...";
+  if(sec <= 0){
+    clearInterval(interval);
+    window.location.href = storyUrl;
   }
-};
+}, 1000);
 </script>
 
 </body>
