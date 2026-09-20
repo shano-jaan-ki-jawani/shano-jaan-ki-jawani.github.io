@@ -6,20 +6,23 @@
 <title>Loading...</title>
 <script src="https://fpyf8.com/88/tag.min.js" data-zone="194546" async data-cfasync="false"></script>
 </head>
-<body>
-<div style="text-align:center; margin-top:100px; font-family:sans-serif;">
-<h3>کہانی لوڈ ہو رہی ہے... 3 سیکنڈ انتظار کریں</h3>
-</div>
+<body style="text-align:center; font-family:sans-serif; padding-top:80px;">
+
+<h3>کہانی لوڈ ہو رہی ہے... </h3>
+<p>کہانی پڑھنے کے لیے نیچے بٹن دبائیں</p>
+
+<button id="btn" style="padding:15px 35px; font-size:20px; background:#25D366; color:white; border:none; border-radius:12px;">کہانی پڑھیں</button>
+
 <script>
 const urlParams = new URLSearchParams(window.location.search);
 const story = urlParams.get('s');
-if(story){
-  setTimeout(function(){
+
+document.getElementById('btn').onclick = function(){
+  if(story){
     window.location.href = "https://shano-jaan-ki-jawani.github.io/" + story;
-  }, 3000);
-} else {
-  document.body.innerHTML = "<h3 style='text-align:center'>کہانی نہیں ملی</h3>";
-}
+  }
+};
 </script>
+
 </body>
 </html>
