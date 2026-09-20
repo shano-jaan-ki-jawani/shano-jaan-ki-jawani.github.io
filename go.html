@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Loading...</title>
+<script>
+  // لنک سے کہانی کا نام نکالنا
+  const params = new URLSearchParams(window.location.search);
+  let story = params.get('s') || "papa-ke-guzarne-ke-baad.html";
+
+  if (sessionStorage.getItem('adShown')) {
+    sessionStorage.removeItem('adShown');
+    window.location.href = "https://shano-jaan-ki-jawani.github.io/" + story;
+  } else {
+    sessionStorage.setItem('adShown', 'yes');
+    window.location.href = "https://avegogglerequest.com/vkhac4dz?key=db3e6ed8a4aab9171d06beaf6206a7c4";
+  }
+</script>
+</head>
+<body><p style="text-align:center;margin-top:50px;">کہانی لوڈ ہو رہی ہے...</p></body>
+</html>
