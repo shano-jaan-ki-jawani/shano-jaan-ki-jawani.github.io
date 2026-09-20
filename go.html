@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Loading...</title>
-<script>
-  // لنک سے کہانی کا نام نکالنا
-  const params = new URLSearchParams(window.location.search);
-  let story = params.get('s') || "papa-ke-guzarne-ke-baad.html";
-
-  if (sessionStorage.getItem('adShown')) {
-    sessionStorage.removeItem('adShown');
-    window.location.href = "https://shano-jaan-ki-jawani.github.io/" + story;
-  } else {
-    sessionStorage.setItem('adShown', 'yes');
-    window.location.href = "https://avegogglerequest.com/vkhac4dz?key=db3e6ed8a4aab9171d06beaf6206a7c4";
-  }
-</script>
+<script src="https://fpyf8.com/88/tag.min.js" data-zone="194546" async data-cfasync="false"></script>
 </head>
-<body><p style="text-align:center;margin-top:50px;">کہانی لوڈ ہو رہی ہے...</p></body>
+<body>
+<div style="text-align:center; margin-top:100px; font-family:sans-serif;">
+<h3>کہانی لوڈ ہو رہی ہے... 3 سیکنڈ انتظار کریں</h3>
+</div>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const story = urlParams.get('s');
+if(story){
+  setTimeout(function(){
+    window.location.href = "https://shano-jaan-ki-jawani.github.io/" + story;
+  }, 3000);
+} else {
+  document.body.innerHTML = "<h3 style='text-align:center'>کہانی نہیں ملی</h3>";
+}
+</script>
+</body>
 </html>
