@@ -280,5 +280,54 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 </body>
+<!-- +18 وارننگ پاپ اپ شروع -->
+<div id="age-gate-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #000000; z-index: 99999; display: flex; justify-content: center; align-items: center; direction: rtl; font-family: sans-serif; padding: 20px; box-sizing: border-box;">
+    <div style="background-color: #1a1a1a; border: 2px solid #ff007f; border-radius: 15px; max-width: 400px; width: 100%; padding: 30px; text-align: center; box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);">
+        
+        <!-- لال دائرے میں +18 کا نشان -->
+        <div style="width: 80px; height: 80px; border: 3px solid #ff0033; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #ff0033; font-size: 30px; font-weight: bold; margin: 0 auto 20px auto; background-color: rgba(255, 0, 51, 0.1);">
+            +18
+        </div>
+        
+        <h2 style="color: #ffcc00; margin-bottom: 15px; font-size: 22px;">حساس مواد کی وارننگ!</h2>
+        
+        <p style="color: #ffffff; font-size: 15px; line-height: 1.6; margin-bottom: 25px; opacity: 0.9;">
+            اس ویب سائٹ پر موجود کہانیاں صرف بالغان (Adults) کے لیے ہیں۔ کیا آپ کی عمر 18 سال یا اس سے زیادہ ہے؟
+        </p>
+        
+        <!-- بٹنز -->
+        <div style="display: flex; gap: 15px; justify-content: center;">
+            <!-- ہاں کا بٹن جو ویب سائٹ کھولے گا -->
+            <button onclick="acceptAge()" style="background-color: #0088cc; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-size: 15px; font-weight: bold; cursor: pointer; flex: 1; transition: 0.2s;">
+                ہاں، میں 18+ ہوں
+            </button>
+            
+            <!-- نہیں کا بٹن جو گوگل پر بھیج دے گا -->
+            <button onclick="rejectAge()" style="background-color: #333333; color: #aaaaaa; border: 1px solid #555555; padding: 12px 25px; border-radius: 25px; font-size: 15px; cursor: pointer; flex: 1;">
+                نہیں
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // چیک کریں کہ کیا قاری پہلے ہی "ہاں" کر چکا ہے
+    if (localStorage.getItem('age_verified') === 'true') {
+        document.getElementById('age-gate-overlay').style.display = 'none';
+    }
+
+    // ہاں پر کلک کرنے کا فنکشن
+    function acceptAge() {
+        localStorage.setItem('age_verified', 'true');
+        document.getElementById('age-gate-overlay').style.display = 'none';
+    }
+
+    // نہیں پر کلک کرنے کا فنکشن (گوگل پر بھیج دے گا)
+    function rejectAge() {
+        window.location.href = "https://google.com";
+    }
+</script>
+<!-- +18 وارننگ پاپ اپ ختم -->
+
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
