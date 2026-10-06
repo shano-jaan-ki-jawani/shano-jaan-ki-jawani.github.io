@@ -392,16 +392,4 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- +18 وارننگ پاپ اپ ختم -->
 
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
-<div id="lc"></div>
-<script>
-(function(){
-var d=document.getElementById('lc');
-d.innerHTML='<div style="text-align:center;padding:20px;background:#000;border-top:2px dashed gold;"><button id="lb" style="background:#e91e63;color:#fff;border:0;padding:12px 28px;border-radius:30px;font-size:19px">❤️ Like <span id="ln">0</span></button><br><br><input id="ci" placeholder="Comment..." style="padding:10px;border-radius:20px;border:0;width:60%"><button onclick="ac()" style="padding:10px 15px;border-radius:20px;background:gold;border:0;margin-left:5px">OK</button><div id="cl" style="margin-top:10px"></div></div>';
-var k='blike'; document.getElementById('ln').innerText=localStorage.getItem(k)||0;
-document.getElementById('lb').onclick=function(){var n=parseInt(localStorage.getItem(k)||0)+1;localStorage.setItem(k,n);document.getElementById('ln').innerText=n;};
-window.ac=function(){var i=document.getElementById('ci');if(!i.value.trim())return;var a=JSON.parse(localStorage.getItem('bc')||"[]");a.push(i.value);localStorage.setItem('bc',JSON.stringify(a));i.value='';sc();};
-window.sc=function(){var a=JSON.parse(localStorage.getItem('bc')||"[]");var l=document.getElementById('cl');l.innerHTML='';for(var j=0;j<a.length;j++)l.innerHTML+='<div style="background:#222;color:#fff;padding:8px;margin:4px;border-radius:8px;text-align:left">'+a[j]+'</div>';};
-sc();
-})();
-</script>
 </html>
