@@ -392,39 +392,4 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- +18 وارننگ پاپ اپ ختم -->
 
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
-<script>
-// pappi - HOME PAGE ONLY - har kahani me Like
-document.addEventListener("DOMContentLoaded", function(){
-  setTimeout(function(){
-    // har kahani ka card dhoondo (jis me .html ka link hai)
-    var cards = document.querySelectorAll('a[href$=".html"]');
-    cards.forEach(function(a){
-      var link = a.getAttribute('href');
-      if(link.includes('index')) return;
-      if(a.querySelector('.myHomeLike')) return;
-
-      var id = 'like_home_' + link;
-      var cnt = localStorage.getItem(id) || 0;
-
-      var btn = document.createElement('div');
-      btn.className = 'myHomeLike';
-      btn.style.cssText = 'text-align:center;margin:8px 0 12px 0';
-      btn.innerHTML = '<button style="background:#e91e63;color:#fff;border:0;padding:6px 18px;border-radius:20px;font-size:14px">❤️ <span>'+cnt+'</span> Like</button>';
-      
-      // click
-      btn.querySelector('button').onclick = function(e){
-        e.preventDefault(); e.stopPropagation();
-        var n = parseInt(localStorage.getItem(id)||0)+1;
-        localStorage.setItem(id, n);
-        btn.querySelector('span').innerText = n;
-      };
-
-      // card ke andar lagao
-      a.insertAdjacentElement('afterend', btn);
-      // agar card div hai to uske andar
-      if(a.parentElement) a.parentElement.appendChild(btn);
-    });
-  }, 1500);
-});
-</script>
 </html>
