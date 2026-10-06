@@ -392,4 +392,52 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- +18 وارننگ پاپ اپ ختم -->
 
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
+<script>
+// pappi FINAL - home page single like - double auto fix
+(function(){
+  function addLikes(){
+    // pehle saare purane double like hata do
+    document.querySelectorAll('.myHomeLike, button').forEach(function(b){
+      if(b.textContent.includes('Like 0') || b.textContent.includes('Like 1')){
+        // agar 2 like ek sath hain to sab hata do
+        var parent = b.closest('div');
+        if(parent && parent.innerHTML.includes('Like 0') && parent.innerHTML.match(/Like/g)?.length>1){
+           parent.innerHTML='';
+        }
+      }
+    });
+    // purane duplicate div hatao
+    document.querySelectorAll('div').forEach(function(d){
+      if(d.querySelectorAll('button').length>=2 && d.innerHTML.includes('Like 0')){
+        var btns = d.querySelectorAll('button');
+        if(btns[0].textContent.includes('Like') && btns[1].textContent.includes('Like')){
+          btns[1].parentElement.remove();
+        }
+      }
+    });
+
+    document.querySelectorAll('a[href$=".html"]').forEach(function(a){
+      if(a.getAttribute('href').includes('index')) return;
+      if(a.parentElement.querySelector('.myHomeLike')) return;
+      var link = a.getAttribute('href');
+      var id = 'like_home_' + link;
+      var cnt = localStorage.getItem(id) || 0;
+      var btn = document.createElement('div');
+      btn.className = 'myHomeLike';
+      btn.style.cssText = 'text-align:center;margin:8px 0;';
+      btn.innerHTML = '<button style="background:#e91e63;color:#fff;border:0;padding:6px 18px;border-radius:20px;font-size:14px">Like '+cnt+' ❤️</button>';
+      btn.querySelector('button').onclick = function(e){
+        e.preventDefault(); e.stopPropagation();
+        var n = parseInt(localStorage.getItem(id)||0)+1;
+        localStorage.setItem(id, n);
+        btn.querySelector('button').innerHTML = 'Like '+n+' ❤️';
+      };
+      // blue button ke neeche lagao
+      var blueBtn = a.parentElement.querySelector('button, a');
+      a.parentElement.appendChild(btn);
+    });
+  }
+  document.addEventListener("DOMContentLoaded", function(){ setTimeout(addLikes, 1000); setTimeout(addLikes, 2500); });
+})();
+</script>
 </html>
