@@ -12,8 +12,12 @@ body{background:#0a0a0a;margin:0;padding:12px;font-family:serif}
 *{ -webkit-user-select:none !important; -moz-user-select:none !important; -ms-user-select:none !important; user-select:none !important; -webkit-touch-callout:none !important; }
 input, textarea{ -webkit-user-select:text !important; user-select:text !important; }
 .title{color:#ffcc33;font-size:34px;font-weight:bold;text-align:center;margin:20px 0 10px}
-.like{display:block;margin:12px auto;background:#e9407a;color:#fff;border:none;padding:10px 28px;border-radius:25px;font-size:18px;cursor:pointer}
+.like{display:block;margin:12px auto;background:#e9407a;color:#fff;border:none;padding:10px 28px;border-radius:25px;font-size:18px}
 .story{color:#f5eeda;font-size:22px;line-height:2.4;text-align:right;margin-top:28px;white-space:pre-line}
+.comment-box{background:#111;border:1px solid #ff0066;border-radius:15px;padding:14px;margin-top:25px}
+.comment-box textarea{width:95%;background:#222;color:#fff;border:1px solid #444;border-radius:10px;padding:10px;font-size:16px;outline:none}
+.comment-box button{background:gold;color:#000;border:none;padding:8px 20px;border-radius:20px;font-weight:bold;margin-top:10px;cursor:pointer}
+.cmnt{color:#ddd;background:#222;padding:8px 12px;border-radius:10px;margin-top:10px;text-align:right;font-size:16px;border-right:3px solid gold}
 </style>
 </head>
 <body>
@@ -21,7 +25,6 @@ input, textarea{ -webkit-user-select:text !important; user-select:text !importan
 <img src="gaon-ki-saqt-garmi.jpg" alt="گاؤں کی سخت گرمی">
 <div class="title">گاؤں کی سخت گرمی</div>
 <button class="like">Like 0 ❤️</button>
-
 <div class="story">
 ہیلو دوستو میرا نام پلوی ھے میں گاؤں کی رہنے والی ھوں میرے پاپا گاؤں میں سب سے امیر ہیں ہماری بہت ساری زمینیں ہیں میرا ایک بھائی مجھ سے بڑا ھے ہمارے ساتھ میں تین گھر ہیں ایک گھر میں ھم سب رہتے ہیں اور دو گھر ہمیشہ سجے رہتے ہیں ویسے میرے پاپا بہت دیالو ہیں 
 ہر کسی کے دکھ میں شریک ھوتے ہیں اور اسی طرح پاپا کے ساتھ ممی بھی بہت دیالو ھے ممی کی ایک سہلی ھے جب ممی ;کی سہلی کو ان کے بہوؤں نے گھر سے نکال دیا تو میری ممی کے پاس روتی ھوئی آئی ممی نے اپنی سہلی کو رہنے کیلئے ایک گھر دے دیا یہ نہیں ممی کی سہلی کی ایک بیٹی جو شادی شدہ ھے جب وہ اپنی ممی سے ملنے آتیں اور کچھ دن رہتی تھی پھر چلی جاتی تھی ونش اور میں بہت تیز تھے ونش مگر ونش بہت زیادہ ھوشیار بھی تھا ونش نے پاپا سے ضد کی کے ہمیں موبائل لینا ھے آخر کار پاپا مان گیا پھر میں اور ونش موبائل لے کر آئے ونش نے مجھے موبائل چلانا سیکھایا اور میں سیکھ گئی ونش اور میں بہت دیر تک موبائل چلاتے رہتے تھے اور وقت پاس کرنے تھے
@@ -79,20 +82,28 @@ input, textarea{ -webkit-user-select:text !important; user-select:text !importan
 اگلے پارٹ 2 کیلئے کمنٹ کریں گاؤں کی گرمی ایک ایسی کہانی جو آپ کو پسند آئے
 </div>
 
-<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+<!-- کمنٹ سیکشن - لوگ یہاں کمنٹ کریں گے پپی -->
+<div class="comment-box">
+  <p style="color:gold;text-align:center;font-weight:bold;margin:0 0 10px 0;">💬 کمنٹس</p>
+  <textarea id="cInput" rows="3" placeholder="اپنا کمنٹ لکھیں..."></textarea><br>
+  <button onclick="addCmnt()">پوسٹ کریں</button>
+  <div id="cList"></div>
+</div>
+
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:25px;">
   <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
   <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
 <a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
 <a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+<a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+<a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+<a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+<a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+<a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+<a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
 <a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
   </div>
   <div style="text-align:center; margin-top:20px;">
@@ -102,13 +113,17 @@ input, textarea{ -webkit-user-select:text !important; user-select:text !importan
 </div>
 
 <script>
-// کاپی پروٹیکشن
-document.addEventListener('contextmenu', e => e.preventDefault());
-document.addEventListener('selectstart', e => e.preventDefault());
-document.addEventListener('copy', e => e.preventDefault());
-document.addEventListener('dragstart', e => e.preventDefault());
+document.addEventListener('contextmenu', e => { if(e.target.tagName!='TEXTAREA' && e.target.tagName!='INPUT') e.preventDefault(); });
+document.addEventListener('selectstart', e => { if(e.target.tagName!='TEXTAREA' && e.target.tagName!='INPUT') e.preventDefault(); });
+document.addEventListener('copy', e => { if(e.target.tagName!='TEXTAREA' && e.target.tagName!='INPUT') e.preventDefault(); });
+function addCmnt(){
+  let v=document.getElementById('cInput').value.trim();
+  if(!v) return;
+  let d=document.createElement('div'); d.className='cmnt'; d.innerText=v;
+  document.getElementById('cList').prepend(d);
+  document.getElementById('cInput').value='';
+}
 </script>
-
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
