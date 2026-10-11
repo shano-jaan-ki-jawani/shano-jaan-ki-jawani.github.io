@@ -2,162 +2,31 @@
 <html lang="ur" dir="rtl">
 <head>
 <script src="https://avegogglerequest.com/64/28/c1/6428c13ee51a451d414ba722ae120e6e.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>میری زندگی کی نئی صبح - کہانیاں</title>
-    <style>
-        /* کلر اسکیم اور بنیادی سیٹنگز (سکرین شاٹ کے مطابق) */
-        :root {
-            --bg-dark: #0d0d0d;
-            --card-bg: #111111;
-            --pink-accent: #ff2a74;
-            --blue-accent: #00a8e8;
-            --text-white: #ffffff;
-            --yellow-title: #ffd700;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* مین کارڈ کنٹینر */
-        .story-card {
-            background-color: var(--card-bg);
-            border: 1px solid #222222;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 100%;
-            padding: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        /* تھری ڈاٹ مینو بٹن */
-        .menu-dots {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            background-color: #24b45b;
-            color: white;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        /* کہانی کی تصویر */
-        .story-img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* کہانی کا عنوان */
-        .story-title {
-            color: var(--yellow-title);
-            text-align: center;
-            font-size: 1.6rem;
-            margin: 25px 0 15px 0;
-            font-weight: bold;
-        }
-
-        /* لائک بٹن کنٹینر */
-        .like-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-
-        /* لائک بٹن کا ڈیزائن */
-        .btn-like {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background-color: var(--pink-accent);
-            color: var(--text-white);
-            border: none;
-            padding: 10px 30px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1rem;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(255, 42, 116, 0.3);
-        }
-
-        /* کہانی کا متن */
-        .story-text {
-            color: var(--text-white);
-            line-height: 2;
-            font-size: 1.15rem;
-            text-align: right;
-            margin-bottom: 25px;
-            padding: 0 10px;
-            white-space: pre-line; /* پیراگراف فارمیٹنگ کے لیے */
-        }
-
-        /* ٹیلی گرام بٹن */
-        .btn-telegram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: #0088cc;
-            color: white;
-            text-decoration: none;
-            padding: 12px 35px;
-            border-radius: 25px;
-            font-weight: bold;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
-            width: fit-content;
-        }
-
-        /* کاپی پروٹیکشن کے لیے CSS */
-        .no-select {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>میری زندگی کی نئی صبح</title>
+<style>
+  body{ background:#0a0a0a; color:#fff; margin:0; padding:12px; user-select:none; }
+  .main-box{ max-width:600px; margin:0 auto; border:2px solid #333; border-radius:18px; padding:14px; background:#111; }
+  .img-wrap{ position:relative; width:100%; border-radius:16px; overflow:hidden; border:1px solid #333; }
+  .img-wrap img{ width:100%; display:block; pointer-events:none; }
+  .img-shield{ position:absolute; top:0; left:0; width:100%; height:100%; z-index:2; }
+  .title{ color:#ffeb3b; text-align:center; font-size:28px; font-weight:bold; margin:18px 0 12px 0; }
+  .like-btn{ display:block; margin:0 auto; background:#ff0066; color:#fff; border:none; padding:10px 28px; border-radius:25px; font-size:18px; font-weight:bold; }
+  .story-text{ color:#f5eeda; font-size:19px; line-height:32px; text-align:center; margin-top:22px; }
+  input, textarea{ user-select:text !important; }
+</style>
 </head>
-<body class="no-select" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
-
-    <!-- مین کہانی کارڈ -->
-    <div class="story-card">
-        <!-- تھری ڈاٹ مینو -->
-        <div class="menu-dots">...</div>
-
-        <!-- آپ کا تھمب نیل لنک -->
-        <img src="meri-zandgi-ki-nayi-sabah.jpeg" alt="मेरी जिंदगी की नई सुबह" class="story-img" draggable="false">
-
-        <!-- کہانی کا عنوان -->
-        <h1 class="story-title">میری زندگی کی نئی صبح</h1>
-
-        <!-- لائک بٹن (سکرین شاٹ 2 کے مطابق ٹائٹل کے فورا بعد) -->
-        <div class="like-container">
-            <button class="btn-like">Like 0 💖</button>
-        </div>
-
-        <!-- کہانی کا مکمل متن -->
-        <p class="story-text">
-            ہیلو دوستو، میرا نام نشا ہے۔ ہم گھر میں چار افراد ہیں: ممی، پاپا، میں اور میرا چھوٹا بھائی۔ میری زندگی کا ایک ایسا رخ بھی رہا ہے جس نے مجھے اندر سے توڑ کر رکھ دیا تھا۔ میری شادی ہوئی تھی، لیکن افسوس کہ وہ صرف تین سال ہی چل سکی اور پھر مجھے طلاق کا سامنا کرنا پڑا۔ طلاق کی وجہ کوئی لڑائی جھگڑا یا بے وفائی نہیں تھی، بلکہ وہ ایک ایسا لفظ تھا جس نے میری پوری دنیا اجاڑ دی۔ مجھے بتایا گیا کہ میں "بانجھ" ہوں۔ بانجھ پن کا یہ لفظ ایک ایسا داغ ہے جو ایک بار انسان پر لگ جائے تو پھر کبھی مٹتا نہیں ہے۔ یہ بات میرے خاندان میں کسی آگ کی طرح پھیل گئی کہ نشا بانجھ ہے۔ لوگوں کی باتیں، ان کے ہمدردی کے لبادے میں چھپے طنز اور خاندان کے اندر پیدا ہونے والی یہ تلخی میرے لیے ناقابلِ برداشت ہو گئی۔
+<body oncontextmenu="return false">
+<div class="main-box">
+  <div class="img-wrap">
+    <img src="meri-zandgi-ki-nayi-sabah.jpeg" draggable="false">
+    <div class="img-shield"></div>
+  </div>
+  <div class="title">میری زندگی کی نئی صبح</div>
+  <button class="like-btn" id="likeBtn">💖 Like 0</button>
+  <div class="story-text">ہیلو دوستو، میرا نام نشا ہے۔ ہم گھر میں چار افراد ہیں: ممی، پاپا، میں اور میرا چھوٹا بھائی۔ میری زندگی کا ایک ایسا رخ بھی رہا ہے جس نے مجھے اندر سے توڑ کر رکھ دیا تھا۔ میری شادی ہوئی تھی، لیکن افسوس کہ وہ صرف تین سال ہی چل سکی اور پھر مجھے طلاق   کا سامنا کرنا پڑا۔
+طلاق کی وجہ کوئی لڑائی جھگڑا یا بے وفائی نہیں تھی، بلکہ وہ ایک ایسا لفظ تھا جس نے میری پوری دنیا اجاڑ دی۔ مجھے بتایا گیا کہ میں "بانجھ" ہوں۔ بانجھ پن کا یہ لفظ ایک ایسا داغ ہے جو ایک بار انسان پر لگ جائے تو پھر کبھی مٹتا نہیں ہے۔ یہ بات میرے خاندان میں کسی آگ کی طرح پھیل گئی کہ نشا بانجھ ہے۔ لوگوں کی باتیں، ان کے ہمدردی کے لبادے میں چھپے طنز اور خاندان کے اندر پیدا ہونے والی یہ تلخی میرے لیے ناقابلِ برداشت ہو گئی۔
 
 طلاق اور بانجھ پن جیسی دو سنگین باتیں لے کر میں اپنی زندگی کی اس نئی اور مشکل راہ پر چل پڑی تھی، جہاں مجھے خود کو ثابت کرنا تھا یا شاید خود کو اس دکھ سے نکالنا تھا۔
 
@@ -270,97 +139,50 @@
 اگر آپ کو یہ کہانی پسند آئی ہو تو اسے **لائک** کریں اور اپنے خیالات کا اظہار ضرور کریں۔ آپ سب کا بہت بہت شکریہ کہ آپ نے میری زندگی کے اس سفر میں میرا ساتھ دیا۔
 
 اپنا بہت سارا خیال رکھیے گا۔ بائے بائے دوستو!
-        </p>
-<!-- COMMENT BOX START -->
-<div style="margin-top:25px; background:#111; border:1px solid #555; border-radius:16px; padding:16px;">
-  <div style="color:#ffcc33; font-size:22px; text-align:center; margin-bottom:12px; font-weight:bold;">💬 کمنٹ کریں</div>
-  
-  <input id="cName" type="text" placeholder="اپنا نام..." style="width:100%; background:#222; color:#fff; border:1px solid #333; border-radius:10px; padding:12px; margin-bottom:10px; text-align:right; font-size:16px;">
-  
-  <textarea id="cText" placeholder="اپنا خیال لکھیں..." style="width:100%; background:#222; color:#fff; border:1px solid #333; border-radius:10px; padding:12px; height:80px; text-align:right; font-size:16px;"></textarea>
-  
-  <button onclick="addComment()" style="width:100%; background:#ffcc00; color:#000; border:none; border-radius:12px; padding:12px; font-size:20px; font-weight:bold; margin-top:10px; cursor:pointer;">بھیجیں</button>
-  
-  <div id="cList" style="margin-top:15px;"></div>
 </div>
 
-<script>
-function addComment(){
-  var name = document.getElementById('cName').value || 'گمنام';
-  var text = document.getElementById('cText').value;
-  if(!text) return alert('پہلے کمنٹ لکھیں پپی');
-  
-  var all = JSON.parse(localStorage.getItem('myComments') || '[]');
-  all.unshift({n:name, t:text, d:new Date().toLocaleDateString('ur-PK')});
-  localStorage.setItem('myComments', JSON.stringify(all));
-  document.getElementById('cText').value='';
-  showComments();
-}
-function showComments(){
-  var all = JSON.parse(localStorage.getItem('myComments') || '[]');
-  var html = '';
-  all.forEach(c=>{
-    html += `<div style="background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:10px; margin-top:8px; text-align:right;">
-    <b style="color:#ffcc33;">${c.n}</b> <small style="color:#888;">${c.d}</small>
-    <div style="color:#f5eeda; margin-top:5px;">${c.t}</div></div>`;
-  });
-  document.getElementById('cList').innerHTML = html;
-}
-showComments();
-</script>
-<!-- COMMENT BOX END -->
+  <div style="margin-top:25px; background:#111; border:1px solid #555; border-radius:16px; padding:16px;">
+    <div style="color:#ffcc33; font-size:22px; text-align:center; margin-bottom:12px; font-weight:bold;">💬 کمنٹ کریں</div>
+    <input id="cName" type="text" placeholder="اپنا نام..." style="width:100%; background:#222; color:#fff; border:1px solid #333; border-radius:10px; padding:12px; margin-bottom:10px; text-align:right;">
+    <textarea id="cText" placeholder="اپنا خیال لکھیں..." style="width:100%; background:#222; color:#fff; border:1px solid #333; border-radius:10px; padding:12px; height:80px; text-align:right;"></textarea>
+    <button onclick="addComment()" style="width:100%; background:#ffcc00; color:#000; border:none; border-radius:12px; padding:12px; font-size:20px; font-weight:bold; margin-top:10px;">بھیجیں</button>
+    <div id="cList" style="margin-top:15px;"></div>
+  </div>
+
 <div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
   <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
-  
   <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
-
 <a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
-
 <a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
     <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
-
     <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
-
     <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
-
     <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
-
     <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
-
     <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
-
     <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
-
     <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
-
     <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
-
 <a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
-
   </div>
-
   <div style="text-align:center; margin-top:20px;">
-    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold;">🏠 ہوم پیج</a>
   </div>
 </div>
-    </div>
 
-    <!-- ٹیلی گرام جوائن بٹن -->
-    <a href="https://t.me" class="btn-telegram">Join Telegram 🚀</a>
-
-    <!-- کاپی پروٹیکشن اسکرپٹ -->
-    <script>
-        // دائیں کلک (Right Click) اور ماؤس ڈریگ بلاک کرنے کے لیے
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('dragstart', e => e.preventDefault());
-
-        // تمام شارٹ کٹس بلاک کرنے کے لیے (F12, Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+Shift+I وغیرہ)
-        document.onkeydown = function(e) {
-            if (e.keyCode == 123) return false; // F12
-            if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) return false;
-            if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 'A'.charCodeAt(0))) return false;
-        };
-    </script>
+</div>
+<script>
+document.addEventListener('contextmenu', e=>e.preventDefault());
+document.addEventListener('copy', e=>e.preventDefault());
+document.addEventListener('selectstart', e=>{ if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA') return; e.preventDefault(); });
+let likes = localStorage.getItem('like_nisha_nayi_subah') || 0;
+document.getElementById('likeBtn').innerText = '💖 Like ' + likes;
+function doLike(){ let l=parseInt(localStorage.getItem('like_nisha_nayi_subah')||0)+1; localStorage.setItem('like_nisha_nayi_subah', l); document.getElementById('likeBtn').innerText='💖 Like '+l; }
+document.getElementById('likeBtn').onclick=doLike;
+function addComment(){ var n=document.getElementById('cName').value||'گمنام'; var t=document.getElementById('cText').value.trim(); if(!t){alert('پہلے کمنٹ لکھیں'); return;} var a=JSON.parse(localStorage.getItem('comments_nayi_subah')||'[]'); a.unshift({n:n,t:t,d:new Date().toLocaleDateString()}); localStorage.setItem('comments_nayi_subah',JSON.stringify(a)); document.getElementById('cText').value=''; showComments(); }
+function showComments(){ var a=JSON.parse(localStorage.getItem('comments_nayi_subah')||'[]'); var h=''; a.forEach(c=>{ h+=`<div style="background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:10px; margin-top:8px; text-align:right;"><b style="color:#ffcc33;">${c.n}</b><div style="color:#f5eeda; margin-top:5px;">${c.t}</div></div>`; }); document.getElementById('cList').innerHTML=h; }
+showComments();
+</script>
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
