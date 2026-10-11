@@ -14,21 +14,16 @@ input, textarea{ -webkit-user-select:text !important; user-select:text !importan
 .title{color:#ffcc33;font-size:34px;font-weight:bold;text-align:center;margin:20px 0 10px}
 .like{display:block;margin:12px auto;background:#e9407a;color:#fff;border:none;padding:10px 28px;border-radius:25px;font-size:18px;cursor:pointer}
 .story{color:#f5eeda;font-size:22px;line-height:2.4;text-align:right;margin-top:28px;white-space:pre-line}
-.comment-box{background:#111;border:1px solid #ff0066;border-radius:15px;padding:14px;margin-top:25px}
-.comment-box textarea{width:95%;background:#222;color:#fff;border:1px solid #444;border-radius:10px;padding:10px;font-size:16px;outline:none}
-.comment-box button{background:gold;color:#000;border:none;padding:8px 20px;border-radius:20px;font-weight:bold;margin-top:10px;cursor:pointer}
-.cmnt{color:#ddd;background:#222;padding:8px 12px;border-radius:10px;margin-top:10px;text-align:right;font-size:16px;border-right:3px solid gold}
 </style>
 </head>
 <body>
 <div class="main">
 <img src="gaon-ki-saqt-garmi.jpg" alt="گاؤں کی سخت گرمی">
 <div class="title">گاؤں کی سخت گرمی</div>
-<button class="like" onclick="this.innerText='Liked ❤️'">Like 0 ❤️</button>
+<button class="like">Like 0 ❤️</button>
 
 <div class="story">
-ہیلو دوستو میرا نام پلوی ھے میں گاؤں کی رہنے والی ھوں میرے پاپا گاؤں میں سب سے امیر ہیں ہماری بہت ساری زمینیں ہیں میرا ایک بھائی مجھ سے بڑا ھے ہمارے ساتھ میں تین گھر ہیں ایک گھر میں ھم سب رہتے ہیں اور دو 
-گھر ہمیشہ سجے رہتے ہیں ویسے میرے پاپا بہت دیالو ہیں 
+ہیلو دوستو میرا نام پلوی ھے میں گاؤں کی رہنے والی ھوں میرے پاپا گاؤں میں سب سے امیر ہیں ہماری بہت ساری زمینیں ہیں میرا ایک بھائی مجھ سے بڑا ھے ہمارے ساتھ میں تین گھر ہیں ایک گھر میں ھم سب رہتے ہیں اور دو گھر ہمیشہ سجے رہتے ہیں ویسے میرے پاپا بہت دیالو ہیں 
 ہر کسی کے دکھ میں شریک ھوتے ہیں اور اسی طرح پاپا کے ساتھ ممی بھی بہت دیالو ھے ممی کی ایک سہلی ھے جب ممی ;کی سہلی کو ان کے بہوؤں نے گھر سے نکال دیا تو میری ممی کے پاس روتی ھوئی آئی ممی نے اپنی سہلی کو رہنے کیلئے ایک گھر دے دیا یہ نہیں ممی کی سہلی کی ایک بیٹی جو شادی شدہ ھے جب وہ اپنی ممی سے ملنے آتیں اور کچھ دن رہتی تھی پھر چلی جاتی تھی ونش اور میں بہت تیز تھے ونش مگر ونش بہت زیادہ ھوشیار بھی تھا ونش نے پاپا سے ضد کی کے ہمیں موبائل لینا ھے آخر کار پاپا مان گیا پھر میں اور ونش موبائل لے کر آئے ونش نے مجھے موبائل چلانا سیکھایا اور میں سیکھ گئی ونش اور میں بہت دیر تک موبائل چلاتے رہتے تھے اور وقت پاس کرنے تھے
 
 ایک بار ایسا ہوا کہ ونش نے مجھے ایک سخت وجود کی ایک تصویر بھیج دی، مگر مجھ نادان کو یہ معلوم ہی نہیں تھا کہ یہ کیا چیز ہے اور اس کی حقیقت کیا ہے۔ جب میں نے پہلی بار وہ تصویر دیکھی، تو مجھے اس کی بناوٹ اور شکل و صورت بہت متاثر کن لگی۔ میں نے حیرت سے ونش سے پوچھا، "یہ کیا ہے؟"
@@ -84,19 +79,6 @@ input, textarea{ -webkit-user-select:text !important; user-select:text !importan
 اگلے پارٹ 2 کیلئے کمنٹ کریں گاؤں کی گرمی ایک ایسی کہانی جو آپ کو پسند آئے
 </div>
 
-<!-- نیا کمنٹ سیکشن پپی -->
-<div class="comment-box">
-  <p style="color:gold;text-align:center;font-weight:bold;margin:0 0 10px 0;">💬 تبصرہ کریں</p>
-  <textarea id="cInput" rows="3" placeholder="اپنا کمنٹ لکھیں..."></textarea>
-  <br>
-  <button onclick="addCmnt()">پوسٹ کریں</button>
-  <div id="cList"></div>
-</div>
-
-<div style="text-align:center; color:gold; padding:12px; border:1px solid #ff0066; margin-top:20px;">
-© 2026 Bold Desi Zonie - All Rights Reserved
-</div>
-
 <div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
   <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
   <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
@@ -120,32 +102,11 @@ input, textarea{ -webkit-user-select:text !important; user-select:text !importan
 </div>
 
 <script>
-// کاپی پروٹیکشن - لیکن کمنٹ باکس میں لکھنے دے گا
-document.addEventListener('contextmenu', e => {
-  if(e.target.tagName!='TEXTAREA' && e.target.tagName!='INPUT') e.preventDefault();
-});
-document.addEventListener('selectstart', e => {
-  if(e.target.tagName!='TEXTAREA' && e.target.tagName!='INPUT') e.preventDefault();
-});
-document.addEventListener('copy', e => {
-  if(e.target.tagName!='TEXTAREA' && e.target.tagName!='INPUT') e.preventDefault();
-});
-
-// کمنٹ سسٹم
-function addCmnt(){
-  let v=document.getElementById('cInput').value.trim();
-  if(!v) return;
-  let div=document.createElement('div');
-  div.className='cmnt';
-  div.innerText=v;
-  document.getElementById('cList').prepend(div);
-  document.getElementById('cInput').value='';
-  localStorage.setItem('gaon-cmnts', document.getElementById('cList').innerHTML);
-}
-window.onload=function(){
-  let saved=localStorage.getItem('gaon-cmnts');
-  if(saved) document.getElementById('cList').innerHTML=saved;
-}
+// کاپی پروٹیکشن
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
+document.addEventListener('copy', e => e.preventDefault());
+document.addEventListener('dragstart', e => e.preventDefault());
 </script>
 
 </body>
