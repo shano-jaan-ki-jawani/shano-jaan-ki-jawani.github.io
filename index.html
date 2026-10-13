@@ -480,5 +480,21 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- +18 وارننگ پاپ اپ ختم -->
 
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
-
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll('div.no-select').forEach(function(card){
+    if(card.querySelector('button')) return;
+    var link = card.querySelector('a[href$=".html"]');
+    if(!link) return;
+    if(link.href.includes('index.html')) return;
+    var key = 'like_'+link.getAttribute('href');
+    var cnt = localStorage.getItem(key) || 0;
+    var btn = document.createElement('button');
+    btn.innerHTML = '❤️ Like ' + cnt;
+    btn.style.cssText = 'background:#ff0066;color:white;border:none;padding:6px 14px;border-radius:22px;font-size:13px;cursor:pointer;margin-right:8px;';
+    btn.onclick = function(e){ e.preventDefault(); cnt++; localStorage.setItem(key,cnt); this.innerHTML='❤️ Like '+cnt; };
+    link.parentNode.insertBefore(btn, link);
+  });
+});
+</script>
 </html>
