@@ -114,7 +114,6 @@
     <p style="color:#ff99ccbb; font-size:14px; margin:0 0 12px 0;">ہیلو دوستو، میرا نام زویا ہے۔ آج میں اپنی زندگی کا وہ راز بتانے جا رہی ہوں۔ جو شاید میں مرتے دم تک کسی سے نہ کہ پاتی  میرے شوہر کا نام اسلم ہے، اور میری زندگی دیکھنے میں تو بہت پرسکون تھی، لیکن میرے اندر ہی اندر ایک ایسی تپش تھی جو مجھے روز پگھلاتی تھی۔ میری شادی کو دس سال بیت چکے تھے، اسلم میرا جیون ساتھی تھا، میرا سب  کچھ تھا...</p>
     <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
       <a href="ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:6px 14px; border-radius:22px; text-decoration:none; font-size:13px;">پوری کہانی پڑھو</a>
-      <span style="background:#ff0066; color:white; padding:6px 14px; border-radius:22px; font-size:13px;">❤️ Like 0</span>
     </div>
   </div>
 </div>
@@ -481,4 +480,32 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- +18 وارننگ پاپ اپ ختم -->
 
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
+<script>
+(function(){
+  function addLikes(){
+    var seen = {};
+    document.querySelectorAll('a[href$=".html"]').forEach(function(a){
+      if(a.href.includes('index.html')) return;
+      if(seen[a.href]) return;
+      seen[a.href]=true;
+      var card = a.closest('div.no-select');
+      if(!card) return;
+      if(card.querySelector('button')) return; // اگر Like پہلے سے ہے تو دوبارہ نہیں
+      var flexDiv = a.closest('div[style*="justify-content"]');
+      if(!flexDiv) return;
+      flexDiv.style.display="flex";
+      flexDiv.style.justifyContent="space-between";
+      flexDiv.style.alignItems="center";
+      var key='like_'+a.getAttribute('href');
+      var cnt=localStorage.getItem(key)||0;
+      var span=document.createElement('span');
+      span.innerHTML='<button style="background:#ff0066; color:white; border:none; padding:6px 14px; border-radius:22px; font-size:13px; cursor:pointer;">❤️ Like '+cnt+'</button>';
+      span.querySelector('button').onclick=function(e){e.preventDefault(); cnt++; localStorage.setItem(key,cnt); this.innerHTML='❤️ Like '+cnt;};
+      flexDiv.insertBefore(span, flexDiv.firstChild);
+    });
+  }
+  document.addEventListener("DOMContentLoaded", function(){ setTimeout(addLikes, 600); });
+})();
+</script>
+</html>
 </html>
