@@ -481,38 +481,4 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- +18 وارننگ پاپ اپ ختم -->
 
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
-<script>
-// pappi FINAL - single like fix
-(function(){
-  function addLikes(){
-    var seen = {};
-    var allLinks = document.querySelectorAll('a[href$=".html"]');
-    allLinks.forEach(function(a){
-      if(a.href.includes('index.html')) return;
-      if(seen[a.href]) return;
-      seen[a.href] = true;
-      var flexDiv = a.closest('div[style*="justify-content"]');
-      if(!flexDiv) {
-        flexDiv = a.parentElement;
-        if(!flexDiv || flexDiv.tagName !== 'DIV') return;
-      }
-      if(flexDiv.querySelector('button')) return;
-      var key = 'like_' + a.getAttribute('href');
-      var cnt = localStorage.getItem(key) || 0;
-      var span = document.createElement('span');
-      span.innerHTML = '<button style="background:#ff0066; color:white; border:none; padding:6px 14px; border-radius:22px; font-size:13px; cursor:pointer;">❤️ Like '+cnt+'</button>';
-      span.querySelector('button').onclick = function(e){
-        e.preventDefault();
-        cnt++;
-        localStorage.setItem(key, cnt);
-        this.innerHTML = '❤️ Like '+cnt;
-      };
-      flexDiv.appendChild(span);
-    });
-  }
-  document.addEventListener("DOMContentLoaded", function(){
-    setTimeout(addLikes, 1000);
-  });
-})();
-</script>
 </html>
