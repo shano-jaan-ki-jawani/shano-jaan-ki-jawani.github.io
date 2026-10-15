@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محبت اور لذت کا سفر</title>
+    <!-- آئیکنز کے لیے لنک -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            /* ٹیکسٹ کاپی اور سلیکٹ ہونے سے روکنے کے لیے */
+            -webkit-user-select: none; 
+            -moz-user-select: none; 
+            -ms-user-select: none; 
+            user-select: none; 
+        }
+        
+        body { 
+            background-color: #000000; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            padding: 15px; 
+        }
+        
+        /* مین کارڈ کا ڈیزائن گلابی بارڈر کے ساتھ */
+        .story-card { 
+            background-color: #050505; 
+            width: 100%; 
+            max-width: 450px; 
+            border: 2px solid #ff007f; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            padding: 15px; 
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.2); 
+            position: relative; 
+        }
+        
+        /* لمبے پورٹریٹ تھمب نیل کو بغیر کٹے پورا دکھانے کے لیے خاص کنٹینر */
+        .thumbnail-container { 
+            width: 100%; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            margin-bottom: 15px; 
+            pointer-events: none; 
+            background-color: #000;
+        }
+        
+        .thumbnail-container img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            object-fit: contain; /* اس سے تصویر اوپر نیچے سے کٹے گی نہیں */
+            -webkit-touch-callout: none; 
+        }
+        
+        /* ٹائٹل کا زرد چمکتا ہوا رنگ */
+        .story-title { 
+            color: #ffea00; 
+            text-align: center; 
+            font-size: 24px; 
+            font-weight: bold; 
+            margin-bottom: 15px; 
+        }
+        
+        .meta-info { 
+            display: flex; 
+            justify-content: center; 
+            gap: 10px; 
+            margin-bottom: 15px; 
+        }
+        
+        .badge { 
+            background-color: rgba(255, 255, 255, 0.05); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            color: #ff9800; 
+            padding: 5px 15px; 
+            border-radius: 20px; 
+            font-size: 14px; 
+            display: flex; 
+            align-items: center; 
+            gap: 5px; 
+        }
+        
+        .like-container { 
+            display: flex; 
+            justify-content: center; 
+            margin-bottom: 20px; 
+        }
+        
+        .like-btn { 
+            background-color: #ff007f; 
+            color: white; 
+            border: none; 
+            padding: 8px 25px; 
+            border-radius: 20px; 
+            font-size: 14px; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            gap: 5px; 
+            transition: 0.3s; 
+        }
+        
+        .like-btn:hover {
+            background-color: #e60072;
+        }
+        
+        /* کہانی کا متن - بالکل صاف سفید رنگ میں */
+        .story-content { 
+            color: #ffffff; 
+            font-size: 16px; 
+            line-height: 1.8; 
+            text-align: justify; 
+            margin-bottom: 25px; 
+            padding: 0 5px; 
+        }
+        
+        /* ٹیلی گرام جوائن بٹن کا ڈیزائن */
+        .telegram-btn { 
+            background-color: #0088cc; 
+            color: white; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 8px; 
+            padding: 12px; 
+            border-radius: 25px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 16px; 
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
+        }
+
+        .telegram-btn:hover {
+            background-color: #0077b3;
+        }
+        
+        /* کمنٹ آئیکن */
+        .comment-badge { 
+            position: absolute; 
+            bottom: 75px; 
+            left: 20px; 
+            background-color: #2ecc71; 
+            color: white; 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="story-card">
+        <!-- تھمب نیل تصویر کا سیکشن (بالکل پرفیکٹ لنک اور سائز) -->
+        <div class="thumbnail-container">
+            <img src="IMG-20261015-WA9356.jpg" alt="محبت اور لذت کا سفر">
+        </div>
+
+        <!-- کہانی کا اصل ٹائٹل -->
+        <div class="story-title">محبت اور لذت کا سفر</div>
+
+        <!-- ویوز میٹر -->
+        <div class="meta-info">
+            <div class="badge">
+                Views | <i class="fas fa-fire" style="color: #ff3d00;"></i> Trending 14,016 👁️
+            </div>
+        </div>
+
+        <!-- لائک کا بٹن -->
+        <div class="like-container">
+            <button class="like-btn" onclick="likeStory()">
+                <i class="fas fa-heart"></i> Like <span id="like-count">0</span>
+            </button>
+        </div>
+
+        <!-- کہانی کا متن (سفید رنگ اور کاپی پروٹیکٹڈ) -->
+        <div class="story-content" oncontextmenu="return false;">
+            ہیلو میرے پیارے دوستو! میرا نام آریان ہے۔ میں آج آپ سب کے سامنے اپنی زندگی کا ایک ایسا حصہ لایا ہوں جو شاید آپ نے پہلے کبھی نہ سنا ہو۔ میں یہاں آپ کے ساتھ اپنی ایک ایسی کہانی شیئر کرنے آیا ہوں جو صرف ایک کہانی نہیں, بلکہ میری اپنی حقیقت ہے۔
+        </div>
+
+        <!-- کمنٹ کا گول بٹن -->
+        <div class="comment-badge">
+            <i class="fas fa-ellipsis-h"></i>
+        </div>
+
+        <!-- ٹیلی گرام چینل کا لنک -->
+        <a href="https://t.me" class="telegram-btn" target="_blank">
+            Join Telegram <i class="fab fa-telegram-plane"></i>
+        </a>
+    </div>
+
+    <script>
+        // لائک بڑھانے کا فنکشن
+        let count = 0; 
+        function likeStory() { 
+            count++; 
+            document.getElementById('like-count').innerText = count; 
+        }
+        
+        // ماؤس کا رائٹ کلک اور کاپی کرنے والے شارٹ کٹس کو مکمل بند کرنا
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', function(e) { 
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 117)) {
+                e.preventDefault(); 
+            }
+        });
+    </script>
+</body>
+</html>
