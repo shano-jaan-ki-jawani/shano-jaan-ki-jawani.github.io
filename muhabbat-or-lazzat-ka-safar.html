@@ -4,157 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>محبت اور لذت کا سفر</title>
-    <style>
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-        .main-container {
-            max-width: 450px;
-            width: 100%;
-            border: 2px solid #a37f43; /* گولڈن بارڈر */
-            border-radius: 20px;
-            padding: 12px;
-            box-sizing: border-box;
-            background-color: #050505;
-            text-align: center;
-            margin-top: 15px;
-        }
-        .thumbnail-box {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            border: 1px solid #222;
-            background-image: url('muhabbat-or-lazzat-ka-safar.png');
-            background-size: cover;
-            background-position: center;
-        }
-        .story-title {
-            color: #ffcc00; /* گولڈن ٹائٹل */
-            font-size: 26px;
-            font-weight: bold;
-            margin: 15px 0 10px 0;
-        }
-        .views-bar {
-            background: #111;
-            border: 1px solid #ff4500;
-            border-radius: 20px;
-            padding: 5px 15px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            color: #ff4500;
-            margin-bottom: 20px;
-        }
-        .views-label {
-            color: #ff4500;
-            font-weight: bold;
-        }
-        .story-content-text {
-            color: #ffffff !important; /* کہانی کا متن بالکل سفید */
-            font-size: 17px;
-            line-height: 1.8;
-            text-align: right;
-            padding: 0 5px;
-            margin-bottom: 25px;
-            white-space: pre-line;
-        }
-        .stats-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .stat-badge-likes {
-            color: #ff1a75;
-            border: 1px solid #ff1a75;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-        .stat-badge-trending {
-            color: #ff4500;
-            border: 1px solid #ff4500;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-        }
-        .btn-read-more {
-            background-color: #1a8cff;
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 14px;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-bottom: 15px;
-        }
-        .btn-telegram {
-            background-color: #229ed9;
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- آپ کے بلاگ کی اصل اسٹائل شیٹ -->
 </head>
-<body oncontextmenu="return false">
+<body oncontextmenu="return false" style="-webkit-user-select:none; user-select:none; background-color:#000000;">
 
-    <div style="color: #666; font-size: 14px; margin-bottom: 5px;">تمام ناولز اور کہانیاں چوری سے محفوظ ہیں</div>
+    <div style="text-align:center; color:#666; font-size:14px; margin-bottom:10px;">تمام ناولز اور کہانیاں چوری سے محفوظ ہیں</div>
 
-    <div class="main-container">
-        <!-- ٹاپ تھم نل امیج ڈبہ -->
-        <div class="thumbnail-box"></div>
-
-        <!-- کہانی کا عنوان -->
-        <div class="story-title">محبت اور لذت کا سفر</div>
-
-        <!-- ویوز بار -->
-        <div class="views-bar">
-            <span class="views-label">Views</span> 
-            <span style="color:#fff;">|</span> 
-            <span>🔥 Trending 12,761 👁️</span>
+    <div class="blog-card" style="margin:0 auto; max-width:450px;">
+        <img src="muhabbat-or-lazzat-ka-safar.png" alt="محبت اور لذت کا سفر" style="width:100%; border-radius:10px;">
+        
+        <h3 style="color:#ffcc00; text-align:center; font-size:24px;">محبت اور لذت کا سفر</h3>
+        
+        <div class="views-bar" style="text-align:center; color:#ff4500; margin:10px 0;">
+            <span>Views</span> | <span>🔥 Trending 12,761 👁️</span>
         </div>
-
-        <!-- کہانی کا متن (بالکل سفید رنگ میں) -->
-        <div class="story-content-text">
+        
+        <p style="color:#ffffff !important; text-align:right; font-size:16px; line-height:1.8; white-space:pre-line;">
             ہیلو میرے پیارے دوستو! میرا نام آریان ہے۔ میں آج آپ سب کے سامنے اپنی زندگی کا ایک ایسا حصہ لایا ہوں جو شاید آپ نے پہلے کبھی نہ سنا ہو۔ میں یہاں آپ کے ساتھ اپنی ایک ایسی کہانی شیئر کرنے آیا ہوں جو صرف ایک کہانی نہیں، بلکہ میری اپنی حقیقت ہے۔
+        </p>
 
-            میں جانتا ہوں کہ جو باتیں میں اب بیان کرنے جا رہی ہوں، وہ اتنی شدت اور اتنے جنون سے بھری ہوں گی کہ آپ کے جسم میں ایک عجیب سی لہر دوڑ جائے گی، آپ کے حواس بے قابو ہو جائیں گے اور آپ کا دل زور زور سے دھڑکنے لگے گا۔
+        <div class="stats-row" style="display:flex; justify-content:space-between; margin:15px 0;">
+            <span class="stat-badge-likes" style="color:#ff1a75; border:1px solid #ff1a75; padding:5px 10px; border-radius:20px;">Likes 0 ❤</span>
+            <span class="stat-badge-trending" style="color:#ff4500; border:1px solid #ff4500; padding:5px 10px; border-radius:20px;">Trending 14,238 🔥</span>
         </div>
 
-        <!-- نیچے والی لائک اور ٹرینڈنگ بار -->
-        <div class="stats-row">
-            <div class="stat-badge-likes">❤ Likes 0</div>
-            <div class="stat-badge-trending">🔥 Trending 14,238 👁</div>
-        </div>
-
-        <!-- ایکشن بٹنز -->
-        <button class="btn-read-more">مکمل کہانی پڑھیں</button>
-        <button class="btn-telegram">Join Telegram 🚀</button>
+        <button class="read-more-btn" style="width:100%; background:#1a8cff; color:white; border:none; padding:12px; border-radius:10px; font-weight:bold; font-size:16px;">مکمل کہانی پڑھیں</button>
+        <br><br>
+        <a href="https://t.me" class="telegram-btn" style="display:block; text-align:center; background:#229ed9; color:white; padding:10px; border-radius:10px; text-decoration:none; font-weight:bold;">Join Telegram 🚀</a>
     </div>
 
 </body>
