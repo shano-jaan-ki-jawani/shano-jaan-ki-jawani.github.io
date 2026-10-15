@@ -9,118 +9,117 @@
         body {
             background-color: #0b0f19;
             color: #ffffff;
-            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .container {
-            max-width: 500px;
+        .main-container {
+            max-width: 450px;
             width: 100%;
             background-color: #111625;
             border: 2px solid #b392ac;
             border-radius: 15px;
             padding: 15px;
             box-sizing: border-box;
-            text-align: center;
         }
-        .thumbnail {
+        .image-box {
+            position: relative;
             width: 100%;
             border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 15px;
             border: 1px solid #3a3f50;
         }
-        .title {
+        .image-box img {
+            width: 100%;
+            display: block;
+        }
+        .image-text-overlay {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            color: #8da2fb;
+            font-size: 14px;
+            background: rgba(0,0,0,0.4);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .story-title {
             color: #ffcc00;
-            font-size: 28px;
-            margin: 20px 0;
+            font-size: 26px;
             font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .like-container {
+            text-align: center;
+            margin-bottom: 25px;
         }
         .like-btn {
             background-color: #e91e63;
             color: white;
             border: none;
-            padding: 10px 30px;
+            padding: 10px 35px;
             border-radius: 20px;
             font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            margin-bottom: 20px;
         }
         .stats-bar {
-            background-color: #1a2235;
             border: 1px solid #ff9800;
             border-radius: 20px;
-            padding: 5px 15px;
-            display: inline-flex;
+            padding: 6px 15px;
+            display: flex;
+            justify-content: center;
             align-items: center;
             gap: 10px;
             font-size: 14px;
             color: #ff9800;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            background-color: #1a2235;
         }
-        .story-text {
-            color: #ffffff !important;
+        .story-content {
+            color: #ffffff !important; /* صرف کہانی کا متن سفید */
             font-size: 18px;
             line-height: 1.8;
             text-align: right;
-            padding: 0 10px;
-            margin-bottom: 25px;
-        }
-        .action-btn {
-            background-color: #00bcd4;
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-bottom: 15px;
-        }
-        .telegram-btn {
-            background-color: #229ed9;
-            color: white;
-            border: none;
-            width: auto;
-            padding: 10px 25px;
-            border-radius: 20px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            padding: 0 5px;
+            white-space: pre-line;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- تھم نل امیج -->
-        <img src="muhabbat-or-lazzat-ka-safar.png" alt="محبت اور لذت کا سفر" class="thumbnail">
+    <div class="main-container">
+        <!-- ٹاپ امیج باکس -->
+        <div class="image-box">
+            <img src="muhabbat-or-lazzat-ka-safar.png" alt="محبت اور لذت کا سفر">
+            <div class="image-text-overlay">محبت اور لذت کا سفر</div>
+        </div>
 
-        <!-- ٹائٹل -->
-        <div class="title">محبت اور لذت کا سفر</div>
+        <!-- کہانی کا عنوان -->
+        <div class="story-title">محبت اور لذت کا سفر</div>
 
         <!-- لائک بٹن -->
-        <button class="like-btn">Like 0 ❤️</button>
-
-        <br>
+        <div class="like-container">
+            <button class="like-btn">❤️ Like 0</button>
+        </div>
 
         <!-- ویوز اور ٹرینڈنگ بار -->
         <div class="stats-bar">
-            <span>Views</span>
-            <span>|</span>
             <span>🔥 Trending 14,238 👁️</span>
+            <span>|</span>
+            <span>Views</span>
         </div>
 
-        <!-- کہانی کا متن (صرف سفید) -->
-        <div class="story-text">
+        <!-- مکمل کہانی کا متن (بالکل سفید) -->
+        <div class="story-content">
             ہیلو میرے پیارے دوستو! میرا نام آریان ہے۔ میں آج آپ سب کے سامنے اپنی زندگی کا ایک ایسا حصہ لایا ہوں جو شاید آپ نے پہلے کبھی نہ سنا ہو۔ میں یہاں آپ کے ساتھ اپنی ایک ایسی کہانی شیئر کرنے آیا ہوں جو صرف ایک کہانی نہیں، بلکہ میری اپنی حقیقت ہے۔
 
- میں جانتا ہوں کہ جو باتیں میں اب بیان کرنے جا رہا ہوں، وہ اتنی شدت اور اتنے جنون سے بھری ہوں گی کہ آپ کے جسم میں ایک عجیب سی لہر دوڑ جائے گی، آپ کے حواس بے قابو ہو جائیں گے اور آپ کا دل زور زور سے دھڑکنے لگے گا۔ یہ کہانی اتنی پرکشش اور اتنی جذباتی ہے کہ آپ کا ہر لمحہ بے چینی اور اشتیاق سے بھر جائے گا۔
+            میں جانتا ہوں کہ جو باتیں میں اب بیان کرنے جا رہا ہوں، وہ اتنی شدت اور اتنے جنون سے بھری ہوں گی کہ آپ کے جسم میں ایک عجیب سی لہر دوڑ جائے گی، آپ کے حواس بے قابو ہو جائیں گے اور آپ کا دل زور زور سے دھڑکنے لگے گا۔ یہ کہانی اتنی پرکشش اور اتنی جذباتی ہے کہ آپ کا ہر لمحہ بے چینی اور اشتیاق سے بھر جائے گا۔
 
 میں جانتا ہوں کہ یہ سب سن کر آپ کے اندر ایک عجیب سی تڑپ پیدا ہوگی، لیکن یقین مانیں، یہ سفر آپ کو ایک ایسی دنیا میں لے جائے گا جہاں صرف احساسات، شدت اور بے پناہ لذت کا راج ہے۔ میں آپ کے اس اشتیاق کو پورا کرنے کے لیے اور آپ کو اس کہانی کے سحر میں جکڑنے کے لیے بالکل تیار ہوں۔
 
@@ -276,7 +275,7 @@
 
 دوستو، یہ تھی میری کہانی یہ ایک ایسی داستان تھی جس میں جنون بھی تھا، بے باکی بھی، محبت بھی اور زندگی کے اتار چڑھاؤ بھی۔ مجھے امید ہے کہ آپ کو یہ سچی، رومانوی اور دلچسپ کہانی، اور اس کے یہ جنونی لمحات پسند آئے ہوں گے۔
 
-**آپ کو میری یہ کہانی کیسی لگی؟ مجھے کمنٹ میں ضرور بتائیں!** آپ کے کمنٹس اور آپ کی پسند ہی مجھے حوصلہ دیتی ہے تاکہ میں آپ کے لیے مزید ایسی ہی دلچسپ اور رومانوی کہانیاں لکھ سکوں۔ آپ کی رائے کا مجھے شدت سے انتظار رہے گا تاکہ میں اپنی اگلی کہانی آپ سب کے ساتھ شیئر کر سکوں۔
+**آپ کو میری یہ کہانی کیسی لگی؟ مجھے کمنٹ میں ضرور بتائیں!** آپ کے کمنٹس اور آپ کی پسند ہی مجھے حوصلہ دیتی ہے تاکہ میں آپ کے لیے مزید ایسی ہی دلچسپ اور رومانوی کہانیاں لکھ سکوں۔ آپ کی رائے کا مجھے شدت سے انتظار رہے گا تاکہ میں اپنی اگلی کہانی آپ سب کے ساتھ شیئر کر سکوں۔۔
         </div>
 <div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
   <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
@@ -317,14 +316,8 @@
   <div style="text-align:center; margin-top:20px;">
     <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
   </div>
+</div>    
 </div>
-        <!-- ایکشن بٹنز -->
-        <button class="action-btn">مکمل کہانی پڑھیں</button>
-        
-        <br>
-        
-        <button class="telegram-btn">Join Telegram 🚀</button>
-    </div>
 
 </body>
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
