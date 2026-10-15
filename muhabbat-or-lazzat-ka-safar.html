@@ -13,7 +13,6 @@
             margin: 0; 
             padding: 0; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            /* ٹیکسٹ کاپی اور سلیکٹ ہونے سے روکنے کے لیے */
             -webkit-user-select: none; 
             -moz-user-select: none; 
             -ms-user-select: none; 
@@ -29,7 +28,6 @@
             padding: 15px; 
         }
         
-        /* مین کارڈ کا ڈیزائن گلابی بارڈر کے ساتھ */
         .story-card { 
             background-color: #050505; 
             width: 100%; 
@@ -42,7 +40,6 @@
             position: relative; 
         }
         
-        /* لمبے پورٹریٹ تھمب نیل کو بغیر کٹے پورا دکھانے کے لیے خاص کنٹینر */
         .thumbnail-container { 
             width: 100%; 
             border-radius: 15px; 
@@ -56,11 +53,10 @@
             width: 100%; 
             height: auto; 
             display: block; 
-            object-fit: contain; /* اس سے تصویر اوپر نیچے سے کٹے گی نہیں */
+            object-fit: contain; 
             -webkit-touch-callout: none; 
         }
         
-        /* ٹائٹل کا زرد چمکتا ہوا رنگ */
         .story-title { 
             color: #ffea00; 
             text-align: center; 
@@ -108,11 +104,6 @@
             transition: 0.3s; 
         }
         
-        .like-btn:hover {
-            background-color: #e60072;
-        }
-        
-        /* کہانی کا متن - بالکل صاف سفید رنگ میں */
         .story-content { 
             color: #ffffff; 
             font-size: 16px; 
@@ -122,7 +113,105 @@
             padding: 0 5px; 
         }
         
-        /* ٹیلی گرام جوائن بٹن کا ڈیزائن */
+        /* ہرا فلوٹنگ کمنٹ بٹن جو کمنٹ باکس کھولے گا */
+        .comment-badge { 
+            position: fixed; 
+            bottom: 85px; 
+            right: 20px; 
+            background-color: #2ecc71; 
+            color: white; 
+            width: 45px; 
+            height: 45px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        /* نیا کمنٹ باکس کا ڈیزائن - بالکل اسکرین شاٹ جیسا */
+        .comment-box-container {
+            display: none; /* شروع میں چھپا رہے گا */
+            border: 2px solid #ff007f;
+            border-radius: 15px;
+            padding: 15px;
+            background-color: #050505;
+            margin-bottom: 20px;
+        }
+
+        .comment-box-title {
+            color: #ffea00;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .comment-box-container textarea {
+            width: 100%;
+            height: 80px;
+            background-color: #111;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            resize: none;
+            text-align: right;
+            outline: none;
+            -webkit-user-select: text;
+            user-select: text; /* وزٹر کو لکھنے کی اجازت دینے کے لیے */
+        }
+
+        .comment-box-container textarea:focus {
+            border-color: #ff007f;
+        }
+
+        .post-btn-container {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .post-btn {
+            background-color: #ffea00;
+            color: black;
+            border: none;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .post-btn:hover {
+            background-color: #ddcc00;
+        }
+
+        /* کمنٹس لسٹ کا اسٹائل */
+        .comments-list {
+            margin-top: 15px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .single-comment {
+            background: rgba(255, 255, 255, 0.05);
+            border-right: 3px solid #ff007f;
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-align: right;
+        }
+        
         .telegram-btn { 
             background-color: #0088cc; 
             color: white; 
@@ -135,62 +224,34 @@
             text-decoration: none; 
             font-weight: bold; 
             font-size: 16px; 
-            transition: 0.3s;
             box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
-        }
-
-        .telegram-btn:hover {
-            background-color: #0077b3;
-        }
-        
-        /* کمنٹ آئیکن */
-        .comment-badge { 
-            position: absolute; 
-            bottom: 75px; 
-            left: 20px; 
-            background-color: #2ecc71; 
-            color: white; 
-            width: 40px; 
-            height: 40px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            cursor: pointer; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
 
     <div class="story-card">
-        <!-- تھمب نیل تصویر کا سیکشن (بالکل پرفیکٹ لنک اور سائز) -->
         <div class="thumbnail-container">
             <img src="IMG-20261015-WA9356.jpg" alt="محبت اور لذت کا سفر">
         </div>
 
-        <!-- کہانی کا اصل ٹائٹل -->
         <div class="story-title">محبت اور لذت کا سفر</div>
 
-        <!-- ویوز میٹر -->
         <div class="meta-info">
             <div class="badge">
                 Views | <i class="fas fa-fire" style="color: #ff3d00;"></i> Trending 14,016 👁️
             </div>
         </div>
 
-        <!-- لائک کا بٹن -->
         <div class="like-container">
             <button class="like-btn" onclick="likeStory()">
                 <i class="fas fa-heart"></i> Like <span id="like-count">0</span>
             </button>
         </div>
 
-        <!-- کہانی کا متن (سفید رنگ اور کاپی پروٹیکٹڈ) -->
         <div class="story-content" oncontextmenu="return false;">
-            ہیلو میرے پیارے دوستو! میرا نام آریان ہے۔ میں آج آپ سب کے سامنے اپنی زندگی کا ایک ایسا حصہ لایا ہوں جو شاید آپ نے پہلے کبھی نہ سنا ہو۔ میں یہاں آپ کے ساتھ اپنی ایک ایسی کہانی شیئر کرنے آیا ہوں جو صرف ایک کہانی نہیں, بلکہ میری اپنی حقیقت ہے۔
-        
-میں جانتا ہوں کہ جو باتیں میں اب بیان کرنے جا رہا ہوں، وہ اتنی شدت اور اتنے جنون سے بھری ہوں گی کہ آپ کے جسم میں ایک عجیب سی لہر دوڑ جائے گی، آپ کے حواس بے قابو ہو جائیں گے اور آپ کا دل زور زور سے دھڑکنے لگے گا۔ یہ کہانی اتنی پرکشش اور اتنی جذباتی ہے کہ آپ کا ہر لمحہ بے چینی اور اشتیاق سے بھر جائے گا۔
+            ہیلو میرے پیارے دوستو! میرا نام آریان ہے۔ میں آج آپ سب کے سامنے اپنی زندگی کا ایک ایسا حصہ لایا ہوں جو شاید آپ نے پہلے کبھی نہ سنا ہو۔ میں یہاں آپ کے ساتھ اپنی ایک ایسی کہانی شیئر کرنے آیا ہوں جو صرف ایک کہانی نہیں، بلکہ میری اپنی حقیقت ہے۔
+       میں جانتا ہوں کہ جو باتیں میں اب بیان کرنے جا رہا ہوں، وہ اتنی شدت اور اتنے جنون سے بھری ہوں گی کہ آپ کے جسم میں ایک عجیب سی لہر دوڑ جائے گی، آپ کے حواس بے قابو ہو جائیں گے اور آپ کا دل زور زور سے دھڑکنے لگے گا۔ یہ کہانی اتنی پرکشش اور اتنی جذباتی ہے کہ آپ کا ہر لمحہ بے چینی اور اشتیاق سے بھر جائے گا۔
 
 میں جانتا ہوں کہ یہ سب سن کر آپ کے اندر ایک عجیب سی تڑپ پیدا ہوگی، لیکن یقین مانیں، یہ سفر آپ کو ایک ایسی دنیا میں لے جائے گا جہاں صرف احساسات، شدت اور بے پناہ لذت کا راج ہے۔ میں آپ کے اس اشتیاق کو پورا کرنے کے لیے اور آپ کو اس کہانی کے سحر میں جکڑنے کے لیے بالکل تیار ہوں۔
 
@@ -347,8 +408,25 @@
 دوستو، یہ تھی میری کہانی یہ ایک ایسی داستان تھی جس میں جنون بھی تھا، بے باکی بھی، محبت بھی اور زندگی کے اتار چڑھاؤ بھی۔ مجھے امید ہے کہ آپ کو یہ سچی، رومانوی اور دلچسپ کہانی، اور اس کے یہ جنونی لمحات پسند آئے ہوں گے۔
 
 **آپ کو میری یہ کہانی کیسی لگی؟ مجھے کمنٹ میں ضرور بتائیں!** آپ کے کمنٹس اور آپ کی پسند ہی مجھے حوصلہ دیتی ہے تاکہ میں آپ کے لیے مزید ایسی ہی دلچسپ اور رومانوی کہانیاں لکھ سکوں۔ آپ کی رائے کا مجھے شدت سے انتظار رہے گا تاکہ میں اپنی اگلی کہانی آپ سب کے ساتھ شیئر کر سکوں۔
-</div>
-<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+ </div>
+
+        <!-- 🎴 اسکرین شاٹ جیسا نیا کمنٹ باکس -->
+        <div class="comment-box-container" id="commentBox">
+            <div class="comment-box-title">
+                <i class="fas fa-comments"></i> کمنٹس
+            </div>
+            <textarea id="commentInput" placeholder="اپنا کمنٹ لکھیں. . ."></textarea>
+            <div class="post-btn-container">
+                <button class="post-btn" onclick="postComment()">پوسٹ کریں</button>
+            </div>
+            <!-- کمنٹس یہاں شو ہوں گے -->
+            <div class="comments-list" id="commentsList"></div>
+        </div>
+
+        <a href="https://t.me" class="telegram-btn" target="_blank">
+            Join Telegram <i class="fab fa-telegram-plane"></i>
+        </a>
+    <div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
   <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
   
   <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
@@ -388,27 +466,46 @@
     <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
   </div>
 </div>
+</div>
 
-        <!-- کمنٹ کا گول بٹن -->
-        <div class="comment-badge">
-            <i class="fas fa-ellipsis-h"></i>
-        </div>
-
-        <!-- ٹیلی گرام چینل کا لنک -->
-        <a href="https://t.me" class="telegram-btn" target="_blank">
-            Join Telegram <i class="fab fa-telegram-plane"></i>
-        </a>
+    <!-- ہرا بٹن جو کمنٹ باکس کو کھولے یا بند کرے گا -->
+    <div class="comment-badge" onclick="toggleCommentBox()">
+        <i class="fas fa-ellipsis-h"></i>
     </div>
 
     <script>
-        // لائک بڑھانے کا فنکشن
         let count = 0; 
         function likeStory() { 
             count++; 
             document.getElementById('like-count').innerText = count; 
         }
+
+        // کمنٹ باکس کو کھولنے اور بند کرنے کا فنکشن
+        function toggleCommentBox() {
+            let box = document.getElementById('commentBox');
+            if(box.style.display === "none" || box.style.display === "") {
+                box.style.display = "block";
+                box.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                box.style.display = "none";
+            }
+        }
+
+        // کمنٹ پوسٹ کرنے کا فنکشن
+        function postComment() {
+            let input = document.getElementById('commentInput');
+            let text = input.value.trim();
+            if(text !== "") {
+                let list = document.getElementById('commentsList');
+                let newComment = document.createElement('div');
+                newComment.className = 'single-comment';
+                newComment.innerText = text;
+                list.insertBefore(newComment, list.firstChild);
+                input.value = ""; // خانہ خالی کرنے کے لیے
+            }
+        }
         
-        // ماؤس کا رائٹ کلک اور کاپی کرنے والے شارٹ کٹس کو مکمل بند کرنا
+        // حفاظت لاکس
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.addEventListener('keydown', function(e) { 
             if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85 || e.keyCode === 83 || e.keyCode === 117)) {
