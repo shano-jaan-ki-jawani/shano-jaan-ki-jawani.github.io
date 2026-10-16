@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پڑوسیوں کا خیال رکھنا چاھیئے</title>
-    <!-- آئیکنز کے لیے لنک -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         * { 
@@ -13,7 +12,6 @@
             margin: 0; 
             padding: 0; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            /* ٹیکسٹ کاپی اور سلیکٹ ہونے سے مکمل روکنے کے لیے */
             -webkit-user-select: none; 
             -moz-user-select: none; 
             -ms-user-select: none; 
@@ -29,7 +27,6 @@
             padding: 15px; 
         }
         
-        /* مین بلاگ کارڈ کا ڈیزائن گلابی بارڈر کے ساتھ */
         .story-card { 
             background-color: #050505; 
             width: 100%; 
@@ -42,7 +39,6 @@
             position: relative; 
         }
         
-        /* پورٹریٹ تھمب نیل کو بغیر کٹے پورا دکھانے والا کنٹینر */
         .thumbnail-container { 
             width: 100%; 
             border-radius: 15px; 
@@ -60,7 +56,6 @@
             -webkit-touch-callout: none; 
         }
         
-        /* ٹائٹل کا زرد چمکتا ہوا رنگ */
         .story-title { 
             color: #ffea00; 
             text-align: center; 
@@ -105,29 +100,25 @@
             display: flex; 
             align-items: center; 
             gap: 5px; 
-            transition: 0.3s; 
         }
         
-        .like-btn:hover {
-            background-color: #e60072;
-        }
-        
-        /* کہانی کا متن - سفید رنگ اور پیراگراف کی شکل میں */
+        /* متن کو بالکل بیچ میں (Center) کرنے کی اہم سیٹنگ */
         .story-content { 
             color: #ffffff; 
             font-size: 16px; 
             line-height: 1.8; 
-            text-align: justify; 
+            text-align: center; /* متن کو اسکرین کے بیچ میں کرنے کے لیے */
             margin-bottom: 25px; 
             padding: 0 5px; 
         }
 
-        /* ہر 15 لائن کے پیراگراف کے درمیان فاصلہ */
+        /* ہر خودکار بننے والے پیراگراف کے درمیان خوبصورت فاصلہ */
         .story-content p {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            text-align: center;
         }
         
-        /* جادوئی ہرا فلوٹنگ کمنٹ بٹن */
+        /* فلوٹنگ ہرا کمنٹ بٹن */
         .comment-badge { 
             position: fixed; 
             bottom: 85px; 
@@ -145,7 +136,7 @@
             z-index: 1000;
         }
 
-        /* کمنٹ باکس کا ڈیزائن */
+        /* گلابی بارڈر کمنٹ باکس کا پورا سیٹ اپ */
         .comment-box-container {
             display: none; 
             border: 2px solid #ff007f;
@@ -230,47 +221,38 @@
             font-weight: bold; 
             font-size: 16px; 
             box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
     </style>
 </head>
-<script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 <body>
+<script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 
     <div class="story-card">
-        <!-- نئی کہانی کا تھمب نیل امیج -->
         <div class="thumbnail-container">
             <img src="IMG-20261016-WA3018.jpg" alt="پڑوسیوں کا خیال رکھنا چاھیئے">
         </div>
 
-        <!-- کہانی کا ٹائٹل -->
         <div class="story-title">پڑوسیوں کا خیال رکھنا چاھیئے</div>
 
-        <!-- ویوز میٹر -->
         <div class="meta-info">
             <div class="badge">
                 Views | <i class="fas fa-fire" style="color: #ff3d00;"></i> Trending 14,016 👁️
             </div>
         </div>
 
-        <!-- لائک بٹن -->
         <div class="like-container">
             <button class="like-btn" onclick="likeStory()">
                 <i class="fas fa-heart"></i> Like <span id="like-count">0</span>
             </button>
         </div>
 
-        <!-- کہانی کا متن (سفید رنگ میں اور الگ الگ پیراگراف کے ساتھ) -->
-        <div class="story-content" oncontextmenu="return false;">
-            
-            <!-- پہلا پیراگراف (آپ اپنی کہانی کا اگلا حصہ اسی طرح نیچے <p> بنا کر شامل کر سکتے ہیں) -->
-            <p>
-                ھیلو دوستو میرا نام اروینا ھے اور میرے دو بچے ہیں میں بہت خوبصورت ھوں میری چھوٹی ایک بیٹی ھے اور بیٹی سے چھوٹا بیٹا ھے میں بلکل اکیلی تھی قربت کی لذت کو پانا چاہتی تھی کیونکہ میرے شوہر کو گزرے دو سال ہو چکے تھے، اور ان دو سالوں نے میرے اندر ایک ایسی تپش جاگ اُٹھی جسے روکنا ممکن نہ تھا۔
-            </p>
+        <!-- 🖋️ جادوئی ٹیکسٹ ہولڈر: یہاں آپ کو اپنی پوری کہانی بس ایک بار پیسٹ کرنی ہے -->
+        <div class="story-content" id="storyTextHolder" oncontextmenu="return false;">ھیلو دوستو میرا نام اروینا ھے اور میرے دو بچے ہیں میں بہت خوبصورت ھوں میری چھوٹی ایک بیٹی ھے اور بیٹی سے چھوٹا بیٹا ھے میں بلکل اکیلی تھی قربت کی لذت کو پانا چاہتی تھی کیونکہ میرے شوہر کو گزرے دو سال ہو چکے تھے، اور ان دو سالوں نے میرے اندر ایک ایسی تپش جاگ اُٹھی جسے روکنا ممکن نہ تھا.............
 
-            <!-- دوسرا پیراگراف (جب آپ اگلی 15 گھر کی دیواریں میری تنہائی کی گواہ تھیں، جہاں راتوں کو جب سب سو جاتے، میں اپنے بستر پر اکیلی، اپنی تڑپتی ہوئی نازک حصے میں انگلیاں پھیر کر اپنی پیاس بجھانے کی ناکام کوشش کرتی۔ وہ انگلیاں کبھی وہ سکون نہیں دے پاتیں جس کے لیے میرا جسم بے چین رہتا تھا۔) -->
-            <p>
-                اس دن دھوپ تیز تھی اور باہر بچوں کے کھیلنے کا شور تھا۔ میں کھڑکی کے پاس کھڑی تھی، میرا موڈ آج کچھ زیادہ ہی خراب تھا، یا شاید میں کہہ دوں کہ میرا جسم آج کچھ زیادہ ہی "گرم" ہو رہا تھا۔ میری سانسیں تیز ہو رہی تھیں اور میری نازک حصہ کے اندر ایک عجیب سی نمی اور تپش محسوس ہو رہی تھی۔ میں نے محسوس کیا کہ میرا لباس میرے جسم سے چپک رہا ہے، جیسے میرا اپنا ہی پسینہ میری پیاس کا پتہ دے رہا ہو۔
+گھر کی دیواریں میری تنہائی کی گواہ تھیں، جہاں راتوں کو جب سب سو جاتے، میں اپنے بستر پر اکیلی، اپنی تڑپتی ہوئی نازک حصے میں انگلیاں پھیر کر اپنی پیاس بجھانے کی ناکام کوشش کرتی۔ وہ انگلیاں کبھی وہ سکون نہیں دے پاتیں جس کے لیے میرا جسم بے چین رہتا تھا۔
+
+اس دن دھوپ تیز تھی اور باہر بچوں کے کھیلنے کا شور تھا۔ میں کھڑکی کے پاس کھڑی تھی، میرا موڈ آج کچھ زیادہ ہی خراب تھا، یا شاید میں کہہ دوں کہ میرا جسم آج کچھ زیادہ ہی "گرم" ہو رہا تھا۔ میری سانسیں تیز ہو رہی تھیں اور میری نازک حصہ کے اندر ایک عجیب سی نمی اور تپش محسوس ہو رہی تھی۔ میں نے محسوس کیا کہ میرا لباس میرے جسم سے چپک رہا ہے، جیسے میرا اپنا ہی پسینہ میری پیاس کا پتہ دے رہا ہو۔
 
 باہر وہ لڑکا، جو پڑوسیوں کا وہ چالاک اور پرکشش نوجوان تھا، بچوں کے ساتھ کھیل رہا تھا۔ اس کی مضبوط جسمانی ساخت اور اس کے چلنے کا انداز میری نظروں سے اوجھل نہیں تھا۔ میں اسے دیکھ رہی تھی اور میرا ذہن ایسی ایسی باتیں سوچ رہا تھا جو ایک "سنجیدہ" عورت کو نہیں سوچنی چاہئیں، لیکن اس وقت میں صرف ایک تڑپتی ہوئی عورت تھی جس کے اندر جنون کا طوفان اٹھ رہا تھا۔
 
@@ -344,12 +326,9 @@
 
 ***
 
-ایک بہت ہی دلچسپ اور ہاٹ موڑ پیدا ھوتا ہے۔  دوستو! اگر آپ بھی میری اس ہاٹ کہانی کا اگلا حصہ پڑھنا چاہتے ہیں، تو جلدی سے کمنٹ کریں اور بتائیں کہ آپ کو یہ کہانی کیسی لگی؟ آپ کے خیالات کا انتظار رہے گا تاکہ میں جلد از جلد پارٹ 2 شیئر کر سکے!**
-            </p>
+ایک بہت ہی دلچسپ اور ہاٹ موڑ پیدا ھوتا ہے۔  دوستو! اگر آپ بھی میری اس ہاٹ کہانی کا اگلا حصہ پڑھنا چاہتے ہیں، تو جلدی سے کمنٹ کریں اور بتائیں کہ آپ کو یہ کہانی کیسی لگی؟ آپ کے خیالات کا انتظار رہے گا تاکہ میں جلد از جلد پارٹ 2 شیئر کر سکے!**</div>
 
-        </div>
-
-        <!-- کمنٹ باکس کا پورا سیٹ اپ -->
+        <!-- کمنٹ باکس کا ڈھانچہ -->
         <div class="comment-box-container" id="commentBox">
             <div class="comment-box-title">
                 <i class="fas fa-comments"></i> کمنٹس
@@ -361,7 +340,6 @@
             <div class="comments-list" id="commentsList"></div>
         </div>
 
-        <!-- ٹیلی گرام لنک -->
         <a href="https://t.me" class="telegram-btn" target="_blank">
             Join Telegram <i class="fab fa-telegram-plane"></i>
         </a>
@@ -409,30 +387,23 @@
 </div>
     </div>
 
-    <!-- ہرا فلوٹنگ سکرول بٹن -->
+    <!-- ہرا گول فلوٹنگ بٹن جو نیچے کی طرف خودکار سکرول کرے گا -->
     <div class="comment-badge" onclick="toggleCommentBox()">
         <i class="fas fa-ellipsis-h"></i>
     </div>
 
     <script>
-        let count = 0; 
-        function likeStory() { 
-            count++; 
-            document.getElementById('like-count').innerText = count; 
-        }
-
-        // سکرول اور کمنٹ باکس ٹوگل فنکشن
-        function toggleCommentBox() {
-            let box = document.getElementById('commentBox');
-            if(box.style.display === "none" || box.style.display === "") {
-                box.style.display = "block";
-                box.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                box.style.display = "none";
-            }
-        }
-
-        function postComment() {
-            let input = document.getElementById('commentInput');
-            let text = input.value.trim();
-            if(text !== "") {
+        // 🔮 جادوئی سکرپٹ: جو کہانی کے ایک ساتھ لکھے ہوئے متن کو خودکار لائنوں کے گروپس اور پیراگراف میں تبدیل کرے گی
+        document.addEventListener("DOMContentLoaded", function() {
+            let holder = document.getElementById("storyTextHolder");
+            let rawText = holder.innerHTML.trim();
+            
+            // اگر آپ ٹیکسٹ میں ڈاٹ (.) یا کُل وقتی لکیریں استعمال کرتے ہیں تو یہ خودکار طور پر ہر 4 سے 5 جملوں (یا لکیروں کے گروپ) کا خوبصورت پیراگراف بنا دے گا
+            let sentences = rawText.split(/(?<=[۔؟!.…])/);
+            let formattedHtml = "";
+            let chunk = "";
+            
+            for (let i = 0; i < sentences.length; i++) {
+                chunk += sentences[i];
+                // ہر 4 جملوں یا لائنوں کے بعد گروپ کو توڑ کر نیا پیراگراف بنانا
+                if ((i + 1) % 4 === 0 || i === sentences.length - 1) {
