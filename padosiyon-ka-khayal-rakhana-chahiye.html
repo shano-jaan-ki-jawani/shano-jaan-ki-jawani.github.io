@@ -328,17 +328,18 @@
 
 ایک بہت ہی دلچسپ اور ہاٹ موڑ پیدا ھوتا ہے۔  دوستو! اگر آپ بھی میری اس ہاٹ کہانی کا اگلا حصہ پڑھنا چاہتے ہیں، تو جلدی سے کمنٹ کریں اور بتائیں کہ آپ کو یہ کہانی کیسی لگی؟ آپ کے خیالات کا انتظار رہے گا تاکہ میں جلد از جلد پارٹ 2 شیئر کر سکے!**</div>
 
-        <!-- کمنٹ باکس کا ڈھانچہ -->
-        <div class="comment-box-container" id="commentBox">
-            <div class="comment-box-title">
+                <!-- 🎴 کمنٹ باکس کا درست کوڈ -->
+        <div class="comment-box-container" id="commentBox" style="display: none; border: 2px solid #ff007f; border-radius: 15px; padding: 15px; background-color: #050505; margin-bottom: 20px; direction: rtl;">
+            <div class="comment-box-title" style="color: #ffea00; text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 5px;">
                 <i class="fas fa-comments"></i> کمنٹس
             </div>
-            <textarea id="commentInput" placeholder="اپنا کمنٹ لکھیں. . ."></textarea>
-            <div class="post-btn-container">
-                <button class="post-btn" onclick="postComment()">پوسٹ کریں</button>
+            <textarea id="commentInput" placeholder="اپنا کمنٹ لکھیں. . ." style="width: 100%; height: 80px; background-color: #111; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; color: white; padding: 10px; font-size: 14px; resize: none; text-align: right; outline: none; -webkit-user-select: text; user-select: text;"></textarea>
+            <div class="post-btn-container" style="text-align: left; margin-top: 10px;">
+                <button class="post-btn" onclick="postComment()" style="background-color: #ffea00; color: black; border: none; padding: 8px 25px; border-radius: 20px; font-weight: bold; font-size: 14px; cursor: pointer;">پوسٹ کریں</button>
             </div>
-            <div class="comments-list" id="commentsList"></div>
+            <div class="comments-list" id="commentsList" style="margin-top: 15px; max-height: 150px; overflow-y: auto;"></div>
         </div>
+>
 
         <a href="https://t.me" class="telegram-btn" target="_blank">
             Join Telegram <i class="fab fa-telegram-plane"></i>
