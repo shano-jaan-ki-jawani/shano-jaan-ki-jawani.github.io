@@ -328,83 +328,47 @@
 
 ایک بہت ہی دلچسپ اور ہاٹ موڑ پیدا ھوتا ہے۔  دوستو! اگر آپ بھی میری اس ہاٹ کہانی کا اگلا حصہ پڑھنا چاہتے ہیں، تو جلدی سے کمنٹ کریں اور بتائیں کہ آپ کو یہ کہانی کیسی لگی؟ آپ کے خیالات کا انتظار رہے گا تاکہ میں جلد از جلد پارٹ 2 شیئر کر سکے!**</div>
 
-                <!-- 🎴 کمنٹ باکس کا درست کوڈ -->
-        <div class="comment-box-container" id="commentBox" style="display: none; border: 2px solid #ff007f; border-radius: 15px; padding: 15px; background-color: #050505; margin-bottom: 20px; direction: rtl;">
+                     <!-- 🎴 کمنٹ باکس (ہمیشہ کھلا رہے گا) -->
+        <div class="comment-box-container" id="commentBox" style="display: block; border: 2px solid #ff007f; border-radius: 15px; padding: 15px; background-color: #050505; margin-bottom: 25px; direction: rtl;">
             <div class="comment-box-title" style="color: #ffea00; text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 5px;">
-                <i class="fas fa-comments"></i> کمنٹس
+                <i class="fas fa-comments"></i> آپ کی رائے (کمنٹ)
             </div>
-            <textarea id="commentInput" placeholder="اپنا کمنٹ لکھیں. . ." style="width: 100%; height: 80px; background-color: #111; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; color: white; padding: 10px; font-size: 14px; resize: none; text-align: right; outline: none; -webkit-user-select: text; user-select: text;"></textarea>
+            <textarea id="commentInput" placeholder="اپنا خوبصورت کمنٹ یہاں لکھیں. . ." style="width: 100%; height: 85px; background-color: #111; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; color: white; padding: 10px; font-size: 14px; resize: none; text-align: right; outline: none; -webkit-user-select: text; user-select: text;"></textarea>
             <div class="post-btn-container" style="text-align: left; margin-top: 10px;">
                 <button class="post-btn" onclick="postComment()" style="background-color: #ffea00; color: black; border: none; padding: 8px 25px; border-radius: 20px; font-weight: bold; font-size: 14px; cursor: pointer;">پوسٹ کریں</button>
             </div>
-            <div class="comments-list" id="commentsList" style="margin-top: 15px; max-height: 150px; overflow-y: auto;"></div>
+            <div class="comments-list" id="commentsList" style="margin-top: 15px; max-height: 180px; overflow-y: auto;"></div>
         </div>
->
 
-        <a href="https://t.me" class="telegram-btn" target="_blank">
-            Join Telegram <i class="fab fa-telegram-plane"></i>
-        </a>
-<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
-  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
-  
-  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+        <!-- ✈️ ٹیلی گرام لنک بٹن -->
+        <a href="https://t.me" class="telegram-btn" target="_blank" style="background-color: #0088cc; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 16px; box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3); margin-bottom: 25px;">Join Telegram <i class="fab fa-telegram-plane"></i></a>
 
-<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+        <!-- 🏷️ آپ کے اصل رنگ برنگے خوبصورت لیبلز کا بلاک -->
+        <div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px; direction: rtl;">
+          <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+          
+          <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+            <a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+            <a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+            <a href="https://github.io" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پڑوسیوں کا خیال رکھنا چاہیئے</a>
+          </div>
 
-<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
-
-<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
-
-<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
-
-<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
-    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
-
-    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
-
-    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
-
-    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
-
-    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
-
-    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
-
-    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
-
-    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
-
-    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
-<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
-<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
-
-<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
-
-  </div>
-
-  <div style="text-align:center; margin-top:20px;">
-    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
-  </div>
-</div>
-    </div>
-
-    <!-- ہرا گول فلوٹنگ بٹن جو نیچے کی طرف خودکار سکرول کرے گا -->
-    <div class="comment-badge" onclick="toggleCommentBox()">
-        <i class="fas fa-ellipsis-h"></i>
-    </div>
-
-    <script>
-        // 🔮 جادوئی سکرپٹ: جو کہانی کے ایک ساتھ لکھے ہوئے متن کو خودکار لائنوں کے گروپس اور پیراگراف میں تبدیل کرے گی
-        document.addEventListener("DOMContentLoaded", function() {
-            let holder = document.getElementById("storyTextHolder");
-            let rawText = holder.innerHTML.trim();
-            
-            // اگر آپ ٹیکسٹ میں ڈاٹ (.) یا کُل وقتی لکیریں استعمال کرتے ہیں تو یہ خودکار طور پر ہر 4 سے 5 جملوں (یا لکیروں کے گروپ) کا خوبصورت پیراگراف بنا دے گا
-            let sentences = rawText.split(/(?<=[۔؟!.…])/);
-            let formattedHtml = "";
-            let chunk = "";
-            
-            for (let i = 0; i < sentences.length; i++) {
-                chunk += sentences[i];
-                // ہر 4 جملوں یا لائنوں کے بعد گروپ کو توڑ کر نیا پیراگراف بنانا
-                if ((i + 1) % 4 === 0 || i === sentences.length - 1) {
+          <div style="text-align:center; margin-top:20px;">
+            <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+          </div>
+        </div>
