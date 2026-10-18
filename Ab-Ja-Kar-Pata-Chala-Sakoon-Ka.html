@@ -46,12 +46,25 @@
             padding-bottom: 10px;
         }
 
+        /* کہانی کی تھمب نیل تصویر */
+        .story-thumbnail {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ff0066;
+            margin-bottom: 20px;
+            display: block;
+            pointer-events: none; /* چوری سے بچانے کے لیے لانگ پریس/رائٹ کلک لاک */
+            -webkit-touch-callout: none;
+        }
+
         /* کہانی کا متن - بالکل اسکرین کے وسط (Center) میں */
         .story-content {
             text-align: center;
             font-size: 18px;
             line-height: 1.8;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .story-content p {
@@ -62,7 +75,7 @@
         /* لائک بٹن اسٹائل */
         .like-section {
             text-align: center;
-            margin: 25px 0;
+            margin: 20px 0;
         }
 
         .like-btn {
@@ -83,7 +96,7 @@
 
         /* ہمیشہ کھلا رہنے والا لائیو کمنٹ باکس */
         .comment-section {
-            margin-top: 30px;
+            margin-top: 25px;
             border-top: 1px solid #ff007f;
             padding-top: 20px;
         }
@@ -135,29 +148,6 @@
             box-shadow: 0 0 10px #0088cc;
         }
 
-        /* رنگ برنگے خوبصورت گول لائیو لیبلز */
-        .labels-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 25px;
-        }
-
-        .label-item {
-            padding: 6px 14px;
-            border-radius: 20px;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .lbl-romantic { background-color: #e91e63; }
-        .lbl-desi { background-color: #ff9800; }
-        .lbl-hot { background-color: #f44336; }
-        .lbl-trending { background-color: #9c27b0; }
-
         /* گولڈ کلر کا ہوم پیج بٹن */
         .home-btn {
             display: block;
@@ -185,7 +175,10 @@
         <!-- ٹائٹل -->
         <h1 class="story-title">اب جا کر پَتا چلا سَکون کا</h1>
 
-        <!-- خام کہانی متن (یہاں جاوا اسکرپٹ جادو چلا کر خوبصورت پیراگراف بنائے گی) -->
+        <!-- کہانی کی تھمب نیل تصویر -->
+        <img src="IMG-20261018-WA3247.jpg" alt="اب جا کر پَتا چلا سَکون کا" class="story-thumbnail">
+
+        <!-- خام کہانی متن (جاوا اسکرپٹ آٹو پیراگراف فلٹر) -->
         <div class="story-content" id="rawStory">
             ہیلو دوستو! میرا نام نندنی ہے۔ ہمارے گھر میں ممی، پاپا، دو بہنیں، دو بھائی اور میں شامل ہوں۔ میں اپنے بہن بھائیوں میں سب سے بڑی ہوں۔ میری خوبصورتی کے بارے میں لوگ اکثر باتیں کرتے ہیں؛ میرا رنگ گورا چٹا ہے اور میری شخصیت میں ایک خاص کشش ہے۔ لیکن حقیقت یہ ہے کہ ہم ایک غریب گھرانے سے تعلق رکھتے ہیں۔ میرے پاپا ہی گھر کے تمام اخراجات اور ذمہ داریاں اکیلے سنبھالتے ہیں۔ میں پڑھی لکھی ہوں، اور پاپا کی ہمیشہ سے یہی خواہش تھی کہ میری شادی کسی اچھے اور مستحکم گھرانے میں ہو جائے تاکہ میری زندگی سکون سے گزر سکے۔ مگر زندگی کے فیصلے کبھی کبھی اتنے آسان نہیں ہوتے جتنے ہم سوچتے ہیں۔
 
@@ -287,9 +280,10 @@
 
 تو دوستو، میری کہانی یہاں ختم ہوتی ہے۔ زندگی کے اس پیچیدہ اور پر اسرار سفر میں جہاں محبت، جنون اور راز ایک ساتھ چلتے ہیں، آپ کو کیسا لگا؟ مجھے کمنٹ میں ضرور بتائیں کہ آپ کو میری یہ کہانی کیسی لگی۔ اگر آپ کو یہ کہانی پسند آئی ہو تو لائک اور کمنٹ کرنا نہ بھولیں!
 
-مجھے اب اجازت دیجیے، اپنا بہت زیادہ خیال رکھیے گا، بائے!        </div>
+مجھے اب اجازت دیجیے، اپنا بہت زیادہ خیال رکھیے گا، بائے!
+        </div>
 
-        <!-- لائک بٹن مع کاؤنٹر -->
+        <!-- لائک بٹن مع کاؤنٹر (اب کہانی کے فوراً نیچے شفٹ کر دیا گیا ہے) -->
         <div class="like-section">
             <button class="like-btn" onclick="boostLikes()">💖 لائک کریں (<span id="likeCount">143</span>)</button>
         </div>
@@ -346,13 +340,6 @@
     <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
   </div>
 </div>
-        <!-- رنگ برنگے لائیو لیبلز کا پورا سیٹ -->
-        <div class="labels-container">
-            <a href="#" class="label-item lbl-romantic">💞 رومینٹک</a>
-            <a href="#" class="label-item lbl-desi">🌾 دیسی کہانیاں</a>
-            <a href="#" class="label-item lbl-hot">🔥 ہاٹ ٹرینڈ</a>
-            <a href="#" class="label-item lbl-trending">⚡ مقبول ترین</a>
-        </div>
 
         <!-- گولڈ کلر کا ہوم پیج بٹن -->
         <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
@@ -363,7 +350,6 @@
         window.onload = function() {
             var storyDiv = document.getElementById('rawStory');
             var rawText = storyDiv.innerText;
-            // جملوں کو نقطہ (۔) یا سوالیہ نشان کی بنیاد پر الگ کر کے خوبصورت چھوٹے پیراگراف بنانا
             var sentences = rawText.split(/[۔؟!]+/);
             var cleanHTML = "";
             
