@@ -570,9 +570,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 </script>
 <!-- +18 وارننگ پاپ اپ ختم -->
-<!-- 18+ وارننگ پاپ اپ ختم -->
-
-<!-- یہاں پر گجنی بھائی کا پہلے والا ہی کوڈ پیسٹ کریں -->
 <div style="text-align: center; margin: 30px 0;">
     <button id="loadMoreBtn" onclick="loadMorePosts()" style="background-color: #ff007f; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 0 10px rgba(255, 0, 127, 0.4);">
         More Posts ➔
@@ -580,6 +577,41 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 <script>
+    const postsPerPage = 5; 
+    let currentShown = postsPerPage;
+    let storyCards = [];
+
+    function initPagination() {
+        const allDivs = document.querySelectorAll('div');
+        allDivs.forEach(div => {
+            if (div.querySelector('h2') && div.innerHTML.includes('Read More')) {
+                storyCards.push(div);
+            }
+        });
+
+        if (storyCards.length <= postsPerPage) {
+            document.getElementById('loadMoreBtn').style.display = 'none';
+            return;
+        }
+
+        for (let i = postsPerPage; i < storyCards.length; i++) {
+            storyCards[i].style.display = 'none';
+        }
+    }
+
+    function loadMorePosts() {
+        let nextBatch = currentShown + postsPerPage;
+        for (let i = currentShown; i < nextBatch && i < storyCards.length; i++) {
+            storyCards[i].style.display = 'block'; 
+        }
+        currentShown = nextBatch;
+        if (currentShown >= storyCards.length) {
+            document.getElementById('loadMoreBtn').style.display = 'none';
+        }
+    }
+    window.addEventListener('DOMContentLoaded', initPagination);
+</script>
+
     const postsPerPage = 5; 
     let currentShown = postsPerPage;
 
