@@ -570,6 +570,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 </script>
 <!-- +18 وارننگ پاپ اپ ختم -->
+<!-- گجنی بھائی کا فکسڈ پیجینیشن کوڈ -->
 <div style="text-align: center; margin: 30px 0;">
     <button id="loadMoreBtn" onclick="loadMorePosts()" style="background-color: #ff007f; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 0 10px rgba(255, 0, 127, 0.4);">
         More Posts ➔
@@ -611,42 +612,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     window.addEventListener('DOMContentLoaded', initPagination);
 </script>
-
-    const postsPerPage = 5; 
-    let currentShown = postsPerPage;
-
-    function initPagination() {
-        const posts = document.querySelectorAll('.home-story-card');
-        
-        if (posts.length <= postsPerPage) {
-            document.getElementById('loadMoreBtn').style.display = 'none';
-            return;
-        }
-
-        for (let i = postsPerPage; i < posts.length; i++) {
-            posts[i].style.display = 'none';
-        }
-    }
-
-    function loadMorePosts() {
-        const posts = document.querySelectorAll('.home-story-card');
-        let nextBatch = currentShown + postsPerPage;
-
-        for (let i = currentShown; i < nextBatch && i < posts.length; i++) {
-            posts[i].style.display = 'block'; 
-        }
-
-        currentShown = nextBatch;
-
-        if (currentShown >= posts.length) {
-            document.getElementById('loadMoreBtn').style.display = 'none';
-        }
-    }
-
-    window.addEventListener('DOMContentLoaded', initPagination);
-</script>
-<!-- کوڈ یہاں ختم ہوا -->
-
 
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
 </html>
