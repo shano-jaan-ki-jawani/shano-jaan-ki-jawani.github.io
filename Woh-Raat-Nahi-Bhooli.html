@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وہ رات نہیں بھولی - شنو جان کی جوانی</title>
+    <style>
+        /* فکسڈ ڈیزائن گائیڈ لائنز */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* ٹیکسٹ پروٹیکشن (سلیکشن بلاک) */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .main-card {
+            background-color: #050505;
+            border: 2px solid #ff007f;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 100%;
+            padding: 25px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ff007f;
+            pointer-events: none; /* تصویر پر لانگ پریس لاک */
+        }
+
+        .story-title {
+            color: #ff007f;
+            font-size: 28px;
+            margin: 20px 0 10px 0;
+            font-weight: bold;
+        }
+
+        /* لائک بٹن اسٹائل */
+        .like-section {
+            margin-bottom: 25px;
+        }
+        .like-btn {
+            background-color: transparent;
+            border: 2px solid #ff007f;
+            color: #ff007f;
+            padding: 8px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .like-btn:hover {
+            background-color: #ff007f;
+            color: #ffffff;
+        }
+
+        /* کہانی کا متن (موٹا اور بڑا) */
+        .story-text {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1.8;
+            text-align: center;
+            white-space: pre-line; /* پیراگراف فارمیٹنگ قائم رکھنے کے لیے */
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* ہمیشہ کھلا رہنے والا کمنٹ باکس */
+        .comment-section {
+            border: 1px solid #ff007f;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 30px;
+            background: #0a0a0a;
+        }
+        .comment-section h3 {
+            color: #ff007f;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .comment-input {
+            width: 100%;
+            height: 80px;
+            background: #000;
+            border: 1px solid #ff007f;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            resize: none;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        .comment-submit {
+            background: #ff007f;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ٹیلی گرام بٹن */
+        .telegram-btn {
+            display: inline-block;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 25px 0;
+            transition: 0.3s;
+            width: 80%;
+            box-sizing: border-box;
+        }
+        .telegram-btn:hover {
+            background-color: #006699;
+        }
+
+        /* رنگ برنگے لائیو لیبلز کا سیٹ */
+        .labels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .label-item {
+            padding: 6px 15px;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .lbl-pink { background-color: #e91e63; }
+        .lbl-purple { background-color: #9c27b0; }
+        .lbl-orange { background-color: #ff9800; }
+        .lbl-blue { background-color: #00bcd4; }
+
+        /* گولڈ ہوم پیج بٹن */
+        .home-btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #000000;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;"> <!-- رائٹ کلک پروٹیکشن -->
+
+    <div class="main-card">
+        <!-- تھمب نیل تصویر (سائز 4:3) -->
+        <img src="image_a31a7daa.jpg" alt="وہ رات نہیں بھولی" class="thumbnail" ondragstart="return false;">
+
+        <!-- کہانی کا ٹائٹل -->
+        <h1 class="story-title">وہ رات نہیں بھولی</h1>
+
+        <!-- لائک بٹن مع کاؤنٹر -->
+        <div class="like-section">
+            <button class="like-btn" id="likeBtn" onclick="doLike()">❤️ لائک (<span id="likeCount">0</span>)</button>
+        </div>
+
+        <!-- کہانی کا متن (جاوا اسکرپٹ کے ذریعے آٹو پیراگراف بنے گا) -->
+        <div class="story-text" id="storyContent">
+            ھیلو دوستو میرا نام سُمن ھے اس وقت میں آپ دوستو سے اپنا وہ راز شیئر کرنا چاہتی ھوں جو آج تک میں نے کسی سے شیئر نہیں کیا اور وہ راز میں آج تک نہیں بھلا پائی ھوں
+        </div>
+
+        <!-- ہمیشہ کھلا رہنے والا لائیو کمنٹ باکس -->
+        <div class="comment-section">
+            <h3>اپنی رائے دیں</h3>
+            <textarea class="comment-input" placeholder="یہاں کمنٹ لکھیں..."></textarea>
+            <button class="comment-submit">کمنٹ پوسٹ کریں</button>
+        </div>
+
+        <!-- ٹیلی گرام بٹن -->
+        <a href="#" class="telegram-btn">🚀 Join Telegram</a>
+
+        <!-- رنگ برنگے خوبصورت لائیو لیبلز کا پورا سیٹ -->
+        <div class="labels-container">
+            <a href="#" class="label-item lbl-pink">رومانی کہانیاں</a>
+            <a href="#" class="label-item lbl-purple">سچی کہانیاں</a>
+            <a href="#" class="label-item lbl-orange">تازہ ترین</a>
+            <a href="#" class="label-item lbl-blue">مقبول عام</a>
+        </div>
+
+        <!-- گولڈ کلر کا ہوم پیج بٹن -->
+        <div>
+            <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
+        </div>
+    </div>
+
+    <script>
+        // جاوا اسکرپٹ کا جادوئی آٹو پیراگراف فلٹر
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('storyContent');
+            const rawText = container.innerText;
+            
+            // ہر جملے (۔ یا ھے) کے بعد خوبصورت پیراگراف بنانے کا فلٹر
+            const formattedText = rawText.replace(/(ھے|تھا|تھی|تھے|ہوئی|تھیں۔|نہیں۔)/g, "$1\n\n");
+            container.innerText = formattedText.trim();
+        });
+
+        // لائک بٹن فنکشنلٹی
+        let count = 0;
+        function doLike() {
+            count++;
+            document.getElementById('likeCount').innerText = count;
+        }
+
+        // شارٹ کٹس لاک کرنے کی سیکیورٹی (Ctrl+C, Ctrl+U وغیرہ)
+        document.onkeydown = function(e) {
+            if(e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 73)) {
+                return false;
+            }
+        };
+    </script>
+</body>
+</html>
