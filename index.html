@@ -593,53 +593,62 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 </script>
 <!-- +18 وارننگ پاپ اپ ختم -->
-<!-- گجنی بھائی کا فکسڈ پیجینیشن کوڈ -->
+<!-- ========================================== -->
+<!-- لوڈ مور بٹن کا فکسڈ حصہ -->
+<!-- ========================================== -->
 <div style="text-align: center; margin: 30px 0; clear: both; display: block !important;">
-    <button id="loadMoreBtn" onclick="loadMorePosts()" style="background-color: #ff007f; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 0 10px rgba(255, 0, 127, 0.4); display: inline-block !important;">
+    <button id="loadMoreBtn" onclick="showMorePosts()" style="background-color: #ff007f; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 0 10px rgba(255, 0, 127, 0.4); display: inline-block !important;">
         More Posts ➔
     </button>
 </div>
 
 <script>
+    // ایک وقت میں ہوم پیج پر کتنی پوسٹس دکھانی ہیں
     const postsPerPage = 5; 
     let currentShown = postsPerPage;
-    let storyCards = [];
+    
+    // یہ کوڈ آپ کے بلاگ کے تمام 20 کارڈز کو ان کی کلاس سے خود بخود ڈھونڈ لے گا
+    const posts = document.querySelectorAll('.home-story-card, .story-card');
 
     function initPagination() {
-        // یہ کوڈ 'شنو جان کی جوانی' بلاگ کی ہر کہانی کو ڈھونڈے گا
-        const allDivs = document.querySelectorAll('div');
-        allDivs.forEach(div => {
-            if (div.querySelector('h2') && div.innerHTML.includes('Read More')) {
-                storyCards.push(div);
+        // شروع میں صرف 5 پوسٹس نظر آئیں گی اور باقی چھپ جائیں گی تاکہ پیج ہینگ نہ ہو
+        for (let i = 0; i < posts.length; i++) {
+            if (i >= currentShown) {
+                posts[i].style.display = 'none';
+            } else {
+                posts[i].style.display = 'block';
             }
-        });
-
-        // اگر کہانیاں 5 یا اس سے کم ہیں تو بٹن خود ہی غائب رہے گا
-        if (storyCards.length <= postsPerPage) {
-            document.getElementById('loadMoreBtn').style.display = 'none';
-            return;
         }
-
-        // پہلی 5 کے علاوہ باقی سب کو چھپانا
-        for (let i = postsPerPage; i < storyCards.length; i++) {
-            storyCards[i].style.display = 'none';
+        
+        // اگر ٹوٹل پوسٹس کم ہوں تو بٹن غائب رہے گا
+        if (posts.length <= currentShown) {
+            const btn = document.getElementById('loadMoreBtn');
+            if(btn) btn.style.display = 'none';
         }
     }
 
-    function loadMorePosts() {
-        let nextBatch = currentShown + postsPerPage;
-        for (let i = currentShown; i < nextBatch && i < storyCards.length; i++) {
-            storyCards[i].style.display = 'block'; 
+    function showMorePosts() {
+        // بٹن دبانے پر اگلی 5 پوسٹس کھلیں گی
+        let nextItems = currentShown + postsPerPage;
+        
+        for (let i = currentShown; i < nextItems && i < posts.length; i++) {
+            posts[i].style.display = 'block';
         }
-        currentShown = nextBatch;
-        if (currentShown >= storyCards.length) {
-            document.getElementById('loadMoreBtn').style.display = 'none';
+        
+        currentShown = nextItems;
+
+        // جب تمام 20 پوسٹس ختم ہو جائیں گی تو بٹن غائب ہو جائے گا
+        if (currentShown >= posts.length) {
+            const btn = document.getElementById('loadMoreBtn');
+            if(btn) btn.style.display = 'none';
         }
     }
-    
-    // پیج لوڈ ہوتے ہی رن کرنے کے لیے
+
+    // پیج لوڈ ہوتے ہی سسٹم کو رن کرنے کے لیے
     window.addEventListener('DOMContentLoaded', initPagination);
 </script>
 
+<!-- آپ کا ایڈاسٹرا کا ایڈ کوڈ بالکل محفوظ ہے -->
 <script src="https://avegogglerequest.com/d2/c0/f2/d2c0f24bfdd5aa6bddd5698bec186a27.js"></script>
+</body>
 </html>
