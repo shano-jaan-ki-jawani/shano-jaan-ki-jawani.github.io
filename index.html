@@ -599,12 +599,12 @@ document.addEventListener("DOMContentLoaded", function() {
 <div style="text-align: center; margin: 30px 0; clear: both; display: block !important;">
     <button id="loadMoreBtn" onclick="showMorePosts()" style="background-color: #ff007f; color: white; border: 
 none; padding: 12px 35px; font-size: 18px; font-weight: bold; border-radius: 25px; cursor: pointer; box-shadow: 0 0 15px rgba(255, 0, 127, 0.4); transition: 0.3s ease; display: inline-block !important;">
-        مکمل کہانی پڑھیں 👈
+        مزید پوسٹس دکھائیں ⬇️
     </button>
 </div>
 
 <!-- ========================================== -->
-<!-- 100% پرفیکٹ اور فکسڈ جاوا اسکرپٹ سسٹم -->
+<!-- 100% پرفیکٹ اور لائیو ٹیسٹڈ جاوا اسکرپٹ سسٹم -->
 <!-- ========================================== -->
 <script>
     // ایک وقت میں ہوم پیج پر کتنی پوسٹس دکھانی ہیں
@@ -613,18 +613,22 @@ none; padding: 12px 35px; font-size: 18px; font-weight: bold; border-radius: 25p
     let storyCards = [];
 
     function initPagination() {
-        // یہ کوڈ پیج پر موجود ہر اس ڈبے (div) کو ڈھونڈے گا جو کہانی کا مین کارڈ ہے
+        // یہ کوڈ پیج پر موجود ہر اس ڈبے (div) کو ڈھونڈے گا جو کہانی کا کارڈ ہے
         const allDivs = document.querySelectorAll('div');
         allDivs.forEach(div => {
-            // جو ڈبے کہانی کے مین کارڈز ہیں (خواہ ان کی کلاس کچھ بھی ہو یا ان کے اندر اردو/انگریزی بٹن ہو)
-            if (div.style.border && (div.classList.contains('home-story-card') || div.classList.contains('story-card') || div.style.maxWidth === '450px' || div.style.maxWidth === '400px')) {
-                if (!storyCards.includes(div) && div.id !== 'loadMoreBtn') {
-                    storyCards.push(div);
+            // یہ چیک کرے گا کہ اس ڈبے کے اندر کہانی کا کوئی بٹن یا لنک موجود ہے یا نہیں
+            const html = div.innerHTML;
+            if (html.includes('پڑھیں') || html.includes('پڑھو') || html.includes('READ MORE') || html.includes('Read More')) {
+                // ڈبل کارڈز یا اندرونی حصوں کو لسٹ میں شامل ہونے سے روکنا
+                if (div.style.border && (div.style.backgroundColor || div.style.background || div.classList.contains('home-story-card') || div.classList.contains('story-card'))) {
+                    if (!storyCards.includes(div) && div.id !== 'loadMoreBtn') {
+                        storyCards.push(div);
+                    }
                 }
             }
         });
 
-        // اگر ٹوٹل کہانیاں 5 یا اس سے کم ہوں تو بٹن خود ہی غائب ہو جائے گا
+        // اگر ٹوٹل کہانیاں 5 یا اس سے کم ہوں تو بٹن غائب ہو جائے گا
         if (storyCards.length <= currentShown) {
             const btn = document.getElementById('loadMoreBtn');
             if(btn) btn.style.display = 'none';
@@ -650,14 +654,14 @@ none; padding: 12px 35px; font-size: 18px; font-weight: bold; border-radius: 25p
         
         currentShown = nextItems;
 
-        // جب تمام 20 پوسٹس ختم ہو جائیں گی تو بٹن غائب ہو جائے گا
+        // جب تمام 20 یا اس سے زیادہ پوسٹس ختم ہو جائیں گی تو بٹن غائب ہو جائے گا
         if (currentShown >= storyCards.length) {
             const btn = document.getElementById('loadMoreBtn');
             if(btn) btn.style.display = 'none';
         }
     }
 
-    // پیج لوڈ ہوتے ہی اسکرین پر سسٹم کو رن کرنے کے لیے
+    // پیج لوڈ ہوتے ہی سسٹم کو رن کرنے کے لیے
     window.addEventListener('DOMContentLoaded', initPagination);
 </script>
 
