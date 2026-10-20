@@ -597,10 +597,15 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- لوڈ مور بٹن کا فکسڈ حصہ -->
 <!-- ========================================== -->
 <div style="text-align: center; margin: 30px 0; clear: both; display: block !important;">
-    <button id="loadMoreBtn" onclick="showMorePosts()" style="background-color: #ff007f; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 25px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 0 10px rgba(255, 0, 127, 0.4); display: inline-block !important;">
-        More Posts ➔
+    <button id="loadMoreBtn" onclick="showMorePosts()" style="background-color: #ff007f; color: white; border: 
+none; padding: 12px 35px; font-size: 18px; font-weight: bold; border-radius: 25px; cursor: pointer; box-shadow: 0 0 15px rgba(255, 0, 127, 0.4); transition: 0.3s ease; display: inline-block !important;">
+        مزید پوسٹس دکھائیں ⬇️
     </button>
 </div>
+
+<!-- ========================================== -->
+<!-- جادوئی جاوا اسکرپٹ سسٹم -->
+<!-- ========================================== -->
 <script>
     // ایک وقت میں ہوم پیج پر کتنی پوسٹس دکھانی ہیں
     const postsPerPage = 5; 
@@ -608,13 +613,12 @@ document.addEventListener("DOMContentLoaded", function() {
     let storyCards = [];
 
     function initPagination() {
-        // یہ جادوئی لائن آپ کے بلاگ کے تمام 20 یا اس سے زیادہ کارڈز کو خود بخود ڈھونڈ لے گی
+        // یہ آپ کے بلاگ کے تمام 20 یا آنے والے نئے کارڈز کو خود بخود ڈھونڈ لے گا
         const allDivs = document.querySelectorAll('div');
         allDivs.forEach(div => {
-            // یہ دیکھے گا کہ جس ڈو (div) کے اندر "مزید پڑھیں" یا "Read More" کا بٹن ہے، وہ کہانی کارڈ ہے
-            if (div.innerHTML.includes('مزید پڑھیں') || div.innerHTML.includes('Read More')) {
-                // اگر وہ کسی دوسرے کارڈ کا اندرونی حصہ نہیں ہے تو اسے لسٹ میں شامل کرے گا
-                if (!div.parentElement.innerHTML.includes('مزید پڑھیں') && !div.parentElement.innerHTML.includes('Read More')) {
+            // اب یہ بالکل درست لفظ "مکمل کہانی پڑھیں" کو نشانہ بنائے گا
+            if (div.innerHTML.includes('مکمل کہانی پڑھیں')) {
+                if (!div.parentElement.innerHTML.includes('مکمل کہانی پڑھیں')) {
                      storyCards.push(div);
                 } else if (div.style.border && div.style.backgroundColor) {
                      storyCards.push(div);
@@ -622,10 +626,16 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // ڈبل کارڈز کو صاف کرنا تاکہ گنتی بالکل درست رہے
+        // کارڈز کی گنتی کو بالکل صاف اور درست کرنا
         storyCards = Array.from(new Set(storyCards)).filter(card => card.tagName === 'DIV' && card.style.border);
 
-        // شروع میں صرف 5 پوسٹس دکھانا اور باقی سب کو چھپا دینا تاکہ ہینگ نہ ہو
+        // اگر ٹوٹل کہانیاں ہی 5 یا اس سے کم ہوں تو بٹن غائب رہے گا
+        if (storyCards.length <= currentShown) {
+            const btn = document.getElementById('loadMoreBtn');
+            if(btn) btn.style.display = 'none';
+        }
+
+        // پہلی 5 پوسٹس کے علاوہ باقی تمام 15 پوسٹس کو چھپانا تاکہ پیج ہینگ نہ ہو
         for (let i = 0; i < storyCards.length; i++) {
             if (i >= currentShown) {
                 storyCards[i].style.display = 'none';
@@ -633,16 +643,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 storyCards[i].style.display = 'block';
             }
         }
-        
-        // اگر ٹوٹل پوسٹس ہی 5 سے کم ہوں تو بٹن غائب رہے گا
-        if (storyCards.length <= currentShown) {
-            const btn = document.getElementById('loadMoreBtn');
-            if(btn) btn.style.display = 'none';
-        }
     }
 
     function showMorePosts() {
-        // بٹن دبانے پر اگلی 5 پوسٹس کھلیں گی
+        // بٹن پر کلک کرنے سے اگلی 5 پوسٹس کھلیں گی
         let nextItems = currentShown + postsPerPage;
         
         for (let i = currentShown; i < nextItems && i < storyCards.length; i++) {
@@ -651,14 +655,14 @@ document.addEventListener("DOMContentLoaded", function() {
         
         currentShown = nextItems;
 
-        // جب تمام پوسٹس ختم ہو جائیں گی تو بٹن غائب ہو جائے گا
+        // جب تمام 20 کہانیاں ختم ہو جائیں گی تو بٹن غائب ہو جائے گا
         if (currentShown >= storyCards.length) {
             const btn = document.getElementById('loadMoreBtn');
             if(btn) btn.style.display = 'none';
         }
     }
 
-    // پیج لوڈ ہوتے ہی سسٹم کو رن کرنے کے لیے
+    // پیج لوڈ ہوتے ہی سسٹم کو ایکٹو کریں
     window.addEventListener('DOMContentLoaded', initPagination);
 </script>
 
