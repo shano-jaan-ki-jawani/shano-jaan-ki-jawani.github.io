@@ -604,23 +604,20 @@ none; padding: 12px 35px; font-size: 18px; font-weight: bold; border-radius: 25p
 </div>
 
 <!-- ========================================== -->
-<!-- 100% پرفیکٹ اور لائیو ٹیسٹڈ جاوا اسکرپٹ سسٹم -->
+<!-- موبائل کے لیے فکسڈ اور آل راؤنڈر جاوا اسکرپٹ سسٹم -->
 <!-- ========================================== -->
 <script>
-    // ایک وقت میں ہوم پیج پر کتنی پوسٹس دکھانی ہیں
     const postsPerPage = 5; 
     let currentShown = postsPerPage;
     let storyCards = [];
 
     function initPagination() {
-        // یہ کوڈ پیج پر موجود ہر اس ڈبے (div) کو ڈھونڈے گا جو کہانی کا کارڈ ہے
         const allDivs = document.querySelectorAll('div');
         allDivs.forEach(div => {
-            // یہ چیک کرے گا کہ اس ڈبے کے اندر کہانی کا کوئی بٹن یا لنک موجود ہے یا نہیں
             const html = div.innerHTML;
-            if (html.includes('پڑھیں') || html.includes('پڑھو') || html.includes('READ MORE') || html.includes('Read More')) {
-                // ڈبل کارڈز یا اندرونی حصوں کو لسٹ میں شامل ہونے سے روکنا
-                if (div.style.border && (div.style.backgroundColor || div.style.background || div.classList.contains('home-story-card') || div.classList.contains('story-card'))) {
+            // یہ موبائل کوڈ آپ کے بلاگ کے تمام 5 الگ الگ ناموں کو خود ہی پہچان لے گا
+            if (html.includes('مکمل کہانی پڑھیں') || html.includes('پوری کہانی پڑھیں') || html.includes('پوری کہانی پڑھو') || html.includes('READ MORE') || html.includes('Read More') || html.includes('مزید پڑھیں')) {
+                if (div.style.border || div.classList.contains('home-story-card') || div.classList.contains('story-card') || div.style.maxWidth) {
                     if (!storyCards.includes(div) && div.id !== 'loadMoreBtn') {
                         storyCards.push(div);
                     }
@@ -628,40 +625,41 @@ none; padding: 12px 35px; font-size: 18px; font-weight: bold; border-radius: 25p
             }
         });
 
-        // اگر ٹوٹل کہانیاں 5 یا اس سے کم ہوں تو بٹن غائب ہو جائے گا
+        // ڈبل ڈبوں کی گنتی صاف کرنا
+        storyCards = storyCards.filter(card => {
+            return card.parentElement && !storyCards.includes(card.parentElement);
+        });
+
         if (storyCards.length <= currentShown) {
             const btn = document.getElementById('loadMoreBtn');
             if(btn) btn.style.display = 'none';
         }
 
-        // پہلی 5 کہانیوں کے علاوہ باقی تمام 15 کہانیوں کو عارضی طور پر چھپانا
+        // پہلی 5 کہانیوں کے علاوہ باقی سب کو موبائل اسکرین پر چھپانا
         for (let i = 0; i < storyCards.length; i++) {
             if (i >= currentShown) {
-                storyCards[i].style.display = 'none';
+                storyCards[i].style.setProperty('display', 'none', 'important');
             } else {
-                storyCards[i].style.display = 'block';
+                storyCards[i].style.setProperty('display', 'block', 'important');
             }
         }
     }
 
     function showMorePosts() {
-        // بٹن دبانے پر اگلی 5 پوسٹس کو لائیو دکھانا
         let nextItems = currentShown + postsPerPage;
         
         for (let i = currentShown; i < nextItems && i < storyCards.length; i++) {
-            storyCards[i].style.display = 'block';
+            storyCards[i].style.setProperty('display', 'block', 'important');
         }
         
         currentShown = nextItems;
 
-        // جب تمام 20 یا اس سے زیادہ پوسٹس ختم ہو جائیں گی تو بٹن غائب ہو جائے گا
         if (currentShown >= storyCards.length) {
             const btn = document.getElementById('loadMoreBtn');
             if(btn) btn.style.display = 'none';
         }
     }
 
-    // پیج لوڈ ہوتے ہی سسٹم کو رن کرنے کے لیے
     window.addEventListener('DOMContentLoaded', initPagination);
 </script>
 
