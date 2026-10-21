@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<script data-cfasync="false" src="https://afders.org/1/6428c13ee51a451d414ba722ae120e6e"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>میرے عشق کی داستان - شنو جان کی جوانی</title>
+    <style>
+        /* فکسڈ کالا پس منظر اور بنیادی سیٹنگز */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            user-select: none; /* ٹیکسٹ سلیکشن لاک */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        /* مین کارڈ ڈیزائن - گلابی بارڈر */
+        .main-card {
+            background-color: #050505;
+            border: 2px solid #ff007f;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+            box-sizing: border-box;
+            text-align: center; /* پورا متن سینٹر میں */
+        }
+
+        /* 4:3 تھمب نیل تصویر */
+        .story-thumbnail {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ff007f;
+            pointer-events: none; /* تصویر پر لانگ پریس/رائٹ کلک لاک */
+        }
+
+        /* کہانی کا ٹائٹل */
+        .story-title {
+            font-size: 28px;
+            color: #ff007f;
+            margin: 15px 0 5px 0;
+            font-weight: bold;
+        }
+
+        /* گلابی لائک بٹن اور کاؤنٹر */
+        .like-container {
+            margin: 10px 0 20px 0;
+        }
+        .like-btn {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .like-btn:hover {
+            background-color: #ff0066;
+            box-shadow: 0 0 10px #ff007f;
+        }
+
+        /* کہانی کا متن - موٹا اور بڑا */
+        .story-content {
+            font-size: 22px; /* بڑا سائز */
+            line-height: 1.8;
+            font-weight: bold; /* موٹا متن */
+            text-align: center;
+            margin-bottom: 30px;
+            white-space: pre-line;
+        }
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        /* لائیو کمنٹ باکس ہمیشہ کھلا */
+        .comment-section {
+            border-top: 1px solid #ff007f;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        .comment-box {
+            width: 100%;
+            height: 80px;
+            background-color: #111;
+            border: 1px solid #ff007f;
+            color: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none;
+            font-size: 16px;
+            text-align: right;
+        }
+        .comment-submit {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        /* ٹیلی گرام بٹن */
+        .telegram-btn {
+            display: block;
+            background-color: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        /* رنگ برنگے لائیو لیبلز کا سیٹ */
+        .labels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .label {
+            padding: 6px 15px;
+            border-radius: 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .lbl-romantic { background-color: #ff0055; }
+        .lbl-sad { background-color: #6a0dad; }
+        .lbl-action { background-color: #ff4500; }
+        .lbl-desi { background-color: #00bfff; }
+
+        /* گولڈ کلر ہوم پیج بٹن */
+        .home-btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #000;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 0 0 10px #ffd700;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;"> <!-- رائٹ کلک مکمل لاک -->
+
+    <div class="main-card">
+        <!-- 4:3 تھمب نیل تصویر -->
+        <img class="story-thumbnail" src="IMG-20261021-WA4744.jpg" alt="میرے عشق کی داستان">
+
+        <!-- ٹائٹل تصویر کے نیچے -->
+        <div class="story-title">میرے عشق کی داستان</div>
+
+        <!-- لائک بٹن ٹائٹل کے نیچے -->
+        <div class="like-container">
+            <button class="like-btn" id="likeBtn">❤️ لائک (<span id="likeCount">0</span>)</button>
+        </div>
+
+        <!-- کہانی کا متن (جاوا اسکرپٹ کے ذریعے 10 لائنوں کے پیراگراف میں تبدیل ہوگا) -->
+        <div class="story-content" id="storyText">
+            ھیلو دوستو میرا نام ماجد ھے آج میں آپ دوستوں کو میرے عشق کی داستان سُنانے جا رہا ھوں جسے سن کر آپ کو بہت زیادہ مزہ آنے والا ھے دوستو میری یہ سچے عشق کی داستان ھے یہ بلکل ایک ایک سچے لفظوں سے اور دل لگا کر لکھی ھے جو میں نے اپنی زبانی آپ بیتی آپ دوستوں سے شیئر کر رہا ھوں تو بنا ٹائم ویسٹ کیئے میں شروع کرتا ھوں
+
+        ہمارے سامنے والے گھر میں ایک موٹی لڑکی رہتی تھی جسے ہمارے محلے کے لڑکے اسے آنٹی شکیلہ کہتے تھے اس موٹاپے کی وجہ سے آج تک بچاری کی شادی نہیں ھوئی تھی شکیلہ کے سامنے تو آنٹی نہیں کہتے تھے مگر پیٹھ پیچھے مزاق اُڑاتے تھے شکیلہ کے اس موٹاپے کی وجہ سے نہ ھی اسے پسند کرتے تھے ویسے شکیلہ آنٹی خوبصورت تو کمال کی تھی میں بھی 
+
+کبھی کبھی دوستو کے ساتھ شکیلہ کے ساتھ آنٹی کا لفظ استعمال کرتا تھا تو دوستو اصل میں میرا یہ حال تھا کہ میں رومانٹک فلمیں اور پیار بھری  کہانیاں پڑھتا تھا بہت کبھی کبھی مٹھیں بھی مار لیتا تھا لیکن قربت کیلئے ترس رہا تھا حالانکہ کے شکیلہ آنٹی کو میں بہت بار دیکھ چکا تھا لوگوں کے مزاق کی وجہ سے میں بھی شکیلہ آنٹی پر کبھی کبھی مزاق اُڑا 
+
+لیتا شکیلہ آنٹی کے بھاری ابھار بہت بڑے تھے اور کمر تو بہت موٹی تھی یہ سلسلہ اس طرح ھوا کہ ایک دن میں اکیلا گلی بجلی جانے کی وجہ سے گلی میں کھڑا تھا تو شکیلہ آنٹی نے مجھے آواز دی لڑکے یہاں آؤ میں گیا تو شکیلہ آنٹی نے کہا تمہارا نام کیا ھے میں نے کہا ماجد تو بولی دیکھو ماجد اس وقت گھر میں کوئی نہیں ھے جس سے میں چکن منگا سکوں تم مجھے لا دو 
+
+گے شکیلہ کی اس طرح خلوص بھری آواز سن کر میں بہت زیادہ متاثر ھو گیا اور میں نے کہا جی بلکل میں لا دیتا ھوں پتا نہیں شکیلہ آنٹی کے جسم کی خوشبو مجھے بہت متاثر کر گئی میں چکن لایا اور بقایا پیسے بھی دیئے حالانکہ میں نام تو جانتا تھا مگر پھر بھی میں نے کہا آپ کا نام کیا ھے بولی شکیلہ میرے منہ سے نکل گیا آپ بہت پیاری ھو نام بھی پیارا ھے مسکرا کر 
+
+بولی تم پہلے لڑکے ھو جو میری تعریف کی ھے میں نے کہا میں سچ بولتا ھوں ہسنے لگی میں نے کہا آپ کی شادی ھو گئی شکیلہ آنٹی مایوس ھو کر بولی نہیں میں ابھی کنواری ھوں میں نے کہا کمال ھے آپ اتنی معصوم اور خوبصورت ھو بوئے فرینڈ تو ھوگا پھر شرما کر بولی بلکل نہیں ایسا کچھ نہیں ھے شکیلہ آنٹی بولی ماجد تم بتاؤ تمہاری تو گرل فرینڈ تو ھوگی میں نے 
+
+کہا نہیں ابھی کوئی نہیں ھے بولی اچھا پھر اسی طرح شکیلہ مجھ سے سامان منگاتی اور ہماری باتیں ھوتی ایک دن میں نے کہا شکیلہ آپ نمبر دو گی بولی ہاں لکھو میں نے نمبر سیو کر لیا اور رات کو میں اسپیشل فلم دیکھ رہا تھا اپنے روم میں میرا وجود سخت تھا اور پتا نہیں مجھے کیا ھوا کہ میں نے اپنے سخت وجود کی فوٹو شکیلہ کو میسج کر دی کچھ دیر بعد چیک 
+
+کیا تو اس نے دیکھ لی مگر کوئی جواب نہ آیا میں نے چار اور فوٹو سینڈ کر دی شکیلہ نے دیکھ تو لی مگر کوئی جواب نہ آیا اور نہ ھی مجھے بلاک کیا آخر میرا رس نکل گیا اور میں سو گیا اب مجھے شکیلہ آنٹی پری سی لگنے لگی کیونکہ شکیلہ ویسے بھی بہت خوبصورت تھی صبح میں تیار ھوا اور باہر کھڑا ھو کر شکیلہ کو دیکھنے کیلئے بیقرار تھا کچھ دیر بعد میں نے دیکھا 
+
+شکیلہ نے گیٹ کھول کر مجھے دیکھ کر مسکرا کر بلایا میں شکیلہ کے پاس آیا تو شکیلہ بولی پہلے تم یہ سامان لاؤ پیسے اور سامان بتا کر اندر چلی گئی میں سامان لے کر آیا بیل بجائی شکیلہ آئی اور سامان لے کر بولی ماجد رات کو تمہیں کیا ھو گیا تھا کیسی فوٹو بھیج دی میں نے کہا اچھی نہیں لگی کیا شکیلہ بولی ایسی بات نہیں ھے فوٹو تو بہت اچھی تھی اگر کوئی 
+
+دیکھ لیتا تو میں نے کہا کون دیکھتا ہسنے لگی پھر مجھ سے بولی ماجد دیکھو گلی میں باہر کوئی ھے تو نہیں میں نے کہا کوئی نہیں ھے بولی اندر آؤ میں اندر آیا بولی کسی کو بتاؤں گے تو نہیں میں نے کہا آپ کی بات میں کیوں بتاؤں گا پھر بولی اچھا پھر کچن میں کے سامان رکھ کر مجھے اپنے روم میں لائی بولی اب مجھے اپنا دیکھاؤ بس میں نے یہ لفظ سنتے ھی شکیلہ کو 
+
+اپنی بانھوں میں بھر کر چومنے لگا اور میرا وجود بھی سخت ھو گیا اور شکیلہ نے میرے سخت وجود کو پکڑ کر سہلانے لگی میں نے جلدی سے شکیلہ قمیض اتار دی اور شکیلہ کے بھاری ابھار کو دبانے اور چوسنے لگا شکیلہ بھی بہت تپش میں آگئی میں نے بھی جلدی سے اپنے کپڑے اتار دیئے شکیلہ کو اپنا سخت وجود دیکھا کر میں نے کہا چوسو بولی بیڈ پر لیٹ جاؤ میں 
+
+لیٹ گیا شکیلہ بہت مزے سے میرے سخت وجود کو چوستی رھی پھر میں نے شکیلہ کو لیٹا کر شکیلہ کی نازک حصے کو دیکھا بالوں سے صاف پنک تھی مجھ سے رہا نہ گیا اور چومنے اور چاٹنے لگا کچھ دیر بعد میں نے اپنے سخت وجود کو تھوک لگا کر ایک ھی جھٹکے سے پورا وجود شکیلہ کے نازک حصے میں اتار دیا شکیلہ کے نازک حصے سے لال رنگ نکلنے لگا میں نے کہا 
+
+ابھی تک آپ کنواری ھو بولی ہاں پھر میں نے فلموں کی طرح ہر اسٹائل سے قربت کرنے لگے اور ھم دونوں اس مزے میں ایک دوسرے کا بھرپور ساتھ دے رھے تھے اور اسی طرح ہمیں تین گھنٹے ھو گئے ھم فارغ ھوئے شکیلہ سے میں نے کہا مزہ آیا شکیلہ نے شرما کر کہا بہت مزہ آیا ھے سچ میں دوستو شکیلہ میں ایسا مزہ تھا کہ میں کیا بتاؤں اس کے بعد ھم ہر روز دوپہر کو 
+
+تین گھنٹے روز مالپ کرنے لگے اور ہمیں ایک ہفتہ ھو گیا اب مجھے شکیلہ کے بنا سکون اور دل نہیں لگتا تھا شکیلہ مجھے بار بار کہتی مجھے تم سے محبت ھو گئی ھے آج تک مجھے کسی نے اس قابل نہیں سمجھا مجھ سے شادی کر لوں میں بولتا میں تو کر لوں گا مگر میرے ابو امی نہیں مانے گے سچ میں مجھے بھی شکیلہ سے محبت ھو گئی لوگوں نے موٹاپے کی وجہ سے 
+
+شکیلہ کو آنٹی کہتے تھے ھم میں صرف ایک سال کا فرق تھا اور جب شکیلہ میرے اوپر ھوتی تو اپنا وزن میرے اوپر بلکل نہیں ڈالتی تھی قریب تین مہینے بعد دو اُلٹے کام ھو گئے ایک تو شکیلہ پریگننٹ ھو گئی اور مجھے بتایا دوسری بات میرے ابو اور شکیلہ کے ابو نے مجھے نکلتے دیکھ لیا تھا میرے ابو نے میری خوب پٹائی کی میں بہوش سا ھو گیا اور وہاں شکیلہ کے 
+
+بھائی نے شکیلہ کو بہت مارا ابو نے وارنگ دی کے آج کے بعد ایسا کیا تو میں تمہیں گولی مار دوں گا دوسرے دن مجھے پتا چلا بچاری شکیلہ کو بہت مار پڑی تھی ابو نے موبائل چھین لیا تھا اب میں شکیلہ کیلئے تڑپ رہا تھا کے کسی طرح موقع مل جائے شکیلہ کو بہت زیادہ پیار کروں میرا ایک دوست تھا آصف اسے میں نے کہا یار تم گلی میں نظر رکھوں میں ملنے جاتا 
+
+ھوں آصف پہلے تو ڈر گیا مگر میں نے کہا کچھ بھی ھوگا تو میں تمہارا نام نہیں لوں گا مان گیا مجھے پتا تھا اس وقت میں صرف شکیلہ گھر پر اکیلی ھوتی ھے میں جا کر گھنٹی بجائی تو شکیلہ نے اندر سے کہا کون میں نے کہا ماجد تو شکیلہ نے جلدی سے گیٹ کھول کر مجھے اندر کیا اور اپنی بانھوں میں بھر کر رونے لگی بولی ماجد میں تیرے بنا نہیں رھے سکتی 
+
+میں نے بھی کہا شکیلہ تیرے بنا میرا دل نہیں لگتا بس ھم گرم ھو گئے پھر قربت کی جب ھم فارغ ھوئے تو شکیلہ نے پھر سے بتایا کہ وہ پریگننٹ ھے اور میرے بچے کی ماں بننے والی ھے یہ سن کر مجھے خوشی ھوئی اور بہت سکون ملا میں نے کہا شکیلہ ھم شادی کر لیتے ہیں بولی یہ کیسے ھوگا میں نے کہا تم فکر نہ کروں کچھ کرتا ھوں شکیلہ کو پیار کرتے کہا تم کو بہت مارا 
+
+تھا بولی ہاں، بھائی نے ڈنڈوں سے مارا تھا شکیلہ بولی میں سنی تم بہوش ھو گئے تھے میں نے کہا ہاں تمہیں کس نے بتایا بولی تیری چھوٹی بہن نے بتایا تھا میرے ابو کا ایک دوست راشد تھا میں راشد چاچو سے جاکر ملا اور اس کے آگے رویا کہ ابو سے بولو شکیلہ سے میری شادی کرا دے وہ پریگننٹ ھے جب راشد چاچو نے پریگننٹ کی بات سنی تو مجھے کہا ماجد بیٹا تم فکر نہ 
+
+کرو میں تمہارے ابو سے بات کرتا ھوں اور بات تمہارے حق میں آئے گی کچھ دن بعد پھر ابو کے ساتھ راشد چاچو آیا اور ابو نے مجھ سے کہا شکیلہ سے شادی کرو گے کیا شکیلہ تمہارے بچے کی ماں بننے والی ھے میں ابو کو سب بتا دیا ہاں یہ سچ ھے ابو اور چاچو شکیلہ کے آبو سے ملے ابو نے مجھے فون دے دیا کچھ دیر بعد راشد چاچو کی مجھے کال آئی کے مبارک ھو ماجد 
+
+اب تم مٹھائی بانٹو یہ سن کر میں بہت خوش ھوا اور مجھے شکیلہ کے آبو نے اپنے گھر پر بُلا کر کہا آج سے تم ہمارے بیٹے ھو شکیلہ اب تمہاری عزت ھے شکیلہ بہت خوش تھی شکیلہ کو خوش دیکھ کر جو مجھے خوشی مل رھی تھی میں وہ بیان نہیں کر سکتا لفظ نہیں ہیں میرے پاس میں نے شکیلہ کے ابو سے کہا ہماری جلدی شادی کرا دو شکیلہ کا بھائی سن کر 
+
+ہنسنے لگا بولا ماجد تم چاھو تو ایک ہفتے میں شادی کر لو اپنے ابو سے بات کر لو میں گھر آیا تو ابو نے میرے کہنے سے پہلے ھی مجھ کہے دا ماجد تمہاری اسی ہفتے میں شادی کرا دوں میں نے ہاں کر دی پھر ایک ہفتے میں میری شکیلہ کے ساتھ شادی ھو گئی اس کے بعد میں شکیلہ کی بہت مزے کرنے لگے دن رات جب شکیلہ کی کمر کے نچلے حصے کے ہیب میں سخت وجود رگڑتا 
+
+تو مجھے بہت مزہ آتا ایک رات شکیلہ نے کہا وہاں کرنا ھے تو ڈال دو میں نے بھی مزے سے شکیلہ کی کمر کے نچلے سطح کی سیل کھول دی جب شکیلہ اپنے بھاری ابھار میں میرے سخت وجود کو مسلتی تو مجھے بہت مزہ آتا پھر ہمارا بیٹا پیدہ ھوا وہ کہتے ہیں نہ کہ جو پھل جس کی قسمت میں لکھا ھوتا ھے وہ اسی کی جھولی میں ھی گرتا ھے
+
+دوستوں، یہ تھی میری اور شکیلہ کی سچی محبت، جنون اور قربانیوں سے بھری ایک ایسی داستان جس نے ثابت کیا کہ محبت کی جیت ہمیشہ ہوتی ہے۔"
+آپ نے اس خوبصورت سفر کو بہت قریب سے محسوس کیا۔ اگر آپ کو یہ کہانی، اور اس کے اتار چڑھاؤ اور اس کے جذباتی انجام نے متاثر کیا ہے، تو اپنی محبت کا اظہار ضرور کریں۔
+
+💬 **کمنٹ باکس میں مجھے بتائیں آپ کو اس کہانی کا کون سا حصہ سب سے زیادہ پسند آیا کیا آپ کو لگتا ہے کہ میں نے جو ہمت دکھائی، وہ آج کے دور میں ممکن ہے آپ اس میری داستان کو ایک لفظ میں کیا نام دیں گے
+
+آپ کے تبصرے اور آپ کے خیالات ہمارے لیے بہت اہم ہیں۔ اپنی رائے کا اظہار کرنے میں دیر نہ کریں
+
+مجھے اجازت دیں اور اپنا بہت زیادہ خیال رکھنا بائے
+</div>
+
+        <!-- ہمیشہ کھلا اور لائیو کمنٹ باکس -->
+        <div class="comment-section">
+            <textarea class="comment-box" placeholder="اپنی رائے یہاں لکھیں..."></textarea>
+            <button class="comment-submit">کمنٹ پوسٹ کریں</button>
+        </div>
+
+        <!-- ٹیلی گرام بٹن -->
+        <a href="#" class="telegram-btn">🔷 Join Telegram</a>
+
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+  
+  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+
+<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/Woh-Raat-Nahi-Bhooli.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ رات نہیں بھولی</a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+  </div>
+</div>
+        <!-- رنگ برنگے خوبصورت گول لائیو لیبلز -->
+        <div class="labels-container">
+            <a href="#" class="label lbl-romantic">💖 رومینٹک</a>
+            <a href="#" class="label lbl-sad">😢 اداس کہانیاں</a>
+            <a href="#" class="label lbl-desi">🔥 دیسی تڑکا</a>
+            <a href="#" class="label lbl-action">⚡ سسپنس</a>
+        </div>
+
+        <!-- گولڈ کلر ہوم پیج بٹن سب سے آخر میں -->
+        <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
+    </div>
+
+    <script>
+        // کاپی اور ٹیکسٹ سلیکشن کو روکنے کی اضافی سیکیورٹی
+        document.addEventListener('copy', (e) => e.preventDefault());
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) e.preventDefault();
+        });
+
+        // گلابی لائک بٹن کا فنکشن
+        let count = 0;
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCount = document.getElementById('likeCount');
+        likeBtn.addEventListener('click', () => {
+            count++;
+            likeCount.innerText = count;
+        });
+
+        // جاوا اسکرپٹ کا جادوئی فلٹر (متن کو خودکار طور پر 10، 10 لائنوں کے پیراگراف میں ترتیب دینے کے لیے)
+        window.addEventListener('DOMContentLoaded', () => {
+            const storyContainer = document.getElementById('storyText');
+            const rawText = storyContainer.innerText.trim();
+            // الفاظ کو اسپیس سے الگ کرنا
+            const words = rawText.split(/\s+/);
+            
+            // اندازاً 10 لائنوں کے لیے خوبصورت جملوں یا الفاظ کی تقسیم (یہاں ہم بلاک پیراگراف ترتیب دے رہے ہیں)
+            let formattedHTML = '';
+            let wordsPerParagraph = 70; // 10 لائنوں کے برابر ٹیکسٹ کا حجم
+
+            for (let i = 0; i < words.length; i += wordsPerParagraph) {
+                let paragraphWords = words.slice(i, i + wordsPerParagraph).join(' ');
+                formattedHTML += `<p>${paragraphWords}</p>`;
+            }
+            storyContainer.innerHTML = formattedHTML;
+        });
+    </script>
+</body>
+<script data-cfasync="false" src="https://bicea.org/14/d2c0f24bfdd5aa6bddd5698bec186a27"></script>
+</html>
