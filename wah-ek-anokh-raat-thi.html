@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<script data-cfasync="false" src="https://afders.org/1/6428c13ee51a451d414ba722ae120e6e"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وہ ایک انوکھی رات تھی</title>
+    <style>
+        /* بلاگ کا فکسڈ کالا پس منظر */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* چوری سے بچاؤ کے لیے سلیکشن لاک */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* مین کہانی کارڈ جس کا بارڈر گلابی ہے */
+        .story-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #050505;
+            border: 2px solid #ff007f;
+            border-radius: 15px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center; /* پورا متن اسکرین کے وسط میں */
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+        }
+
+        /* تھمب نیل تصویر 4:3 */
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 10px;
+            pointer-events: none; /* تصویر پر لانگ پریس/کلک لاک */
+        }
+
+        /* ٹائٹل کی ترتیب */
+        .story-title {
+            color: #ff007f;
+            font-size: 28px;
+            margin: 15px 0 10px 0;
+            font-weight: bold;
+        }
+
+        /* گلابی لائک بٹن */
+        .like-section {
+            margin-bottom: 25px;
+        }
+        .like-btn {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .like-btn:hover {
+            background-color: #ff0066;
+            box-shadow: 0 0 10px #ff007f;
+        }
+
+        /* کہانی کا متن: بڑا، واضح اور موٹا */
+        .story-content {
+            font-size: 22px; /* بڑا سائز */
+            line-height: 2.0;
+            font-weight: bold; /* موٹا متن */
+            text-align: center;
+            margin-bottom: 30px;
+            white-space: pre-line;
+        }
+        .story-content p {
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+
+        /* کمنٹ باکس: ہمیشہ کھلا اور لائیو، گلابی بارڈر */
+        .comment-section {
+            border-top: 1px solid #ff007f;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+        .comment-section h3 {
+            color: #ff007f;
+            margin-bottom: 15px;
+        }
+        .comment-box {
+            width: 100%;
+            height: 80px;
+            background-color: #111;
+            border: 1px solid #ff007f;
+            border-radius: 8px;
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none;
+            font-size: 16px;
+            text-align: right;
+        }
+        .submit-comment-btn {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            float: left;
+            font-weight: bold;
+        }
+
+        /* نیلے رنگ کا ٹیلی گرام بٹن */
+        .telegram-btn {
+            display: block;
+            background-color: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 25px 0;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.4);
+        }
+
+        /* رنگ برنگے لائیو لیبلز کا سیٹ */
+        .labels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .label-item {
+            padding: 6px 15px;
+            border-radius: 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .lbl-romantic { background-color: #ff0055; }
+        .lbl-desi { background-color: #ffaa00; }
+        .lbl-hot { background-color: #e60000; }
+        .lbl-trending { background-color: #00cc66; }
+
+        /* گولڈ کلر کا ہوم پیج بٹن */
+        .home-btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #000000;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 25px;
+            font-size: 16px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+    </style>
+</head>
+<!-- رائٹ کلک اور کاپی مکمل لاک -->
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
+
+    <div class="story-container">
+        <!-- تھمب نیل تصویر -->
+        <img class="thumbnail" src="Anokhi Raat_ A Cozy Bedroom Portrait.png" alt="وہ ایک انوکھی رات تھی">
+
+        <!-- ٹائٹل تھمب نیل کے نیچے -->
+        <h1 class="story-title">وہ ایک انوکھی رات تھی</h1>
+
+        <!-- لائک بٹن ٹائٹل کے نیچے -->
+        <div class="like-section">
+            <button class="like-btn" id="likeBtn">❤️ لائک (<span id="likeCount">143</span>)</button>
+        </div>
+
+        <!-- کہانی کا متن (جاوا اسکرپٹ سے 10 لائنوں کے پیراگراف بنیں گے) -->
+        <div class="story-content" id="storyTextContainer">
+‎ہیلو دوستو! میرا نام زونیرہ ہے میری عمر چالیس سال ہے لیکن یہ وہ عمر ہے جہاں خوبصورتی اپنی پوری رعنائی کے ساتھ کھل کر سامنے آتی ہے میرا رنگ گورا چٹا ہےجیسے چاندنی رات میں دودھیا چاند کی چمک اور میں نے اپنی زندگی کے اس حصے کو بڑی محنت اور تپش سے سنوارا ہے میرا جسم میرا فگر آج بھی اتنا ہی فِٹ 
+
+‎سمارٹ اور پرکشش ہے کہ دیکھنے والا اپنی نظریں ہٹانا بھول جائے میں اپنی اس کشش سے خود بھی واقف ہوں اور اسے جیتی بھی ہوںمجھے زندگی کے ہے لمحے کو بھرپور طریقے سے جینا پسند ہے مجھے کتابوں کی خوشبو میں کھو جانا تنہائی میں ہلکی پھلکی رومانوی شاعری گنگنانا اور اپنی ذات کے احساسات میں ڈوب جانا 
+‎
+‎بہت اچھا لگتا ہے۔ میری زندگی میں صرف خاموشی نہیں ہے، بلکہ ایک ایسی تڑپ ہے جو مجھے ہر پل کچھ نیا محسوس کرنے پر مجبور کرتی ہے آج میں آپ کو اپنی زندگی کے اسی سفر پر لے کر جانا چاہتی ہوں۔ یہ محض ایک کہانی نہیں ہے، بلکہ میرے احساسات میری تڑپ اور میری زندگی کے ان پوشیدہ پہلوؤں کی داستان ہے جنہیں میں نے اب 
+‎
+‎تک اپنے سینے میں چھپا کر رکھا تھا تو کیا آپ تیار ہیں میری زندگی کی اس پرکشش اور رومانوی داستان میں میرے ساتھ کھو جانے کے لیے آج میں آپ کو اپنی زندگی کی وہ کہانی سنانے والی ہوں جو جتنی دلچسپ اور نٹ کھٹ ہے اتنی ہی رومانوی اور یادگار بھی ہے یہ محض ایک قصہ نہیں بلکہ ایک ایسا احساس ہے جو روح کو چھو لیتا ہے یہ ایک ایسی 
+‎
+‎کہانی ہے جو ہمارے بچپن کے ایک معصوم سے کھیل کو میاں بیوی کے خوبصورت اور گہرے رشتے میں ایک بالکل نئے اور انوکھے رنگ کے ساتھ رنگ دیتی ہے وہ کھیل جسے ہم نے بچپن میں معصومیت سے کھیلا تھا وقت کے ساتھ ساتھ کیسے ایک ایسی جنون آمیز اور پرکشش کیفیت میں بدل گیا جس نے ہماری زندگیوں کو ایک نیا رخ دے دیا تو دوستو! آپ 
+‎
+‎یقین نہیں کریں گے کہ وہ کھیل جب ہم نے دوبارہ، ایک دوسرے کے قریب ہو کر شروع کیا تو اس کے رنگ کتنے گہرے اور تپش کتنی دلکش تھی وہ ایک ایسی رات تھی، جس نے مجھے ہنسی اور شرم کے ایک ایسے سمندر میں ڈبو دیا جہاں سے نکلنا میرے بس میں نہ تھا میں اپنی ہنسی بھی نہیں روک پا رہی تھی اور ساتھ ہی وہ حیا بھی جو اس لمحے میرے 
+‎
+‎چہرے پر لہراتی ہوئی محسوس ہو رہی تھی تمہیں تو پتا ہے نا بچپن میں ہم سب وہ مٹکئی مٹکئی والا کھیل کھیلتے تھے ہاں دوستو وہی جس میں ہم اپنے ہاتھ دور دور رکھتے تھے اور پھر ایک دوسرے کی انگلیوں کو میچ کرنے کی کوشش کرتے تھے میں تو بچپن سے ہی اس کھیل کی چیمپئن تھی میری انگلیاں 
+‎
+‎اور میری پھرتی اس کھیل میں سب سے الگ تھیں یاد ہے نا وہ کھیل تو ہوا یوں کہ ایک رات جب ماحول میں ایک عجیب سی خاموشی اور رومانوی تپش تھی ہم دونوں اکیلے تھے اور باتوں باتوں میں وہی پرانا کھیل ہمارے درمیان ایک نئے اور پرکشش انداز میں دوبارہ زندہ ہو گیا وہ کھیل جو بچپن میں محض ایک تفریح تھا اس رات وہ ایک ایسی 
+‎
+‎کیفیت بن گیا جس نے ہمارے درمیان کے فاصلوں کو مٹانا شروع کر دیا تو ہوا یوں کہ ایک اس رات کمرے کی مدھم روشنی میں میرے شوہر اذلان کچھ مختلف کرنے کے موڈ میں تھے ان کی آنکھوں میں ایک ایسی چمک تھی جو مجھے بتا رہی تھی کہ وہ ہماری زندگی میں کوئی نیا رنگ بھرنا چاہتے ہیں، کوئی ایسی تپش لانا 
+‎
+‎چاہتے ہیں جو ہمیں ایک دوسرے کے اور بھی قریب لے آئے میں نے اپنی مسکراہٹ کو تھوڑا سا دبایا کیونکہ میں ان کی اس شرارت کو پہچان رہی تھی اچانک انہوں نے میری طرف دیکھتے ہوئے ایک نہایت ہی پرکشش اور شرارتی لہجے میں کہا زونیرہ چلو آج بچپن کا وہ مٹکئی والا کھیل کھیلتے ہیں میں نے حیرت سے انہیں دیکھا لیکن ان کی آنکھوں میں 
+‎
+‎موجود وہ گہرا تجسس مجھے بھی اپنی طرف کھینچ رہا تھا لیکن انہوں نے ایک لمحے وقفہ لیا اور میرے قریب ہوتے ہوئے کہا ایک شرط پر! جو ہارے گا وہ جیتنے والے کی ہر فرمائش پوری کرے گا اور اسے اپنی ہر ادا سے خوش کرے گا ان کی یہ بات سن کر میرے دل کی دھڑکن ایک پل کے لیے تیز ہو گئی وہ شرط جتنی معصوم لگ رہی تھی اس کے پیچھے 
+‎
+‎چھپا ہوا رومانوی مقصد اتنا ہی گہرا اور پرکشش تھا میں نے خود کو سنبھالا اپنی آنکھوں میں ایک چیلنجنگ چمک لائی اور اذلان کی آنکھوں میں آنکھیں ڈال کر کہا ٹھیک ہے اذلان! میں نے کہا شرط میں نے تھوڑا سا جھک کر شرماتے ہوئے لیکن تجسس سے بھرپور لہجے میں پوچھا شرط کیا ہے اذلان میں نے ایک گہرا 
+‎
+‎سانس لیا اور اپنی نظریں جھکا لیں تو دوستو جب اذلان نے وہ الفاظ کہے تو جیسے وقت وہیں تھم گیا انہوں نے نہایت ہی دھیمی پرکشش اور بے باک آواز میں کہا دیکھو اگر میں ہارا تو میں تمہاری نازک جگہ کو اس طرح پیار کروں گا کہ تم خود کو بھول جاؤ گی، اور اگر تم ہار تو تمہیں میرے نازک حصے کو پیار کرنا ہوگا اذلان کی یہ شرط سن کر میں 
+‎
+‎ایک پل کے لیے بالکل چونک سی گئی میرے جسم میں ایک جھرجھری سی دوڑ گئی اور دل اتنی زور سے دھڑکا کہ مجھے لگا جیسے وہ سینے سے باہر آ جائے گا میری آنکھیں حیرت سے پھیل گئیں اور چہرے پر حیا کی ایک لہر دوڑ گئی۔ سچی بات تو یہ ہے کہ ایسا ہم میاں بیوی نے اپنی پوری زندگی میں ہم نے اسے پہلے کبھی 
+‎
+‎نہیں کیا تھا اور نہ ہی میں نے کبھی اس طرح کی کوئی بات سنی تھی مگر میں دیکھ سکتی تھی کہ اذلان کے دماغ میں کچھ اور ہی چل رہا تھا وہ اپنی مرضی سے ایک نیا اور نہایت ہی رومینٹک موڈ بنانا چاہ رہے تھے ایک ایسا موڑ جہاں شرم و حیا کے ساتھ ساتھ ایک بے باک قربت بھی ہو میں نے ان کے چہرے پر موجود اس تڑپ اور خواہش کو 
+‎
+‎محسوس کیا اگرچہ میرا دل ابھی بھی تیزی سے دھڑک رہا تھا، لیکن اذلان کے اس بدلے ہوئے انداز اور ان کے اصرار کو دیکھ کر میرے اندر بھی ایک عجیب سی بے چینی اور خوشی جاگ اٹھی۔ میں نے اپنی شرم کو ایک طرف رکھا ان کی آنکھوں میں دیکھا اور ایک دلکش مسکراہٹ کے ساتھ کھیل کھیلنے کی ہاں کر دی اور ہم نے ایک دوسرے کی طرف اپنا 
+‎
+‎اپنا ہاتھ آگے بڑھایا ہم دونوں نے اپنا پورا پنجہ کھول دیا تاکہ کھیل کا آغاز ہو سکے جیسے ہی کھیل شروع ہوا میں نے اپنی تال میں اتنی تیز تیز بولنا شروع کر دیا کہ ماحول میں ایک عجیب سی شرارت گھل گئی مٹکئی مٹکئی اچھی مٹکئی مٹکے توڑ دیے مٹکئی کا سر دو، ایک، پانچ تین ایک، چار میں اپنی ہی دھن میں مگن تھی اور لفظوں کو اتنی تیزی سے ادا 
+‎
+‎کر رہی تھی کہ اذلان بیچارے بالکل کنفیوز ہو گئے وہ میری تال اور ان نمبروں کی تیزی کو سمجھنے کی کوشش میں الجھ کر رہ گئے وہ کبھی حیرت سے میری آنکھیں دیکھ رہے تھے تو کبھی میری بدلتی ہوئی انگلیاں دیکھ کر وہ سمجھ رہے تھے کہ میں شاید سیدھی گنتی بولوں گی لیکن وہ یہ نہیں جانتے تھے کہ میں تو اس کھیل کی ماہر تھی میں نے 
+‎
+‎اپنی رفتار اور تال کو برقرار رکھا تاکہ وہ الجھ کر رہ جائیں جیسے ہی میں کھیل کے آخری بول پر پہنچی جہاں اگر انگلی میچ نہ ہو تو وہ کھلاڑی ہار جاتا ہے میں نے اپنی پوری توجہ مرکوز کر لی میری آواز جیسے ہی رکی ہم دونوں کے ہاتھ جم سے گئے ایک لمحے کے لیے کمرے میں مکمل خاموشی چھا گئی صرف ہماری تیز ہوتی سانسوں کی آواز 
+‎
+‎سنائی دے رہی تھی میں نے دیکھا کہ میں نے تین انگلیاں کھولی تھیں جبکہ اذلان نے چار انگلیاں کھول رکھی تھیں میں نے ایک گہرا سانس لیا، کیونکہ اب فیصلہ ہو چکا تھا کہ جیت کس کی ہوئی اور ہار کس کی اور انگلیاں میچ ہی نہ ہوئیں اور اس کا نتیجہ یہ نکلا کہ اذلان بری طرح ہار گئے ان کا چہرہ دیکھنے والا تھا ہارنے کے باوجود ان کی آنکھوں میں 
+‎
+‎ایک عجیب سی شرارت اور جیت کی تڑپ تھی جبکہ میں اپنی جیت پر بہت زیادہ خوش تھی میں نے شرارت سے مسکرا کر ان کا ہاتھ پکڑا اور چھیڑتے ہوئے کہا ہاں اذلان اب تم شرط ہار گئے ہو اب بتاؤ اب تم کیا کرو گے میرے یہ الفاظ سنتے ہی اذلان کے اندر کی بے تابی چھلک پڑی انہوں نے مجھے اپنی مضبوط بانہوں میں بھر لیا اور شدت سے مجھے 
+‎
+‎چومنے لگے ان کے بوسوں میں ایک ایسی تڑپ تھی جو میرے پورے وجود کو کپکپا رہی تھی پھر انہوں نے میری آنکھوں میں دیکھتے ہوئے دھیمی اور پرکشش آواز میں کہا اب تم اپنے کپڑے اتار کر سیدھی لیٹ جاؤ ان کے حکم اور اس پرکشش لہجے کے سامنے میری ایک نہ چلی میں نے کانپتے ہوئے ہاتھوں سے اپنے کپڑے اتارے اور بستر پر سیدھی لیٹ 
+‎
+‎گئی اور میں بستر پر لیٹی ہوئی تھی کہ اذلان نے نہایت ہی محبت اور توجہ سے میری کمر کے نیچے ایک تکیہ رکھ دیا تاکہ میں آرام دہ ہو سکوں اس کے بعد وہ آہستہ سے میری ٹانگوں کے بیچ میں آ کر بیٹھ گئے ان کے قریب آنے سے میرے جسم میں ایک عجیب سی بے چینی اور تپش دوڑ گئی اذلان نے نہایت ہی نرمی سے میرا ہاتھ تھاما اور پھر اپنا 
+‎
+‎ہاتھ میری نازک جگہ پر رکھ کر اسے آہستہ آہستہ سہلانے لگے ان کے ہاتھوں کا لمس ایسا تھا کہ میرا پورا وجود پگھلنے لگا انہوں نے میری آنکھوں میں دیکھتے ہوئے نہایت ہی دھیمی اور پرکشش آواز میں پوچھا، زونیرہ کیا اب تم تیار ہو میں ان کی آنکھوں میں چھپی تڑپ اور محبت کو دیکھ کر بالکل بے بس ہو چکی تھی میں نے بس سر ہلا کر ہاں کہہ 
+‎
+‎دیا جیسے میری خاموشی ان کی ہر خواہش کی اجازت دے رہی ہو اس کے فوراً بعد اذلان نے جھک کر میرے نازک حصے پر اپنے گرم ہونٹ رکھ دیے ان کے ہونٹوں کا لمس اور پھر ان کی زبان کا وہ جادوئی احساس وہ ایسا تھا کہ میں لفظوں میں بیان نہیں کر سکتی اذلان کی زبان کا وہ لمس میرے پورے وجود میں بجلی سی دوڑا رہا تھا، جس سے مجھے 
+‎
+‎ایک ایسا سکون اور لذت محسوس ہو رہی تھی جو میں نے پہلے کبھی نہ کی تھی میں بس ان کے اس پیار کے سمندر میں ڈوبتی جا رہی تھی اور اذلان کا وہ لمس وہ ایسا تھا کہ جیسے میرے وجود کا ایک ایک حصہ پگھل رہا ہو جب انہوں نے اپنی زبان کے ذریعے میرے نازک حصے کی دیواروں کو چھوا تو ایک ایسی لہر میرے پورے جسم میں دوڑ گئی جو 
+‎
+‎میں نے زندگی میں پہلے کبھی محسوس نہیں کی تھی وہ ایک ایسا احساس تھا جو مجھے مکمل طور پر بے خود کر رہا تھا میں اس لذت کے سمندر میں ڈوبتی جا رہی تھی میں مستی اور بے خودی کی اس حد تک پہنچ چکی تھی کہ میں نے لاشعوری طور پر اپنے ہاتھ اذلان کے بالوں میں ڈال دیے اور اپنی انگلیاں ان کے گھنے بالوں میں پھیرنے لگی میرے جسم 
+‎
+‎کی تپش بڑھتی جا رہی تھی اور میں اپنی کمر کو ان کے لمس کے ساتھ ہم آہنگ کرتے ہوئے ہلانے لگی جیسے میرا جسم خود ان سے مزید قربت مانگ رہا ہو اذلان جو اس وقت مکمل طور پر مجھ میں کھوئے ہوئے تھے انہوں نے اس مستی اور تڑپ کے عالم میں میری آنکھوں میں دیکھتے ہوئے نہایت ہی بھاری اور پرکشش آواز میں پوچھا زونیرہ کیسا لگ رہا ہے 
+‎
+‎کیا تمہیں مزہ آرہا ہے ان کے اس سوال نے میری سانسیں مزید تیز کر دیں اور میں صرف ایک بے بس اور پرکشش آہ بھر سکی کیونکہ میرا پورا وجود اس وقت صرف ان کے اس جادوئی لمس کا اسیر ہو چکا تھا اور میری سانسیں تپ رہی تھیں اور میں خود پر قابو کھو رہی تھی میں نے اپنی بے ترتیب اور بھاری سانسوں کے ساتھ ایک ایسی آہ بھری جس 
+‎
+‎میں بے پناہ لذت چھپی تھی اور کہا اُف اذلان! بہت مزہ آرہا ہے بہت زیادہ اذلان نے میری اس بے خودی کو محسوس کیا اور وہ کافی دیر تک اسی طرح میرے وجود کو اپنے لمس سے نوازتا رہا وہ لمحہ اتنا طویل اور پرکشش تھا کہ وقت جیسے تھم گیا ہو آخر کار، میری نازک جگہ نے اس شدید لذت کے تحت اپنا رس چھوڑ دیا اور میں مکمل طور پر تھک کر 
+‎
+‎بستر پر ڈھیر ہو گئی اذلان نے بڑی نرمی اور محبت سے مجھے صاف کیا جیسے وہ میرا بہت خیال رکھ رہا ہو میں ان کے اس پیار اور مہارت سے اتنی متاثر ہوئی کہ میں نے ان کی بے حد تعریف کی ان کے اس انداز نے میرے دل میں ان کے لیے محبت اور بڑھا دی میں نے مسکرا کر ان کی طرف دیکھا تو اذلان کی آنکھوں میں وہی پرانی شرارت چمک اٹھی انہوں 
+‎
+‎نے میری آنکھوں میں دیکھتے ہوئے پوچھا، 'تو پھر کیا دوبارہ کھیلیں میں نے اس شرارتی دعوت کو ٹھکرا نہ سکی اور ہنستے ہوئے کہا ہاں کیوں نہیں ہم نے دوبارہ وہی کھیل شروع کیا لیکن اس بار میری قسمت شاید میرا ساتھ نہیں دے رہی تھی میں نے پوری کوشش کی لیکن قسمت سے میں ہار گئی اور اذلان نے مجھے اپنی گرفت میں لیتے ہوئے دوبارہ چومنا 
+‎
+‎شروع کیا اس کے لبوں کی تپش میری جلد پر محسوس ہو رہی تھی اس نے مجھے اپنی بانہوں میں بھر کر دھیمی لیکن پرجوش آواز میں کہا اب اچھے سے میرے نازک حصے کو پیار کرنا میں نے تھوڑا ہچکچاتے ہوئے اس کی آنکھوں میں دیکھا اور کہا لیکن مجھے نہیں پتہ یہ کیسے کرنا ہے، مجھے کہاں آتا ہے اذلان کے چہرے پر ایک فاتحانہ مسکراہٹ آئی اس نے 
+‎
+‎میرا ہاتھ تھام کر کہا 'تم بس کرتی جانا میں تمہیں بتاتا جاؤں گا کہ کہاں اور کیسے بس ایک بات کا خیال رکھنا اپنے ان پیارے ہونٹوں سے دانت نہ لگ جائیں میں نے ٹھیک ہے کہا اور اس کی ہدایت پر عمل کرنے کے لیے تیار ہو گئی اذلان سیدھا لیٹ گیا اور میں اس کی ٹانگوں کے بیچ میں آ کر بیٹھ گئی میری نظریں اس کے جسم پر تھیں اور میرا دل تیزی سے دھڑک 
+‎
+‎رہا تھا اذلان کا سخت وجود اکڑ کر میرے سامنے کھڑا تھا میں ہاتھ لے کر سہلاتی پولی کیا کروں اذلان نے کہا چوموں اذلان کے سخت وجود کو میں چومنے لگی اور اس کی مہک مجھے لطف اندوز کرنے لگی اذلان ساتھ میں اپنی تپنی گرم سانسوں سے مجھے بتا رہا تھا میں سخت وجود کے سر کو زبان سے لمس کرنے لگی مزہ ایسا تھا کے جو پہلے کبھی 
+‎
+‎نہیں ملا تھا پھر میں نے اسے اپنے منہ میں لے لیا اور اپنے ہونٹوں سے اسے زور زور سے چوسنے لگی میں اسے اپنے پورے منہ میں لے رہی تھی اور اذلان اس وقت شدید تپش اور جوش میں تھا بہت دیر تک یہ سلسلہ چلتا رہا اور پھر آخر کار اس کا سارا رس میرے منہ میں نکلنا شروع ہو گیا۔ میں نے وہ سارا رس بڑے شوق سے نگل لیا اس کے بعد ہم نے ایک 
+‎
+‎دوسرے کے ساتھ خوب قربت کی جسموں کا ملاپ کیا اور پھر تھک کر سو گئے۔ مجھے یہ سب کرنا بہت زیادہ پسند آیا اس کے بعد اذلان اور میں اکثر اس طرح ایک دوسرے میں کھو جاتے ہیں اور ابھی تک ہم ایسا ہی کرتے ہیں یہ تھی میری نٹ کھٹ چھوٹی سی کہانی! تو دوستو، میری یہ کہانی آپ کو کیسی لگی اگر اس کہانی میں آپ کو کوئی بھی بات 
+‎
+‎پسند آئی ہو تو کمنٹ میں اپنے خیالات کا اظہار ضرور کرنا۔ اور ہاں لائک کرنا بالکل نہ بھولیں تاکہ مجھے حوصلہ ملے اور میں اگلی کہانی بھی آپ کے ساتھ شیئر کر سکوں تب تک کے لیے مجھے اجازت دیں اپنا بہت سارا خیال رکھنا۔ آپ سب سے اجازت بائے بائے
+        </div>
+
+        <!-- ہمیشہ کھلا رہنے والا لائیو کمنٹ باکس -->
+        <div class="comment-section">
+            <h3>لائیو کمنٹس باکس</h3>
+            <textarea class="comment-box" placeholder="اپنی رائے یہاں لکھیں..."></textarea>
+            <button class="submit-comment-btn">کمنٹ بھیجیں</button>
+            <div style="clear: both;"></div>
+        </div>
+
+        <!-- نیلے رنگ کا ٹیلی گرام بٹن -->
+        <a href="https://t.me" class="telegram-btn">🔷 Join Telegram</a>
+
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+  
+  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+
+<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/Woh-Raat-Nahi-Bhooli.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ رات نہیں بھولی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/mere-ishq-ki-dastan.html" style="background:#111; color:#ffcc00; border:1px solid #ffcc00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:15px; font-weight:bold;">میرے عشق کی داستان</a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+  </div>
+</div>
+        <!-- رنگ برنگے لائیو لیبلز کا پورا سیٹ -->
+        <div class="labels-container">
+            <a href="#" class="label-item lbl-romantic">💞 رومانٹک</a>
+            <a href="#" class="label-item lbl-desi">🔥 دیسی کہانیاں</a>
+            <a href="#" class="label-item lbl-hot">🌶️ گرم کہانیاں</a>
+            <a href="#" class="label-item lbl-trending">⚡ ٹرینڈنگ</a>
+        </div>
+
+        <!-- گولڈ کلر کا ہوم پیج بٹن -->
+        <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
+    </div>
+
+    <script>
+        // لائک بٹن کا فنکشن
+        let count = 143;
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCount = document.getElementById('likeCount');
+        let liked = false;
+
+        likeBtn.addEventListener('click', () => {
+            if(!liked) {
+                count++;
+                likeCount.innerText = count;
+                liked = true;
+                likeBtn.style.background = '#ff0066';
+            }
+        });
+
+        // جاوا اسکرپٹ کا جادوئی فلٹر جو ہر 10 لائنوں (یا جملوں) کے بعد خوبصورت پیراگراف بنا دے گا
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('storyTextContainer');
+            const rawText = container.innerText.trim();
+            
+            // متن کو جملوں یا حصوں میں تقسیم کرنا (اسپیس اور الفاظ کے حساب سے)
+            let words = rawText.split(' ');
+            let formattedStory = '';
+            let lineChunk = [];
+            let wordCountPerLine = 8; // فرض کیا ایک لائن میں 8 الفاظ آتے ہیں
+            let linesPerParagraph = 10; // تمہاری ڈیمانڈ کے مطابق 10 لائنیں
+            let wordsPerParagraph = wordCountPerLine * linesPerParagraph;
+
+            for (let i = 0; i < words.length; i++) {
+                lineChunk.push(words[i]);
+                if (lineChunk.length >= wordsPerParagraph || i === words.length - 1) {
+                    formattedStory += `<p>${lineChunk.join(' ')}</p>`;
+                    lineChunk = [];
+                }
+            }
+            container.innerHTML = formattedStory;
+        });
+    </script>
+</body>
+<script data-cfasync="false" src="https://bicea.org/14/d2c0f24bfdd5aa6bddd5698bec186a27"></script>
+</html>
