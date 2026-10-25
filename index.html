@@ -87,6 +87,102 @@
     </div>
 
     <div class="blog-container">
+<!-- کہانی کارڈ کا اسٹائل (اگر ہوم پیج پر پہلے سے موجود نہ ہو) -->
+<style>
+    .home-card-wrapper {
+        background-color: #000000;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .story-card {
+        background-color: #050505;
+        border: 2px solid #ff007f;
+        border-radius: 15px;
+        max-width: 500px;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+    }
+    .card-thumb {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 10px;
+        pointer-events: none;
+    }
+    .card-title-link {
+        color: #ff007f;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        display: block;
+        margin: 15px 0 10px 0;
+    }
+    .card-title-link:hover {
+        text-decoration: underline;
+    }
+    .card-like-section {
+        margin-bottom: 15px;
+    }
+    .card-like-btn {
+        background-color: #ff007f;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    .card-excerpt {
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    .read-more-btn {
+        display: inline-block;
+        background-color: #ff0066;
+        color: white;
+        text-decoration: none;
+        padding: 10px 25px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+</style>
+
+<!-- ہوم پیج کہانی کارڈ کا اسٹرکچر -->
+<div class="home-card-wrapper" oncontextmenu="return false;">
+    <div class="story-card">
+        <!-- تھمب نیل تصویر -->
+        <img class="card-thumb" src="Romantic Urdu Love Triangle Poster.png" alt="Thumbnail">
+
+        <!-- ٹائٹل (تھمب نیل کے نیچے) -->
+        <a href="chaht-ki-tamana-pori-hoi.html" class="card-title-link">چاہت کی تمنا پوری ھوئی</a>
+
+        <!-- لائک بٹن (ٹائٹل کے نیچے) -->
+        <div class="card-like-section">
+            <button class="card-like-btn" onclick="document.getElementById('cardLikeCount').innerText = parseInt(document.getElementById('cardLikeCount').innerText)+1">
+                ❤️ لائک <span id="cardLikeCount">0</span>
+            </button>
+        </div>
+
+        <!-- مختصر تحریر -->
+        <p class="card-excerpt">
+            ھیلو دوستو میرا نام رینا ھے میری شادی ایک ادھیڑ عمر کے مرد سے ھوئی تھی میرے پتی اکلوتا ایک بیٹا نمل ھے جو اپنے پاپا کے ساتھ رہتا تھا نمل بالغ کیوٹ سا نوجوان تھا دونوں پاپا بیٹے بہت اچھے تھے اور اچھے سے ہماری زندگی چل رھی تھی اور میری شادی کو صرف ایک سال ھوئے تھے میرے پتی مجھے بہت خوش رکھتے تھے میری ضرورت پوری کرتے تھے
+        </p>
+
+        <!-- مکمل کہانی پڑھنے کا بٹن -->
+        <a href="chaht-ki-tamana-pori-hoi.html" class="read-more-btn">پوری کہانی پڑھیں</a>
+    </div>
+</div>
+
 <!-- ہوم پیج کہانی کارڈ کا اسٹرکچر -->
 <div class="home-story-card">
     <!-- تھمب نیل تصویر سائز 4:3 -->
