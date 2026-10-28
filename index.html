@@ -87,6 +87,114 @@
     </div>
 
     <div class="blog-container">
+<!-- ہوم پیج کہانی کارڈ کا بلاک -->
+<div class="home-story-card">
+    <!-- 16:9 تھمب نیل تصویر -->
+    <a href="trin-ka-wuh-safar.html">
+        <img src="A Romantic Train Journey.png" alt="ٹرین کا وہ سفر" class="card-thumbnail" ondragstart="return false;">
+    </a>
+
+    <!-- تھمب نیل کے نیچے ٹائٹل -->
+    <h2 class="card-title"><a href="trin-ka-wuh-safar.html">ٹرین کا وہ سفر</a></h2>
+
+    <!-- ٹائٹل کے نیچے لائک بٹن -->
+    <div class="card-like-container">
+        <button class="card-like-button" onclick="handleCardLike(this)">❤️ لائک (<span>0</span>)</button>
+    </div>
+
+    <!-- مختصر تحریر کارڈ کے لیے -->
+    <p class="card-excerpt">
+        ھیلو دوستو میرا نام پاروتی ھے آج میں آپ دوستوں سے وہ کہانی شیئر کرنے والی ھوں جو ایک ٹرین کے سفر کی ھے اس کہانی میں آپ کو بہت مزہ آنے والا ھے
+    </p>
+
+    <!-- پڑھیں بٹن -->
+    <a href="trin-ka-wuh-safar.html" class="read-more-btn">مکمل کہانی پڑھیں...</a>
+</div>
+
+<style>
+    /* ہوم پیج کارڈ کے فکسڈ ڈیزائن اسٹائلز */
+    .home-story-card {
+        background-color: #050505;
+        border: 2px solid #ff007f; /* گلابی بارڈر */
+        border-radius: 12px;
+        padding: 20px;
+        max-width: 500px;
+        width: 100%;
+        margin: 20px auto;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(255, 0, 127, 0.2);
+        user-select: none;
+    }
+
+    .card-thumbnail {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #ff007f;
+    }
+
+    .card-title {
+        font-size: 24px;
+        margin: 15px 0 10px 0;
+    }
+
+    .card-title a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .card-like-container {
+        margin-bottom: 15px;
+    }
+
+    .card-like-button {
+        background-color: transparent;
+        border: 1px solid #ff007f;
+        color: #ff007f;
+        padding: 6px 15px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .card-excerpt {
+        color: #cccccc;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .read-more-btn {
+        display: inline-block;
+        color: #ffffff;
+        background-color: #ff007f;
+        text-decoration: none;
+        padding: 8px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 16px;
+        transition: opacity 0.2s;
+    }
+
+    .read-more-btn:hover {
+        opacity: 0.9;
+    }
+</style>
+
+<script>
+    // ہوم کارڈ کا لائک ہینڈلر
+    function handleCardLike(btn) {
+        let span = btn.querySelector('span');
+        let currentLikes = parseInt(span.innerText);
+        span.innerText = currentLikes + 1;
+        btn.style.backgroundColor = '#ff007f';
+        btn.style.color = '#ffffff';
+    }
+</script>
+
 <!-- کہانی کارڈ کا اسٹائل (اگر ہوم پیج پر پہلے سے موجود نہ ہو) -->
 <style>
     .home-card-wrapper {
