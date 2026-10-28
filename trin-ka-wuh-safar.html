@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<script data-cfasync="false" src="https://afders.org/1/6428c13ee51a451d414ba722ae120e6e"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ٹرین کا وہ سفر</title>
+    <style>
+        /* فکسڈ ڈیزائن گائیڈ لائنز */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            user-select: none; /* ٹیکسٹ سلیکشن لاک */
+        }
+
+        .main-card {
+            background-color: #050505;
+            border: 2px solid #ff007f; /* گلابی بارڈر */
+            border-radius: 15px;
+            max-width: 800px;
+            width: 100%;
+            padding: 25px;
+            box-sizing: border-box;
+            text-align: center; /* پورا متن اسکرین کے وسط میں */
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ff007f;
+        }
+
+        .story-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 20px 0 10px 0;
+        }
+
+        /* لائک بٹن اسٹائل */
+        .like-btn-container {
+            margin-bottom: 25px;
+        }
+
+        .like-button {
+            background-color: transparent;
+            border: 2px solid #ff007f;
+            color: #ff007f;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .like-button:hover {
+            background-color: #ff007f;
+            color: #ffffff;
+        }
+
+        /* کہانی کا متن - موٹا اور بڑا */
+        .story-content {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 2;
+            margin-bottom: 30px;
+            text-align: center;
+            white-space: pre-line;
+        }
+
+        /* کمنٹ باکس - ہمیشہ کھلا اور لائیو */
+        .comment-box-container {
+            border: 2px solid #ff007f;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 30px;
+            background-color: #0a0a0a;
+        }
+
+        .comment-box-container h3 {
+            color: #ff007f;
+            margin-top: 0;
+        }
+
+        .comment-input {
+            width: 100%;
+            height: 80px;
+            background-color: #000000;
+            border: 1px solid #ff007f;
+            color: #ffffff;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none;
+            font-size: 16px;
+        }
+
+        .comment-submit {
+            background-color: #ff007f;
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ٹیلی گرام بٹن */
+        .telegram-btn {
+            display: inline-block;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 25px;
+            margin: 25px 0;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .telegram-btn:hover {
+            background-color: #006699;
+        }
+
+        /* رنگ برنگے لیبلز اور ہوم بٹن */
+        .labels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        .label-item {
+            padding: 6px 15px;
+            border-radius: 20px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .label-red { background-color: #ff3b30; }
+        .label-blue { background-color: #007aff; }
+        .label-green { background-color: #34c759; }
+        .label-purple { background-color: #af52de; }
+        .label-orange { background-color: #ff9500; }
+
+        .home-button {
+            display: inline-block;
+            background-color: #d4af37; /* گولڈ کلر */
+            color: #000000;
+            text-decoration: none;
+            padding: 8px 20px;
+            font-weight: bold;
+            border-radius: 20px;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;"> <!-- رائٹ کلک لاک -->
+
+    <div class="main-card">
+        <!-- 16:9 تھمب نیل تصویر -->
+        <img src="A Romantic Train Journey.png" alt="ٹرین کا وہ سفر" class="thumbnail" ondragstart="return false;">
+
+        <!-- تھمب نیل کے نیچے ٹائٹل -->
+        <div class="story-title">ٹرین کا وہ سفر</div>
+
+        <!-- ٹائٹل کے نیچے لائک بٹن -->
+        <div class="like-btn-container">
+            <button class="like-button" id="likeBtn">❤️ لائک (<span id="likeCount">0</span>)</button>
+        </div>
+
+        <!-- کہانی کا متن (جاوا اسکرپٹ کے ذریعے 10 لائنوں کے فلٹر کے ساتھ یہاں شو ہوگا) -->
+        <div class="story-content" id="storyBody">
+ھیلو دوستو میرا نام پاروتی ھے آج میں آپ دوستوں سے وہ کہانی شیئر کرنے والی ھوں جو ایک ٹرین کے سفر کی ھے اس کہانی میں آپ کو بہت مزہ آنے والا ھے
+
+ کیونکہ یہ میری اپنی آپ بیتی کہانی ھے تو چلو میں اپنی کہانی شروع کرتی ھوں تو دوستو میری ممی تو میرے بچپن میں ھی گزر گئی تھی اور میری ممی کی خالہ نے پال پوس کر بڑا کیا اور ہمارے قریبی رشتے داروں میں 
+
+میری شادی کرا دی میرا پتی بہت زیادہ رومانٹک تھا اور ھے بھی میری شادی کو ابھی دو ماہ ھوئے تھے کے مجھے پالنے والی ممی نے مجھے اپنے گاؤں چلنے کو بولی لیکن میں پتی کے بغیر پوچھے ھی ہاں کر اور اتنا ھی نہیں بلکہ میں نے تیاری بھی کر لی جب میرے پتی کو پتا چلا تو مجھے منع کیا کہا کے ابھی شادی کو دو ماہ ھوئے ہیں اور تم مجھ سے پوچھے بنا 
+
+گاؤں جا رھی ھو مجھے منع کر دیا میں ممی سے کہا مجھے منع کر دیا پھر میرے پالنے والی ممی نے میرے اپنے پاپا سے بات کی اور نے غصے سے ہمیں کہا کے تمہارے پتی کی یہ مجال کے تم کو جانے کو روکے بیٹی تم جاؤ اور اپنے پتی کی بلکل پرواہ نہ کرو اور اسی دوران پتی آگیا میرے پاپا اور پالنے والی ممی اور پتی میں بہت بھیس ھوئی لیکن میں نے بھی جانے کی ضد 
+
+میں رھی آخر پتی غصے سے باہر چلا گیا ھم نے تیاری کی اور ممی مجھے گاؤں لے کر آگئی اور مجھے اسی طرح گاؤں میں ایک مہنہ ھو گیا میرا پتی کبھی گاؤں نہیں جاتا تھا نہ گاؤں کی کسی گلی شہر سے وقف تھا وقت گزرنے کے ساتھ جب مجھے ایک مہنہ ھو گیا تو مجھے پتی کی بہت یاد آنے لگی اور میرے اندر کی بےچینی مجھے پاگل بھی کر رھی ایک ماہ جب دس 
+
+دن ھوئے تو ہمیں خبر ملی کے میرا پتی اپنے دوست کے ساتھ گاؤں آیا ھوا میں روز سوچتی ابھی جائے گا مجھے لینے مجھے اس بات کا بہت احساس تھا کے میں اپنے پتی کا دل توڑ دیا اور اپنے گھر والوں کے سامنے ذلیل کروایا پھر ایک دن اچانک میرا پتی آگیا پتی کو دیتی کر میں بہت خوش ھو گئی اور رات کو پتی کو خوش کرنے کا بھی سوچ لیا وہ دن بڑی مشکل سے گزرا اور 
+
+رات ھو گئی پالنے والی ممی نے ہمارے لیئے الگ کمرے کا بندوست کیا اور میں پتی کے ساتھ کمرے میں آگئی پہلے تو پتی نے مجھ سے کہا میں تم سے بہت پیار کرتا ھوں جب تم گئی تو مجھے لگا میری دنیاں ھی چلی گئی میں نے پتی سے اس باری میں معافی مانگی اور پتی نے مجھے معاف کر کے کہا آئیندہ ایسا کبھی نہیں کرنا میں نے پتی کو یعقین دلایا کے ابھی ایسا کبھی نہیں 
+
+کروں گی پھر میں آپس میں مست اتنے ھوئے کے مجھے تو بہت مزہ آیا پتی کو میں نے بہت خوش کیا اور پتی کو سر سے لے کر پاؤں تک بہت پیار کیا کمرے میں صرف ہماری گرم سانسیں تھی اور جسموں کے ٹکرانے کی آوازیں گونج رھی تھی اور بہت مزہ آیا پتی کے ساتھ میں گاؤں میں تین راتیں رھی لیکن ایک بھی رات ضائع نہیں کی پتی کا تو مجھ سے دل ھی نہیں بھرتا تھا 
+
+اور اب میرا بھی یہی حال ھو چکا تھا پھر ممی ہمارے ساتھ ہمیں شہر چھوڑنے کیلئے ساتھ آئی پتی نے ٹرین کی تین ٹکٹیں کرائی اور کھڑکی کے ساتھ بینچ والی سیٹ پوری بُک کرا لی تاکہ ہمارے اور کوئی نہ بیٹھ سکے سامنے والی بینچ سیٹ پر کوئی فیملی آکر بیٹھ گئی ھم اپنی جگہ پر تھے میں تو کھڑکی والی سیٹ پر تھی اور اور میرے ساتھ پتی پھر میری ممی تھی 
+
+جب وقت زیادہ ھو گیا تو ممی نے نیچے چادر بچھا کر لیٹ گئی اور میں پتی کی طرف ٹانگیں کرکے کمبل اوڑھ کر لیٹ گئی اور سب سوئے ھوئے تھے اور پتی موبائل چلا رہا تھا مجھے نیند آگئی پھر اچانک مجھے محسوس ھوا کسی کا سخت وجود میرے موٹے نرم گیپ میں گُھسا ھوا ھے میں نے کمبل سے سر نکال کر دیکھا تو میرا پتی تھا پتی نے بھی کمبل اپنے اوپر کی ھوئی 
+
+تھی اور اپنی ٹانگیں میرے آگے کی ھوئی تھی اور میرے ھیپ پتی کے سخت وجود سے لگا ھوا تھا میں تو گرم ھو گئی میں نے نظر گھمائی سب نیند میں تھے پتی نے نے مجھے لذت بھری مسکراہٹ دی میں نے پیچھے ہاتھ کیا اور پتی کے سخت حصے کو ہاتھ میں لے کر سہلانے لگی میں نے اپنی لاسٹک کی شلوار نیچے کی اور پتی کا ناڑا کھول کر نازک حصے کو نکال کر 
+
+ھونٹوں کو ہلاتی کہا ڈالوں پتی نے ادھر اُدھر دیکھ کر اپنی ہتھیلی میں تھوک ڈال کر پھر میری نازک جگا پر لگا کر اپنا سخت وجود میری نازک جگہ کے ھونٹوں پر رکھا میں اپنے پیچھے کو پتی کے نازک حصے پر زور سے دبایا یہاں تک میں نے پتی کے نازک حصے کو اپنے اندر پورا اتار لیا من ھی من میں میری اُف نکل گئی اس لمحے میں تو جیسے مری جا رھی تھی اور 
+
+ٹرین کی حرکت سے جو مزہ آرہا تھا وہ بتانے کیلئے مجھے لفظ نہیں مل رھے ہیں میری سب پر نظر تھی میں سلوسلو اپنی کمر آگے پیچے کرنی من تو کر رہا تھا ابھی سب کچھ اتار کر ٹوٹ پڑوں لیکن یہ ٹرین کا سفر تھا پتی کو اشارہ کیا کے تم بھی حرکت کرو پتی بھی سلوسلو حرکت کر رہا تھا  پھر آگے اسٹیشن آگیا میں اور پتی یوں ھی کمبل میں رھے پتی تو موبائل چلا 
+
+رہا تھا میں اپنی نازک جگہ کو کبھی ٹائٹ کرتی کبھی ڈھیلی چھوڑتی رھی ممی اٹھ کو میں اٹھتی دیکھی تو میں آنکھیں بند کئے لیٹی رھی ممی نے مجھے اٹھایا میں میں آنکھیں کھولی ممی میرے پتی کا بولی اسے بولو پانی لے کر آئے میں ممی کو کان میں بولی ممی ھم دونوں اس وقت ہل نہیں سکتے میرا من ھی نہیں تھا کے ھم دونوں کا وجود الگ ھو میں ہاتھ سے 
+
+پتی کا وجود اپنے حصے سے نکالا شلوار اوپر کی پتی نے بھی پھرتی سے اپنا آزار بند کیا پھر پتی جاکر پانی لایا پھر میں پتی کی گود میں سر رکھ کر لیٹ گئی پتی کمبل ھم دونوں پر تھا مگر پتی بیٹھا موبائل چلا رہا تھا میں نے پتی کے وجود کو سہلانا شروع کیا اور وہ سخت ھو گیا میں پتی کے وجود کو باہر نکال کر منہ میں لے کر شروع ھو گئی کچھ دیر میں پتی کا 
+
+سارا رس میرے منہ میں نکلا مگر میرے حصے میں تو آگ تھی میں آٹھ کر پتی کے کان میں بولی مجھے فارغ کرو کسی طرح لیکن پھر اسٹیشن آگیا پھر موقعہ نہ ملا اور اسی طرح ہمارا اسٹیشن آیا ھم اترے اور ٹیکسی میں گھر آئے اور آتے ھی میں نے پتی سے خوب لذت حاصل کی پھر دوسرے دن ممی اپنے گاؤں چلی گئی اس کے بعد میں پھر کبھی بھی پتی کو چھوڑ کر نہیں گئی اور ساتھ رھی ابھی تک 
+
+میرے دوستوں یہ تھی میری ٹرین کا ایک واقعہ جو میں نے آپ دوستو سے شیئر کیا اگر آپ کو یہ واقعی پسند آیا ھو تو لائک ضرور کرنا اور اپنی رائے میں کمنٹ کرنا تاکہ میں اپنے اور بھی واقعہ شیئر کر سکوں اب تک کیلئے مجھے اجازت دیں اپنا خیال رکھنا 
+        </div>
+
+        <!-- کمنٹ باکس ہمیشہ کھلا اور لائیو -->
+        <div class="comment-box-container">
+            <h3>لائیو کمنٹس</h3>
+            <textarea class="comment-input" placeholder="اپنی رائے یہاں لکھیں..."></textarea>
+            <button class="comment-submit">کمنٹ پوسٹ کریں</button>
+        </div>
+
+        <!-- ٹیلی گرام بٹن -->
+        <div>
+            <a href="https://t.me" class="telegram-btn" target="_blank">🔷 Join Telegram</a>
+        </div>
+
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+  
+  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+
+<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/Woh-Raat-Nahi-Bhooli.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ رات نہیں بھولی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/mere-ishq-ki-dastan.html" style="background:#111; color:#ffcc00; border:1px solid #ffcc00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:15px; font-weight:bold;">میرے عشق کی داستان</a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+  </div>
+</div>
+        <!-- رنگ برنگے خوبصورت گول لائیو لیبلز کا پورا سیٹ -->
+        <div class="labels-container">
+            <a href="#" class="label-item label-red">رومانیت</a>
+            <a href="#" class="label-item label-blue">سفر نامہ</a>
+            <a href="#" class="label-item label-green">نئی کہانیاں</a>
+            <a href="#" class="label-item label-purple">مقبول</a>
+            <a href="#" class="label-item label-orange">دلچسپ</a>
+        </div>
+
+        <!-- ہوم پیج گولڈ بٹن -->
+        <div>
+            <a href="index.html" class="home-button">🏠 ہوم پیج</a>
+        </div>
+    </div>
+
+    <script>
+        // سیکیورٹی پروٹیکشن: کاپی اور شارٹ کٹس لاک
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {
+                e.preventDefault();
+            }
+        });
+
+        // لائک بٹن کاؤنٹر فنکشن
+        let count = 0;
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCount = document.getElementById('likeCount');
+        likeBtn.addEventListener('click', () => {
+            count++;
+            likeCount.innerText = count;
+            likeBtn.style.backgroundColor = '#ff007f';
+            likeBtn.style.color = '#ffffff';
+        });
+
+        // جادوئی خودکار پیراگراف فلٹر (ہر 10 لائنوں/جملوں کے بعد خوبصورت پیراگراف بنانا)
+        window.addEventListener('DOMContentLoaded', () => {
+            const storyDiv = document.getElementById('storyBody');
+            let rawText = storyDiv.innerText.trim();
+            
+            // اگر متن لمبا ہو تو اسے جملوں یا لائنوں کے حساب سے 10، 10 کی ترتیب میں تقسیم کرنے کا فلٹر
+            // نوٹ: فی الحال دی گئی کہانی چھوٹی ہے، جب آپ اس میں بڑی کہانی ڈالیں گے تو یہ خودکار کام کرے گا
+            let lines = rawText.split('\n');
+            let formattedText = "";
+            let chunk = [];
+
+            for (let i = 0; i < lines.length; i++) {
+                chunk.push(lines[i]);
+                if (chunk.length === 10 || i === lines.length - 1) {
+                    formattedText += chunk.join('\n') + "\n\n";
+                    chunk = [];
+                }
+            }
+            storyDiv.innerText = formattedText.trim();
+        });
+    </script>
+</body>
+<script data-cfasync="false" src="https://bicea.org/14/d2c0f24bfdd5aa6bddd5698bec186a27"></script>
+</html>
