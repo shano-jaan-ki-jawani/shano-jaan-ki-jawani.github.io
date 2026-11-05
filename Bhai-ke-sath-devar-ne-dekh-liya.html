@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<script data-cfasync="false" src="https://afders.org/1/6428c13ee51a451d414ba722ae120e6e"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بھائی کے ساتھ دیور نے دیکھ لیا</title>
+    <style>
+        /* فکسڈ بلیک بیک گراؤنڈ */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* مکمل ٹیکسٹ سلیکشن اور کاپی لاک */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* مین کہانی کارڈ - گلابی بارڈر */
+        .story-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #050505;
+            border: 2px solid #ff007f;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center; /* پورا متن اسکرین کے وسط میں */
+        }
+
+        /* تھمب نیل 4:3 سائز */
+        .story-thumbnail {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #ff0066;
+        }
+
+        /* ٹائٹل - تھمب نیل کے نیچے */
+        .story-title {
+            color: #ff007f;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 15px 0 5px 0;
+        }
+
+        /* لائک بٹن - ٹائٹل کے نیچے */
+        .like-section {
+            margin-bottom: 20px;
+        }
+        .like-btn {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+        }
+        .like-btn:hover {
+            background-color: #ff0066;
+        }
+
+        /* کہانی کا متن - موٹا اور بڑا */
+        .story-content {
+            font-size: 22px; /* بڑا سائز */
+            font-weight: bold; /* موٹا متن */
+            line-height: 2; /* الفاظ کھل کر نظر آئیں */
+            white-space: pre-line;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* کمنٹ باکس - ہمیشہ کھلا اور لائیو */
+        .comment-section {
+            border: 2px solid #ff007f;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 25px;
+            background-color: #0a0a0a;
+        }
+        .comment-section h3 {
+            color: #ff007f;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .comment-box {
+            width: 100%;
+            height: 80px;
+            background-color: #111;
+            border: 1px solid #ff0066;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            resize: none;
+            box-sizing: border-box;
+            font-size: 16px;
+            text-align: right;
+        }
+        .comment-submit {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ٹیلی گرام بٹن */
+        .telegram-btn {
+            display: block;
+            background-color: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .telegram-btn:hover {
+            background-color: #0077b3;
+        }
+
+        /* رنگ برنگے لائیو لیبلز کا سیٹ */
+        .labels-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        .label-pill {
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .lbl-romantic { background-color: #ff0055; }
+        .lbl-desiclick { background-color: #9c27b0; }
+        .lbl-trending { background-color: #ff5722; }
+        .lbl-sachi { background-color: #4caf50; }
+
+        /* ہوم پیج بٹن - گولڈ کلر */
+        .home-btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #000000;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        }
+        .home-btn:hover {
+            background-color: #e6c200;
+        }
+    </style>
+</head>
+<!-- تصویر پر رائٹ کلک اور لانگ پریس مکمل لاک -->
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+
+    <div class="story-container">
+        <!-- تھمب نیل تصویر -->
+        <img class="story-thumbnail" src="Surprised Glances Behind the Door.png" alt="بھائی کے ساتھ دیور نے دیکھ لیا" oncontextmenu="return false;">
+
+        <!-- ٹائٹل تھمب نیل کے نیچے -->
+        <div class="story-title">بھائی کے ساتھ دیور نے دیکھ لیا</div>
+
+        <!-- لائک بٹن ٹائٹل کے نیچے -->
+        <div class="like-section">
+            <button class="like-btn" onclick="addLike()">
+                ❤️ لائک کریں (<span id="like-count">44</span>)
+            </button>
+        </div>
+
+        <!-- کہانی کا متن (خودکار پیراگراف فلٹر اس میں جادو کرے گا) -->
+        <div class="story-content" id="raw-story">
+            بھائی کے ساتھ دیور نے دیکھ لیا 
+
+دوستو میرا نام امبر تسکین ھے۔ میں بہت خوبصورت ھوں۔ اور گوری چٹی ھوں۔ میرے بڑے اور بھاری ابھار ہیں۔ اور کیوٹ سی نازک جگہ ھے۔ اور پلی ھوئی کمر کا نچلا حصہ ھے۔ تو دوستو۔ میرے تین بھائی ہیں۔ دو میرے سگے بھائی ہیں۔ ایک مجھ سے بڑا ھے اس کا نام عثمان ھے اور ایک مجھ سے چھوٹا ھے اس کا نام عمر ھے۔ اور سوتیلا بھائی ھم سے چھوٹا ھے اور اس کا نام اسلم ھے۔ لیکن وہ بھی جوان ھے اور پاپا کی دوسری بیوی کا بیٹا ھے۔ جب پاپا کی دوسری بیوی گزری۔ تو پاپا اسلم کو گھر لایا۔ تو مما پاپا کو ڈانٹنے لگی۔ تو پاپا نے کہا اسلم کو اپنے ساتھ اپنے بستر میں استعمال کیلئے رکھو چاھو تو اسلم کو بستر میں میرے سامنے بھی استعمال کر سکتی ھو۔ مما یہ سن کر خوش ھو گئی۔ کیونکہ مما مث بہت ہوس تھی۔ مما تو میرے دادا سے بھی ملاپ کرتی تھی۔ جب مما کا دیور یعنی میرا چاچو آتا مما تو پاپا اور اپنے دیور کے ساتھ مل کر ملاپ کرتی۔ پھر مما اسلم کو اپنے ساتھ سلاتی اور ملاپ کرتی اور اسلم کا ھم سب سے زیادہ خیال رکھتی اور مما کبھی کبھی روم سے بنا۔ کپڑوں کے باہر آ جاتی جسے عثمان اور عمر بھی دیکھتے تھے۔ سوچو مما ایسی ھے تو پھر میں کیسی ھوں گی۔ کیوں کے میرے اندر مما کا خون ھے اور میرے دو بھائی عثمان عمر اور میں مما کی تپتی ھوئی نازک حصے سے نکل کر آئے وہ نازک حصہ جسے ہر مَردوں کا سخت وجود لینے کا شوق رکھتی ھے۔ پاپا بھی مما کی تپتی نازک جگہ کا بہت خیال رکھتے تھے اس لیئے تو مما کی قربت کیلئے پاپا اسلم کو لائے تھے۔ اور پاپا بھی ساتھ میں ملاپ کرتا پاپا مما کی نازک حصے کا غلام تھا اور مما سے بہت پیار کرتا تھا۔ مما اپنے روم میں بنا کپڑوں کے رہتی اور اسلم کو بھی بنا کپڑوں کے رکھتی اور مما کے روم کا ڈور میں نے زندگی میں کبھی بھی لاک نہیں دیکھا اس لیئے ھم مما کی شروع سے قربت دیکھتے آرھے تھے۔ عثمان کا روم الگ تھا۔ میرا اور عمر کا ایک روم تھا اور ایک بیڈ تھا۔ میں اور عمر ایک چادر میں سوتے تھے۔ میری نسوں میں بھی مما کا گرم خون تھا اور میرے دو بھائیوں کی نسوں میں بھی مما کا گرم خون تھا اور یہ گرم خون آخر مجھے بھی مست کرنے لگا۔ تو ایک رات میں نے عمر سے کہا عمر ھم ملاپ کریں تو عمر نے کرنے کو کہا میں اور عمر چمہ چٹی کرنے لگے اور ھم بنا کپڑوں کے مست ھو جاتے مجھے اور عمر کو بہت مزہ آتا۔ میں عمر کے سخت وجود کو چوس کر وجود کا پانی نکال کر نگل جاتی اور عمر میری نازک جگہ کو چاٹ چاٹ کر میری نازک حصے کا رس نکال دیتا مجھے بہت مزہ آتا اور میری نازک حصے کا سارا رس چاٹ چاٹ کر نگل جاتا۔ پھر ایک رات کو عمر کے سخت وجود سے اپنی نازک حصے کی سیل کھلوائی مجھے درد تو بلکل نہیں ھوا۔ پر بیڈ کی چادر میری نازک حصے نکلے لال رنگ سے بھر گئی۔ پھر میں اور عمر روز ملاپ کرتے۔ ایک بار مما کے روم گئی تو مما اسلم کے سخت وجود کو اپنی کمر کے نچلی سطح میں لے کر قربت کروا رھی تھی اور اسلم بڑی اسپیڈ سے مما کی قربت کر رہا تھا۔ میں نے دیکھا تو مجھ سے رہا نہ گیا تو میں نے بھی رات کو عمر کے سخت وجود کو اپنی کمر کے نچلی منزل میں لے کر نچلی منزل کی سیل کھلوائی۔ اس کے بعد عمر جب قربت کرتا تو مجھے پاگل کر دیتا اب میں بھی مما کی طرح ھو گئی۔ پھر عمر نے عثمان کو بتایا کے میں اور تسکین ملاپ کرتے ہیں۔ پھر رات کو میں اور عمر قریب کر رھے تھے تو عثمان اندر آیا اپنے کپڑے اتار کر میری قربت کرنے لگا۔ پھر ساری رات دونوں میری قربت کرتے رھے۔ مجھے تو بہت مزہ آیا۔ لیکن عثمان جلدی فارغ ھو جاتا تھا اس لیئے عثمان کے ساتھ مجھے مزہ نہیں آتا تھا۔ پر عمر تو فارغ ھونے کا نام بھی نہیں لیتا تھا۔ اور عمر قربت بھی بہت زبردست کرتا تھا۔ اس لیئے مجھے عمر کے ساتھ بہت زیادہ مزہ آتا تھا۔ پھر ایک مرتبہ مما کہیں گئی ھوئی تھی تو میں نے اسلم سے بھی قربت کی تو اسلم تو عمر سے بھی زیادہ قربت کرتا۔ اسی طرح میں عمر اور عثمان کے ساتھ قربت کرتی اور اسلم کے ساتھ کبھی کبھی موقعہ ملتا۔ پھر اس بات کا مما اور پاپا کو پتا چل گیا لیکن ہمیں منع نہیں کیا۔ صرف مجھے اسلم کے ساتھ ملاپ کرنے کو منع کیا۔ لیکن میں پھر بھی اسلم سے ملاپ کر لیتی۔ پھر ایک بار ایسا ھوا کے پاپا بمار پڑ گئے۔ اور مما جب اسلم کے ساتھ مصروف ھوتی تو پاپا کی وجہ سے مما ڈسٹرپ ھوتی۔ تو مما نے پاپا کو دوسرے روم میں شفٹ کر دیا۔ پھر کچھ دن بعد ایک رات مما نے مجھے تیل دے کر کہا
+
+
+اپنے پاپا کے کپڑے اتار کر جسم کی مساج کرنا پھر کپڑے نہ پہنانا ورنہ کپڑے خراب ھو جائیں گے۔ اور پاپا کے ساتھ ھی سو جانا اور آج کے بعد تم اپنے پاپا کا خیال رکھنا۔ میں تیل لےکر پاپا کے کمرے میں آئی تو دیکھا پاپا کا سخت وجود چڈی کو تمبو بنائے کھڑا ھے۔ تو پاپا نے کہا تسکین اپنی مما سے کہو میری مساج کر دو۔ میں نے کہا پاپا آج سے میں آپ کی مساج کروں گی اور آپ کا خیال رکھوں گی۔ پاپا نے کہا ٹھیک ھے تسکین۔ میں نے تیل کو ٹیبل پر رکھ کر۔ پاپا کو باھوں میں بھر کر اٹھا کر ٹیک لگایا تو پاپا کے ساتھ میرا موڈ بن گیا۔ پھر تیل کو اٹھا کر بیڈ پر رکھ کر اپنی ٹانگیں پھیلا کر پاپا کے سخت وجود پر بیٹھی تو پاپا نے کہا تسکین کیسی بیٹھی ھو۔ میں نے کہا آپ کی مساج کرنی ھے۔ پاپا کا وجود بہت سخت تھا جس کی وجہ سے میرا موڈ بن گیا پھر پاپا کے سینے پر تیل گرا کر مساج کرتی ھوئی سلوسلو پاپا کے سخت وجود پر اپنی نازک جگہ رگڑنے لگی۔ اور پاپا بھی مستی میں آرھا تھا۔ پھر میں گرم ھو گئی۔ اور اپنی قمیض اتار دی۔ تو پاپا نے میرے بھاری ابھار کی تعریف کی تو میں نے پاپا کے منہ میں منہ دیا اور چوسنے لگی پاپا میرے مموں کو دبانے لگا پھر میں نے پاپا کے منہ میں اپنے بھاری ابھار دیئے تو پاپا چومتے ھوئے ابھار کی نیپلوں کو چوسنے لگا۔ میں اُٹھ کر اپنی شلوار اتار کر پاپا کی چڈی اتار کر پاپا کا سخت وجود دیکھا تو عمر کا وجود بھی پاپا کے وجود جیسا تھا۔ بہت دیر تک پاپا کے وجود کو چومتی چاٹتی چوپے لگاتی رھی۔ پھر ابھاروں میں رگڑتی رھی پھر پاپا کے سخت وجود کو پیار کرتی ھوئی پاپا کی ٹانگوں کی مساج کرنے لگی اف مجھے تو بہت مزہ آرہا تھا۔ پھر پاپا کے سخت وجود کی مساج کی۔ اُٹھ کر پاپا کے سخت وجود کو اپنی نازک جگہ میں لےکر قربت کرنے لگی۔ جب میری نازک جگہ رس چھوڑ دیتی تو پاپا کے سخت وجود کو اپنی نچلی منزل میں لے کر قربت کرتی اور چار بجے میں اور پاپا ساتھ میں سو گئے اسی طرح میں پاپا کا ہر طرح سے خیال رکھنے لگی۔ اور کچھ ھی دنوں میں پاپا ٹھیک ھو گئے۔ پھر پاپا اسی روم میں رہا۔ پاپا کے ساتھ تین چار دن چھوڑ کے پاپا کے ساتھ سو جاتی۔ میں بہت خوش تھی۔ کیوں کے میں اپنے گھر میں چار وجودوں سے مزے کرنے لگی۔ لیکن جو بات عمر میں تھی وہ کسی میں نہیں تھی۔ کیونکہ عمر کے ساتھ مجھے بہت مزہ آتا۔ میں بہت بار پیٹ سے ھو جاتی۔ تو مما ابوشن کرانے مرد ڈاکٹر کے پاس لے جاتی۔ پہلے تو تین گھنٹے ڈاکٹر میری قربت کرتا پھر ابوشن کرتا ڈاکٹر کا سخت وجود بھی مست تھا اور مجھے بہت مزہ آتا۔ پھر میں تو عثمان اور عمر سے دن رات قربت کرتی۔ اور اسلم سے جب موقعہ ملتا تو ملاپ کر لیتی۔ اور پاپا کو قربت سے بہت خوش رکھتی پھر مما نے اپنے یار کے بیٹے سے میری شادی کر دی ایک بار شوہر کچھ دنوں کیلئے باہر گیا تو گھر میں ساس سسر دو دیور اور طلاق شدہ نند تھی۔ میں نے عمر کو ملاپ کیلئے بلا لیا اور اپنے روم میں رکھا رات کو ھم دونوں ھوکر قربت کرتے۔ عمر تو ایسی زبردست قربت کرتا کے میں پاگل سی ھو جاتی۔ ایک رات میں اور عمر نگے قربت میں مست تھے میں عمر کے وجود  کی سواری میں مست تھی اور بڑا دیور کسی طرح سے ڈور کھول کر اندر آگیا۔ میں عمر کے وجود کو اوپر سے قربت کر رھی تھی۔ اور عمر نیچے سے میری نازک جگہ کی قربت کر رھا تھا۔ اور ھم دونوں اتنی فاسٹ قربت کر رھے تھے۔ کے اف مت پوچھوں۔ مجھے بہت مزہ آرہا تھا۔ جب دیور کو دیکھا تو میں عمر کا سخت وجود اپنی نازک جگہ سے نکال کر ہٹی تو بس پھر تو دیور نے پکڑ لیا اف پھر تو دونوں ایک ساتھ ھی قربت کرنے لگے۔ مجھے تو دونوں نے پاگل کر دیا۔ ساری رات قربت کرتے رھے۔ تین راتیں تو دونوں میری قربت کرنے میں لگے رھے۔ اور دن کو بھی نہیں چھوڑتے تھے۔ پھر عمر چلا گیا۔ پھر اکیلا دیور تو مجھ پر بھاری پڑ گیا۔ مجھے تو دیور نے اتنا مزہ دیا کے میں کیا بتاؤں۔ دیور تو میری کمر کے نچلی منزل اور نازک جگہ میرے بھاری ابھار اور منہ کی زبردست قربت کرتا۔ پھر شوہر آگیا۔ لیکن دیور کو اب روکنا مشکل تھا۔ میں کچن واش یاں گھر کا کام کر رھی ھوتی تو دیور وہیں میری شلوار نیچے کرکے میری نازک جگہ یاں کمر کا نچلی منزل کی  قربت کرنا شروع کر دیتا۔ اور ایک بار میں صفائی کر رھی تھی تو بڑے دیور نے مجھے پکڑ لیا اور میری شلوار نیچے کر کے قربت کرنے لگا تو چھوٹے دیور نے دیکھ لیا میں چھوٹے دیور کو دیکھ کے سمجھ گئی اب اس سے بھی مزے کروں گی بڑا دیور کھڑے کھڑے قربت کر رہا تھا اورمیں تو بہت گرم ھو چُکی تھی۔ تو دیور سے کہا تیرے روم میں چل کر کرتے ہیں۔ پھر دیور کے روم میں آکر قربت کی۔ بڑے دیور سے قربت کر کے میں اپنے روم میں آئی تو اتنی دیر میں چھوٹے دیور نے آکر پکڑ لیا پھر چھوٹے دیور نے تسلی سے مجھے خوش کیا اور میں نے بھی مست ھو کر چھوٹے دیور کو خوش کیا۔ پھر اسی طرح ایک بار بڑا دیور کچن میں میری قربت کر رہا تھا۔ تو سسر نے مجھے قربت کرتے دیکھ لیا۔ میں نے بھی سسر کو دیکھ لیا۔ دیور نے نہیں دیکھا تھا۔ میں تو سسر کو دیکھ کر سمجھ گئی کے افففف اب سسر بھی نہیں چھوڑے گا۔ ایک رات میں دیور سے قربت کر کے آئی تو آگے چڈی میں سسر کا وجود سخت کھڑا کیئے کھڑا تھا سسر کا کھڑا اور ٹائٹ وجود کو دیکھا تو افففف میں سمجھ گئی کے اب سسر قربت کرے گا میں نے جاکر سسر کے سخت وجود کو اپنے ہاتھ میں پکڑ لیا تو سسر مجھے اٹھا کر دوسرے روم لے گیا اور قربت شروع کردی۔ مجھے بہت مزہ آیا سسر فارغ ھوا تو میں روم سے باہر آئی تو چھوٹا دیور مجھے اٹھا کر اپنے روم لے گیا اور قربت کی۔ پھر میں شوہر کے پاس آئی تو شوہر شروع ھو گیا۔ ایک ھی وقت میں۔ میں نے چار وجودوں کے مزے لیئے پھر کبھی بڑا دیور اٹھا کر لے جاتا تو کبھی سسر تو کبھی چھوٹا دیور۔ کبھی میں اپنے روم میں ھوتی تو کبھی بڑا دیور تو کبھی چھوٹا دیور تو کبھی سسر آکر شروع ھو جاتا دن میں دو بار سسر اور دو بار بڑے دیور کے ساتھ تو کبھی دو بار چھوٹے دیور کے ساتھ ملاپ کرتی۔ یہ رات کو بھی نہیں چھوڑتے۔ میں تو دن کو تین وجود سے مزے کرتی تو رات میں چار وجود سے مزے کرتی۔ جب شوہر کی چھٹی ھوتی تو اس دن بہت مزہ آتا رات سے لےکر دن تک اور دن سے لےکر رات تک پھر دن سے لےکر رات تک۔ چار وجودوں سے ملاپ کرتی کبھی سسر پکڑ لیتا تو کبھی بڑا دیور تو کبھی شوہر تو کبھی چھوٹا دیور۔ پھر میں عمر کو بھی بلا لیتی عمر کے ساتھ مل کر میں بڑے اور چھوٹے دیور سے ملاپ کرتی۔ تو نند نے اس رات مجھے تینوں سے ملاپ کرتی دیکھ لیا اور سسر کے ساتھ بھی ملاپ کرتی دیکھ لیا۔ نند نے کہا بھابھی تم تو بہت مزے کرتی ھو اپنے بھائی عمر اور میرے دونوں بھائیوں اور پاپا کے ساتھ۔ پھر کہا بھابھی میں بھی کرنا چاہتی ھوں کچھ کرو۔ میں نے کہا ایک شرط پر میں تیری سب سے قربت کروا سکتی ھوں اپنے بھائی عمر سے اور تیرے دونوں بھائیوں اور پاپا سے اور میرے پاپا اور بڑے بھائی سے ۔ کہا افففف سچ میں بھابھی۔ میں نے کہا ہاں تو کہا پھر شرط بتاؤ۔ میں نے کہا میرے ساتھ تم ملاپ کرو۔ پھر میں اور نند نے ملاپ کیا پھر نند سے کہا سب سے پہلے تیری قربت عمر سے کراؤ عمر زبردست قربت کرتا ھے۔ نند نے کہا ہاں بھابھی پھر میری جلدی سے قربت کراؤ اب مجھ سے صبر نہیں ھوتا میں نے کہا آج ھم ملاپ کریں گی تو پھر میں عمر کو بلا لوں گی یا وہیں رات گزاریں گے تو عمر جو کرے اسے کرنے دینا پھر اپنے پاپا سے پھر عثمان سے۔ کہا ٹھیک ھے۔ پھر میں اور نند نے خوب ملاپ کیا۔ پھر کچھ ایک ہفتے کیلئے نند کی قربت کرانے اپنے میکے آئی نند کو عمر کے حوالے کر کے میں پاپا کے ساتھ روم میں تھی۔ تین رات عمر نے نند کی قربت کی پھر تین رات عثمان نے قربت کی میں نے عمر سے قربت کی پھر نند کو ایک رات پاپا کے ساتھ چھوڑا میں عثمان اور عمر ایک ساتھ قربت کی پھر نند عمر سے شروع ھو گئی پھر ھم واپس آئے تو نند عمر پر مرمٹی تھی پھر نند کو بتایا کے رات کو ھم ملاپ کریں گیں مجھے کرنے کوئی بھی أئے گا تو ھم دونوں کو بنا کپڑوں کے دیکھ کر تیری بھی قربت کرے گا پھر ھم ملاپ کر رھی تھی کے بڑا دیور آیا اس نے ھم دونوں کی قربت کی۔ میں زیاد نند کو آگے کیا اسی طرح چھوٹے دیور نے بھی نند کی قربت کی پھر آخر سسر سے بھی نند کی قربت کرا دی پھر نند نے عمر سے شادی کا کہا اور عمر سے شادی ھو گئی۔ نند نے میرے بھائیوں اور پاپا کو اپنی نازک جگہ اور کمر کی نچلی منزل دے کر گھر کی لاڈلی بن گئی۔ یہاں سب میرے دیوانے تھے میں دونو دیور سے اب ایک ساتھ قربت کرتی ھوں
+
+ تو دوستو میری کہانی کیسی لگی اگر پسند آئی ھو تو لائک کریں اور اپنے خیالات کا اظہار کمنٹ میں ضرور کریں اور اب مجھے اجازت دیں اپنا خیال رکھنا بائے دوستو
+        </div>
+
+        <!-- کمنٹ باکس ہمیشہ کھلا اور لائیو -->
+        <div class="comment-section">
+            <h3>💬 لائیو کمنٹس</h3>
+            <textarea class="comment-box" placeholder="کہانی کے بارے میں اپنی رائے لکھیں..."></textarea>
+            <button class="comment-submit">کمنٹ پوسٹ کریں</button>
+        </div>
+
+        <!-- ٹیلی گرام بٹن -->
+        <a href="https://t.me" class="telegram-btn">📢 Join Telegram</a>
+
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+  
+  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+
+<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/Woh-Raat-Nahi-Bhooli.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ رات نہیں بھولی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/mere-ishq-ki-dastan.html" style="background:#111; color:#ffcc00; border:1px solid #ffcc00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:15px; font-weight:bold;">میرے عشق کی داستان</a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+  </div>
+</div>
+        <!-- رنگ برنگے لائیو لیبلز کا پورا سیٹ -->
+        <div class="labels-container">
+            <a href="#" class="label-pill lbl-romantic">🔥 رومانوی کہانیاں</a>
+            <a href="#" class="label-pill lbl-desiclick">💖 شنو جان اسپیشل</a>
+            <a href="#" class="label-pill lbl-trending">⚡ ٹرینڈنگ ناولز</a>
+            <a href="#" class="label-pill lbl-sachi">🌟 سچی کہانیاں</a>
+        </div>
+
+        <!-- گولڈ کلر کا ہوم پیج بٹن -->
+        <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
+    </div>
+
+    <script>
+        // لائک کاؤنٹر کا فنکشن
+        let count = 44;
+        function addLike() {
+            count++;
+            document.getElementById('like-count').innerText = count;
+        }
+
+        // جاوا اسکرپٹ کا جادوئی خودکار پیراگراف فلٹر
+        window.onload = function() {
+            let storyElement = document.getElementById('raw-story');
+            let text = storyElement.innerHTML.trim();
+            
+            // اگر پوری کہانی ایک ساتھ پیسٹ کی جائے تو یہ جملوں کو چھوٹے خوبصورت پیراگراف میں توڑ دے گا
+            let paragraphs = text.split('\n\n');
+            let formattedText = '';
+            
+            paragraphs.forEach(function(para) {
+                if(para.trim() !== '') {
+                    formattedText += '<p style="margin-bottom: 25px;">' + para.trim() + '</p>';
+                }
+            });
+            
+            storyElement.innerHTML = formattedText;
+        };
+    </script>
+</body>
+<script data-cfasync="false" src="https://bicea.org/14/d2c0f24bfdd5aa6bddd5698bec186a27"></script>
+</html>
