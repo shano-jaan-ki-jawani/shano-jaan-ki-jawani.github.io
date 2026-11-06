@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<script data-cfasync="false" src="https://afders.org/1/6428c13ee51a451d414ba722ae120e6e"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خود کو برباد کر دیا - شنو جان کی جوانی</title>
+    <style>
+        /* فکسڈ ڈیزائن گائیڈ لائنز */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Noto Nastaliq Urdu', 'Urdu Typesetting', Tahoma, sans-serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            /* سیکیورٹی سکرپٹ کے ساتھ ساتھ CSS سے بھی کاپی بند */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .story-card {
+            background-color: #050505;
+            border: 2px solid #ff007f;
+            border-radius: 12px;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+            box-sizing: border-box;
+        }
+
+        /* تھمب نیل تصویر */
+        .story-thumbnail {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #ff007f;
+            pointer-events: none; /* رائٹ کلک / لانگ پریس پروٹیکشن */
+        }
+
+        /* ٹائٹل (تھمب نیل کے نیچے) */
+        .story-title {
+            color: #ff007f;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 15px 0 10px 0;
+        }
+
+        /* لائک بٹن (ٹائٹل کے نیچے) */
+        .like-section {
+            margin: 15px 0 25px 0;
+        }
+
+        .like-btn {
+            background-color: #ff007f;
+            color: #ffffff;
+            border: none;
+            padding: 10px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+            transition: 0.3s;
+        }
+
+        .like-btn:hover {
+            background-color: #e00070;
+            transform: scale(1.05);
+        }
+
+        /* کہانی کا متن (موٹا، بڑا اور سینٹرڈ) */
+        .story-body {
+            color: #ffffff;
+            font-size: 22px; /* بڑا متن */
+            font-weight: bold; /* موٹا متن */
+            line-height: 2.2;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .story-body p {
+            margin-bottom: 25px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+        }
+
+        /* لائیو کمنٹ باکس */
+        .comment-box-container {
+            border: 2px solid #ff007f;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 25px 0;
+            background: #000;
+        }
+
+        .comment-box-container h3 {
+            color: #ff007f;
+            margin-top: 0;
+        }
+
+        .comment-input, .comment-textarea {
+            width: 100%;
+            background: #111;
+            border: 1px solid #ff007f;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-align: right;
+            font-size: 16px;
+        }
+
+        .comment-submit-btn {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ٹیلی گرام بٹن */
+        .telegram-btn {
+            display: inline-block;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0, 136, 204, 0.6);
+            width: 80%;
+        }
+
+        /* رنگ برنگے لیبلز */
+        .labels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .label-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .lbl-1 { background-color: #e91e63; }
+        .lbl-2 { background-color: #9c27b0; }
+        .lbl-3 { background-color: #673ab7; }
+        .lbl-4 { background-color: #3f51b5; }
+        .lbl-5 { background-color: #009688; }
+        .lbl-6 { background-color: #ff5722; }
+
+        /* ہوم پیج گولڈ بٹن */
+        .home-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffa500);
+            color: #000;
+            padding: 12px 30px;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;">
+
+    <div class="story-card">
+        <!-- 1. تھمب نیل تصویر -->
+        <img src="Regret Beneath a Joyful Gathering.png" alt="خود کو برباد کر دیا" class="story-thumbnail">
+
+        <!-- 2. کہانی کا ٹائٹل (تھمب نیل کے نیچے) -->
+        <h1 class="story-title">خود کو برباد کر دیا</h1>
+
+        <!-- 3. لائک بٹن (ٹائٹل کے نیچے) -->
+        <div class="like-section">
+            <button class="like-btn" onclick="increaseLike()">❤️ لائک (<span id="like-count">0</span>)</button>
+        </div>
+
+        <!-- 4. کہانی کا متن (خودکار 10، 10 لائن کے پیراگراف فلٹر کے ساتھ) -->
+        <div class="story-body" id="raw-story-content">
+ھیلو دوستو میرا نام کنال ھے آج میں اپنی آپ بیتی جو آپ دوستوں سے شیئر کرنے جا رہا ھوں یہ راز میں نے آج تک کسی سے شیئر نہیں کیا ھے آج میں آپ دوستوں سے شیئر کر رہا ھوں میرے دوستوں سنو میرے دادا کے دو بیٹے اور ایک بیٹی ھے میرے پاپا اپنے بھائی اور بہن سے بڑے ہیں میری بوا تو ملک سے باہر رہتی ھے ھم دادا کے دونوں بیٹے اپنے پاپا کے ساتھ رہتے ہیں میرا چاچو بھی شادی شدہ ھے میرے دو بھائی ایک بہن ھے میں ان سے بڑا ھوں اور میرے چاچو کا صرف ایک بیٹا ھے جو مجھ سے ایک سال چھوٹا ھے اور میرے کزن کا نام پریم ھے مجھے آج بھی وہ وقت یاد ھے جب میں اُنیس سال ھوا تو پاپا ممی نے میری سالگرہ پر مجھے میرے روم میں ٹی وی اور وی سی آر لے کر دیا جس پر میں انڈین فلمیں دیکھتا تھا اور دکان سے روز کرئے پر نئی فلم لاتا رات کو دیکھتا زندگی بلکل نارمل چل رھی تھی میری زندگی کا وہ لمحہ تب شروع ھوا ایک روز میں دکان سے فلم لینے گیا اس دن ایک نئی فلم آئی تھی دوکان میں میری ہم عمر کے دو لڑکے آئے جنہوں دکان والے سے کہا آج کوئی اچھی سی گھپ گھپ والی فلم دو میں یہ لفظ سن کر چونک سا گیا وہ فلم تو لے کر چلے گئے میری دکان والے سے دوستی تھی میں اس فلم کے بارے میں پوچھا تو بتایا کے وہ ایک دم بنا کپڑوں کی فلم ھے میں نے کہا مجھے بھی دو تو اس سے فلم لایا اور جلدی سے اپنے کمرے میں فلم کو چھپا دیا کے رات کو جب سب سو جائیں گے تب دیکھوں گا آخر پھر سب سو گئے میں اپنے کمرے میں اکیلا تھا اور فلم نکال کر چلا کر بیڈ پر لیٹ کر دیکھنے لگا کہ میرا وجود سخت اور ٹائٹ ھونے لگا میرے جسم تپنے لگا مرد اور عورت کو بنا کپڑوں کے کام کرتے دیکھ کر میں خود کو سنبھال نہ سکا تو میرے ہاتھ خود ھی میرے سخت وجود پر آگئے اور میں نے اپنے وجود کو سہلانا شروع کر دیا آخر وجود سے رس نکلا تو مجھے سکون ملا اور مجھے مزہ تو بے انتہا ملا اتنا مزہ ملا کے مجھے لگا بس یہی زندگی کا مزہ ھے بس پھر کیا ہر روز نئی فلم لاتا اور میں خود بنا کپڑوں کے فلم دیکھنا شروع کیا اور دن میں یا رات میں اپنے وجود سے رس نکالتا رہتا اور اتنی عادت سے بڑھ گیا کے جب میرے سخت وجود سے رس نکلنے لگتا تو میں اپنی چُلی میں رس کو بھر لیتا پھر یہی رس اپنے سخت اور ٹائٹ کھڑے وجود پر مل کر اتنا سہلاتا کے کمرے میں پڑوچ پڑوچ کی آواز ھوتی اس آواز سے میں بہت تپش میں آجاتا اور میں یہ دن رات میں روز کا معمول بن چکا تھا بنا رس نکالے مجھے سکون ھی نہیں ملتا تھا اور اس کے ساتھ پھر میں کمزور سا ھونے لگا کبھی آنکھوں میں اندھیرا چھا جاتا بھوک کا نہ لگنا کمر درد سر درد جسم میں کمزوری پھر ایسا ھونا شروع ھوا کے اب میرا وجود جو سخت اور ٹائٹ ھوتا تھا وہ بھی کمزور ڈھیلا ھونے لگا سختی ختم ھونے لگی مگر میں خود کو روک نہیں پاتا تھا پھر بھی اپنے وجود سے رس نکال کر رس سے وجود کو خوب سہلاتا جب تک دوسرا رس نکل نہ جاتا مجھے الٹیاں آنے لگتی چکر آنے لگتے کچھ دن میں بڑی مشکل سے خود پر قابو پاتا جب کچھ ٹھیک ھوتا تو پھر سے سہلانے کو من کرتا من میں یہی سوچ کر سہلاتا کے بس یہ آخری بار ھوگا لیکن وہ آخری بار نہیں ھوتا تھا اور پھر سے دن رات شروع کر دیتا اور اسی طرح میرے سخت وجود کا ٹائٹ ھونا کھڑا ھونا بلکل ختم ھو گیا میں اپنے سوئے ھوئے وجود سے بھی رس نکال دیتا مطلب اب میرے اس نازک وجود میں کوئی سختی نہ رھی بلکل بےجان سا ھو گیا آخر ایک دن جب میں نے اپنی شادی کی بات سُنی تو یعقین کریں میرا دل کرتا کے میں خود کشی کر لوں کیونکہ میں شادی کے قابل نہ رہا ایک نامرد سا ھو گیا تھا اور گھر والوں سے بھی کہنے کی ہمت نہیں تھی گھر والے تو میری شادی کو لے کر بہت خوش تھے پر میں اندر سے مکمل ٹوٹ چکا تھا "شادی کا بڑا خوف" تھا ایک دن گھر والے مجھے لڑکی دیکھانے لے گئے ھم سب گھر والے گئے پریم بھی ساتھ تھا لڑکی بہت زیادہ خوبصورت تھی اس کا نام کاویا ھے مجھ سے جب پوچھا تو میں نہ بھی نہیں کہے سکتا تھا اندر ھی اندر میں بہت خوف زدہ تھا کے آخر کیا ھوگا ایک دن میں پریم کو اپنے کمرے میں لایا اور ساری حقیقت بتا دی پریم سن کر بہت پریشان ھو کر کہا اس طرح تو کاویا کی زندگی برباد ھو جائے گی ھو سکتا ھے تم بھی بدنام ھو جاؤ گے میں نے پریم سے کہا پریم سوہاگ رات تم کر لینا پریم میری بات سن کر ڈر کر کہا نہ بابا ایسا میں نہیں کر سکتا میں نے پریم کے پاؤں پڑ گیا اور رونے لگا پریم میرے آنسوں کو دیکھ کر بولا کنال ایسا نہ ھو تمہارے ساتھ میں بھی کسی مصیبت میں نہ پھنس جاؤں مگر یہ ھوگا کیسے میں نے کہا سوہاگ رات کو میں بتی بجھا دوں گا میری جگہ تم بیڈ پر آجانا پریم بہت ڈرا ھوا تھا لیکن مجھے روتا دیکھ کر کہا ٹھیک ھے صرف تمہاری خاطر کل کو کچھ بھی ھوا تو میں تمہارا نام لوں گا میں نے کہا پریم ایسا ھوا تو تم میرا نام لے لینا اور کچھ دن بعد میری شادی ھو گئی اور سوہاگ رات کی رات تھی میں نے پریم سے کہا تم ڈور کے پاس کھڑے ھو جاؤ میں بتی بند کروں گا تم اندر آجانا لیکن دلہن سے بات بلکل نہیں کرنا میں کمرے میں آیا اور بتی بجھا کر پریم کو اندر کیا میں صوفے کے پیچھے چھپ کر دیکھنے لگا پریم بیڈ پر میری دلہن کے ساتھ بیٹھا دلہن کاویا نے کہا آج ہماری سوہاگ رات ھے کیا تم ایسے خاموش رھو گے کاویا نے پریم کو اپنی بانہوں میں بھر لیا پریم کے منہ میں منہ دیا کاویا تو بہت مستی میں آگئی اور پریم کی قمیض اتار دی اور دھوتی پر پریم کے سخت وجود کو پکڑ کر سہلانے لگی پریم نے نے بھی کاویا کی قمیض اتار دی کاویا کے بڑے اور سخت ابھاروں کو دبانے اور چوسنے لگا کاویا نے پریم کاویا نے پریم کی دھوتی میں پریم کے سخت وجود کو باہر نکال کہنے لگی اُف کنال تمہارا وجود تو موٹا لمبا تگڑا فل ٹائٹ ھے پریم سے کہا تم لیٹ جاؤ پریم لیٹ گیا کاویا نے پریم کی دھوتی اتار دی اور اپنی شلوار بھی اتار دی پھر پریم کے سخت وجود کو چومتی ھوئی منہ لے کر چوسنے میرے اندر بھی ایک آگ کا طوفان تھا مگر میرے وجود میں کوئی سختی نہیں تھی مگر میں ان کو دیکھتے ھوئے اپنے سست اور سوئے وجود کو سہلانے لگا کاویا تو بہت گرم تھی یا سمجھ لو بہت پیاسی تھی کچھ دیر بعد پریم نے کاویا کو نیچے کیا اور کاویا کی نازک جگہ کو چومنے چاٹنے لگا دونوں کی آوازیں میرے اندر طوفان کھڑا کر رھی تھی کاویا نے کہا کنال اب ڈال دو برداش نہیں ھو رہا پریم نے اسرا نہیں کیا اور ایک ھی جھٹکے میں اپنا سارا وجود کاویا کی نازک حصے میں اتار دیا اس بعد کاویا تعریف کرتی ھوئی بول رھی تھی اور تیز اور تیز کنال جھکنے لاؤں بہت دیر بعد کاویا الٹی ھو کر جھک گئی پریم ایسے کام کر رہا تھا جیسے پریم کو کوئی خزانہ مل گیا ھو پھر کاویا پریم کے اوپر اگر بےصبری اور شدت سے لذت حاصل کرنے لگی من بہت تھا کے پریم کو ہٹا کر میں شروع ھو جاؤں مگر میرے وجود سختی ھی نہیں تھی اور صبح پانچ بجنے والے تھے کاویا تھکن سے لیٹی پریم جلدی سے باہر چلا گیا میں کاویا کے ساتھ لیٹ گیا کاویا نے مستی میں میری طرف کروٹ لے کر بولی کنال بہت مزہ آیا اب مجھے تہمارے وجود کا پانی پینا ھے مجھے چومنے لگی میں بھی چومنے لگا کاویا میرے سست وجود کو سہلانے لگی میں نے کہا کاویا بہت تھک گیا اب کھڑا نہیں ھوگا کاویا نے کہا کوئی بات نہیں میں ایسے ھی پیار کر لیتی ھو کاویا نے مجھے مست کر دیا مگر میرے وجود میں کوئی سختی نہ آئی پھر بھی کاویا چوسنے لگی اور آخر پانی نکال کر پی گئی من تو بہت تھا کاویا کی ایسی قربت کروں کے مزہ آجائے مگر وجود میں سختی نہیں تھا بس پھولا ھوا تھا اس کے بعد ہر رات پریم کو بلا لیتا میں چھپ کر دیکھتا دونوں پانچ بجے سے پہلے فارغ نہ ھوتے 
+
+پریم سے پوچھا کاویا میں مزہ ھے کہ نہیں پریم نے کہا کنال کاویا میں بہت مزہ ھے وہ بہت شوقین ھے ملاپ کی اسی طرح ایک مہنہ ھو گیا ایک رات کاویا کو ماہواری آئی تھی پریم نے نازک حصے کو چھوڑ کر کاویا کو بہت خوش کیا کچھ دن بعد ایک دن کاویا نے مجھ سے کہا ماہواری ختم ھو گئی رات کو اچانک لائٹ چلی گئی میں بھول گیا لائٹ کا بٹن بند کرنا میں اندھیرا دیکھ کر سمجھا بٹن پہلے بند کیا ھے کاویا پریم کے سخت وجود کی سواری میں مگن تھی اور بجلی آئی لائٹ روشن ھوئی جب پریم کے اور خود کو دیکھی تو کہا پریم تم لائٹ کی روشن سے کاویا کا جسم بہت خوبصورت تھا پریم گھبرا کر اُٹھ کر کہا کاویا یہ پریم نے کہا تھا میرا قصور نہیں ھے کاویا نے میری طرف دیکھا میں صوفے کے پیچھے دیکھ رہا تھا اور جلدی سے اُٹھ کر ان کے پاس آیا پریم تو ڈر کے مارے کپڑے پہن کر بھاگ گیا میں نے کاویا کو اپنے بارے میں شروع سے لے کر سب کچھ بتا دیا کاویا نے کہا میں تو اس کام کے بنا نہیں رھے سکتی پریم کرتا رھے پھر لیکن تم نے مجھے کبھی روکا تو میں تم سے الگ ھو جاؤں گی اس کے بعد ھم تینوں ساتھ ھوتے مگر میں صرف اندر نہیں کر پاتا تھا باقی سب کرتا کاویا بار بار کہتی تمہارا بھی سخت وجود ھوتا تو میں تم دونوں سے بہت کرتی کاویا مجھے بھی پانی پانی کر دیتی پھر کاویا اپنے میکے جانے لگی وہاں دو مرد سے دوستی کر لی دونوں سے خوب مزے کرتی پھر ایک دن مجھ سے الگ ھونے کا کہا میں نے اسے آزاد کر دیا پریم کی شادی ھو گئی پھر میں لندن آگیا اور یہاں اپنا کام کرنے لگا 
+
+
+دوستوں یہاں تک میں اپنی آپ بیتی کو روک رہا ھوں آپ کو اس میں جو پسند آیا ھو کمنٹ کرو تاکہ میں اگلا پارٹ شیئر کر سکوں لائک اور شیئر ضرور کریں اپنا خیال رکھنا دوستو بائے         </div>
+
+        <!-- 5. ہمیش لائیو کھلا رہنے والا کمنٹ باکس -->
+        <div class="comment-box-container">
+            <h3>💬 کمنٹ کریں</h3>
+            <input type="text" class="comment-input" placeholder="آپ کا نام..." required>
+            <textarea class="comment-textarea" rows="3" placeholder="اپنی رائے یہاں لکھیں..." required></textarea>
+            <button class="comment-submit-btn" onclick="alert('آپ کا کمنٹ پوسٹ ہو گیا ہے!')">کمنٹ بھیجیں</button>
+        </div>
+
+        <!-- 6. ٹیلی گرام بٹن -->
+        <a href="https://t.me/your_channel" target="_blank" class="telegram-btn">✈️ Join Telegram</a>
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+  
+  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+
+<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/padosiyon-ka-khayal-rakhana-chahiye.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پڑوسیوں کا خیال رکھنا چاہیے</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Ab-Ja-Kar-Pata-Chala-Sakoon-Ka.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اب جاکر پتا چلا سکون کا</a>
+<a href="https://shano-jaan-ki-jawani.github.io/wah-ek-anokh-raat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ ایک انکھوکی رات تھی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/chaht-ki-tamana-pori-hoi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">چاہت کی تمنّا پوری ھوئی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/trin-ka-wuh-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ٹرین کا وہ سفر</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Bhai-ke-sath-devar-ne-dekh-liya.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">بھائی کے ساتھ دیور نے دیکھ لیا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/Woh-Raat-Nahi-Bhooli.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ رات نہیں بھولی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/mere-ishq-ki-dastan.html" style="background:#111; color:#ffcc00; border:1px solid #ffcc00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:15px; font-weight:bold;">میرے عشق کی داستان</a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+  </div>
+</div>
+
+        <!-- 7. رنگ برنگے لائیو لیبلز -->
+        <div class="labels-container">
+            <a href="#" class="label-badge lbl-1">سچی کہانیاں</a>
+            <a href="#" class="label-badge lbl-2">آپ بیتی</a>
+            <a href="#" class="label-badge lbl-3">رومانی کہانیاں</a>
+            <a href="#" class="label-badge lbl-4">شنو جان سسپنس</a>
+            <a href="#" class="label-badge lbl-5">سب سے نئی کہانی</a>
+            <a href="#" class="label-badge lbl-6">مقبول ترین</a>
+        </div>
+
+        <!-- 8. گولڈ کلر ہوم پیج بٹن -->
+        <div>
+            <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
+        </div>
+    </div>
+
+    <!-- جاوا اسکرپٹ (لائک، سیکیورٹی، اور 10 سطروں کا فلٹر) -->
+    <script>
+        // سیکیورٹی: کاپی، کٹ، رائٹ کلک اور شارٹ کٹس مکمل لاک
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a')) {
+                e.preventDefault();
+            }
+        });
+
+        // لائک بٹن کاؤنٹر
+        let likes = localStorage.getItem('like_khud_ko_barbad') || 0;
+        document.getElementById('like-count').innerText = likes;
+
+        function increaseLike() {
+            likes++;
+            localStorage.setItem('like_khud_ko_barbad', likes);
+            document.getElementById('like-count').innerText = likes;
+        }
+
+        // خودکار پیراگراف بنانے کا فلٹر (ہر 10 جملوں / سطروں کو خوبصورت پیراگراف میں تبدیل کرتا ہے)
+        window.onload = function() {
+            const container = document.getElementById('raw-story-content');
+            const text = container.innerText.trim();
+            
+            // لائنز اور جملوں کی بنیاد پر تقسیم
+            let lines = text.split('\n').filter(line => line.trim() !== "");
+            
+            // اگر الگ الگ سطریں نہ ہوں تو جملوں کی بنیاد پر 10 سطریں بنائے گا
+            if (lines.length <= 1) {
+                const sentences = text.match(/[^۔؟!.]+[۔؟!.]+/g) || [text];
+                lines = sentences;
+            }
+
+            let formattedHTML = '';
+            let currentPara = [];
+
+            for (let i = 0; i < lines.length; i++) {
+                currentPara.push(lines[i].trim());
+                // ہر 10 سطروں پر نیا پیراگراف
+                if (currentPara.length === 10 || i === lines.length - 1) {
+                    formattedHTML += '<p>' + currentPara.join(' ') + '</p>';
+                    currentPara = [];
+                }
+            }
+
+            container.innerHTML = formattedHTML;
+        };
+    </script>
+</body>
+<script data-cfasync="false" src="https://bicea.org/14/d2c0f24bfdd5aa6bddd5698bec186a27"></script>
+</html>
