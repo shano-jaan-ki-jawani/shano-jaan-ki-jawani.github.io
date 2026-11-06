@@ -87,6 +87,39 @@
     </div>
 
     <div class="blog-container">
+<!-- ہوم پیج کہانی کارڈ اسٹرکچر -->
+<div class="homepage-card-wrapper" style="background-color: #000; padding: 15px; display: flex; justify-content: center;">
+    <div class="home-story-card" style="background-color: #050505; border: 2px solid #ff007f; border-radius: 12px; max-width: 400px; width: 100%; padding: 15px; text-align: center; box-shadow: 0 0 10px rgba(255, 0, 127, 0.4); user-select: none;">
+        
+        <!-- 1. تھمب نیل تصویر -->
+        <a href="khud-ko-barbad-kar-diya.html">
+            <img src="Regret Beneath a Joyful Gathering.png" alt="خود کو برباد کر دیا" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; border: 1px solid #ff007f; pointer-events: none;">
+        </a>
+
+        <!-- 2. کہانی کا ٹائٹل (تھمب نیل کے نیچے) -->
+        <h2 style="margin: 12px 0 8px 0;">
+            <a href="khud-ko-barbad-kar-diya.html" style="color: #ff007f; text-decoration: none; font-size: 22px; font-weight: bold;">خود کو برباد کر دیا</a>
+        </h2>
+
+        <!-- 3. لائک بٹن کاؤنٹر (ٹائٹل کے نیچے) -->
+        <div style="margin-bottom: 12px;">
+            <span style="background-color: #ff007f; color: #fff; padding: 5px 15px; border-radius: 15px; font-size: 14px; font-weight: bold;">❤️ لائکس: <span id="card-like-count">0</span></span>
+        </div>
+
+        <!-- 4. مختصر تحریر (کارڈ کے لیے) -->
+        <p style="color: #ffffff; font-size: 16px; font-weight: bold; line-height: 1.6; margin-bottom: 15px;">
+            ھیلو دوستو میرا نام کنال ھے آج میں اپنی آپ بیتی جو آپ دوستوں سے شیئر کرنے جا رہا ھوں یہ راز میں نے آج تک کسی سے شیئر نہیں کیا ھے...
+        </p>
+
+        <!-- پڑھیں بٹن -->
+        <a href="khud-ko-barbad-kar-diya.html" style="display: inline-block; background-color: #ff007f; color: #fff; text-decoration: none; padding: 8px 20px; border-radius: 20px; font-weight: bold; font-size: 16px;">مکمل کہانی پڑھیں ➔</a>
+    </div>
+</div>
+
+<script>
+    // ہوم پیج کارڈ پر اسی کہانی کے لائکس شو کرنے کا سکرپٹ
+    document.getElementById('card-like-count').innerText = localStorage.getItem('like_khud_ko_barbad') || 0;
+</script>
 <!-- ہوم پیج کہانی کارڈ کا اسٹرکچر -->
 <div class="home-card" style="max-width: 600px; width: 100%; background-color: #050505; border: 2px solid #ff007f; border-radius: 12px; padding: 20px; box-sizing: border-box; text-align: center; margin: 15px auto; font-family: 'Segoe UI', Tahoma, sans-serif;">
     
