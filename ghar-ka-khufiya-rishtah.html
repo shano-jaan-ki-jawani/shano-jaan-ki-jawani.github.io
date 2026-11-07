@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<script data-cfasync="false" src="https://afders.org/1/6428c13ee51a451d414ba722ae120e6e"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گھر کا خفیہ رشتہ - شنو جان کی جوانی</title>
+    <style>
+        /* فکسڈ ڈیزائن گائیڈ لائنز */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .main-card {
+            background-color: #050505;
+            border: 2px solid #ff007f;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 800px;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+        }
+
+        .thumbnail-img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid #ff007f;
+            pointer-events: none;
+        }
+
+        .story-title {
+            color: #ff007f;
+            font-size: 2.5rem;
+            margin: 20px 0 10px 0;
+            font-weight: bold;
+        }
+
+        /* لائک بٹن اسٹائل */
+        .like-section {
+            margin-bottom: 25px;
+        }
+
+        .like-btn {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .like-btn:hover {
+            background-color: #ff0066;
+            box-shadow: 0 0 10px #ff007f;
+        }
+
+        /* کہانی کا بڑا اور موٹا متن */
+        .story-content {
+            font-size: 1.6rem;
+            line-height: 2.2;
+            font-weight: bold;
+            text-align: center;
+            white-space: pre-line;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        /* کمنٹ باکس */
+        .comment-section {
+            border-top: 1px solid #ff007f;
+            padding-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .comment-box {
+            width: 100%;
+            height: 100px;
+            background-color: #111;
+            border: 2px solid #ff007f;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            resize: none;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .comment-submit {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* بٹنز اور لیبلز */
+        .telegram-btn {
+            background-color: #0088cc;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .telegram-btn:hover {
+            box-shadow: 0 0 10px #0088cc;
+        }
+
+        .labels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .label {
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .home-btn {
+            background-color: #ffd700;
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            box-shadow: 0 0 10px #ffd700;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div class="main-card">
+        <!-- 1. تھمب نیل تصویر -->
+        <img src="Secret Relationship in the Bedroom.png" alt="گھر کا خفیہ رشتہ" class="thumbnail-img" oncontextmenu="return false;">
+
+        <!-- 2. ٹائٹل -->
+        <h1 class="story-title">گھر کا خفیہ رشتہ</h1>
+
+        <!-- 3. لائک بٹن -->
+        <div class="like-section">
+            <button class="like-btn" id="likeBtn">❤️ لائک کریں (<span id="likeCount">0</span>)</button>
+        </div>
+
+        <!-- 4. کہانی کا متن (جاوا اسکرپٹ سے لوڈ ہوگا) -->
+        <div class="story-content" id="storyContainer">
+            <!-- کہانی کا خام متن یہاں پیسٹ کریں -->
+            ہیلو دوستو! میرا نام اننیا ہے میں خود کو آئینے میں دیکھتی ہوں تو مجھے اپنا وجود بہت دلکش لگتا ہے۔ میں تھوڑی سی بھری ہوئی ہوں، میرے جسم کے اتار چڑھاؤ میں ایک عجیب سی کشش ہے۔ میرے سینے کے بھاری ابھار اور ان کی پنک نپلیں اکثر میری نائٹی کے نیچے سے ابھری ہوئی محسوس ہوتی ہیں۔ میرا پورا وجود، خاص طور پر میری نازک حصہ کے پنک ہونٹ اور اس کی اندرونی سرخی، مجھے خود بھی بہت پرکشش لگتی ہے۔
+
+ہمارے گھر میں ہم چار لوگ ہیں۔ امی، ابو، یش اور میں۔ سچ کہوں تو، مجھے پہلے ان سب چیزوں کا بالکل علم نہیں تھا، لیکن پھر ایک صبح نے میری زندگی اور میرے خیالات کو ہمیشہ کے لیے بدل دیا۔
+
+وہ ایک عام سی صبح تھی، میں ناشتے کے لیے یش کو اٹھانے اس کے کمرے میں گئی۔ وہ گہری نیند میں تھا، لیکن جیسے ہی میری نظر اس کی چڈی پر پڑی، میرے پیروں تلے سے زمین نکل گئی۔ اس کی چڈی اس کے سخت اور تگڑے وجود کی وجہ سے بالکل ٹائٹ ہو کر ابھری ہوئی تھی۔ وہ منظر دیکھ کر میرے جسم میں ایک عجیب سی تپش دوڑ گئی، جیسے کسی نے میرے اندر آگ لگا دی ہو۔ اس دن کے بعد سے، میرا مقصد اسے اٹھانا نہیں، بلکہ اس کے اس تگڑے وجود کو دیکھنا بن گیا۔
+
+میں روز اس کے کمرے میں جاتی، اسے دیکھتی اور اس کے وجود کی سختی کا تصور کر کے خود کو تڑپاتی۔ میں اتنی گرم رہنے لگی کہ اکثر تنہائی میں اپنی انگلیوں سے اپنی نازک جگہ کو سہلاتی، یہاں تک کہ میرا رس بہہ نکلتا۔ میرے ذہن میں ہزاروں خیال آتے۔ میں سوچتی کہ اگر میں کسی باہر کے مرد کے ساتھ ایسا کروں تو بدنامی ہوگی، میں پریگننٹ بھی ہو سکتی ہوں اور کوئی میرا ساتھ نہیں دے گا۔ لیکن یش... یش میرا اپنا تھا۔ اگر میں اس کے ساتھ کچھ کروں گی تو کسی کو پتہ بھی نہیں چلے گا، اور اگر میں پریگننٹ بھی ہو گئی تو وہ میرا خیال بھی رکھے گا۔
+
+بالآخر، میں نے فیصلہ کر لیا۔ وہ رات مجھے یاد رہے گی۔ میں بہت گھبرائی ہوئی تھی، میرا دل سینے سے باہر آنے کو تھا، لیکن میری پیاس میری گھبراہٹ پر غالب تھی۔ میں دبے پاؤں آریان کے کمرے میں داخل ہوئی۔ کمرے کی مدھم روشنی میں میں نے دیکھا کہ آریان گہری نیند میں ہے اور اس کا وجود چڈی سے باہر نکل کر ایک تگڑے ستون کی طرح کھڑا تھا۔
+
+اسے دیکھ کر میرا ضبط جواب دے گیا۔ میں نے اپنی نائٹی اتار کر پھینکی اور ننگے بدن کے ساتھ اس کے قریب ہو گئی۔ جیسے ہی میں نے اس کے گرم اور سخت وجود کو اپنے ہاتھ میں لیا، اس کی سختی نے مجھے پاگل کر دیا۔ میرا منہ اس کے وجود کو چومنے کے لیے ترس رہا تھا۔ میں نے جُھک کر اپنے پیاسے ہونٹوں سے اس کے وجود کے سر کو چومنا شروع کیا اور پھر اسے آہستہ آہستہ اپنے منہ میں لینا شروع کر دیا۔ اس کا ذائقہ اور اس کی تپش نے مجھے ایک ایسی لذت دی جو میں نے پہلے کبھی محسوس نہیں کی تھی۔
+
+میں اس کے وجود کو پوری شدت سے چوس رہی تھی کہ اچانک مجھے محسوس ہوا کہ کسی نے میرے بالوں میں انگلیاں پھیرنا شروع کر دی ہیں۔ میں نے ڈرتے ڈرتے آنکھیں اٹھائیں تو دیکھا کہ یش جاگ چکا تھا اور وہ پوری مستی اور جنون سے مجھے دیکھ رہا تھا۔ میری آنکھوں میں ایک خاموش التجا تھی—"یش، مجھے اپنے اندر سما لو"۔
+
+یش نے ایک لمحہ بھی ضائع نہیں کیا، اس نے مجھے اپنی مضبوط باہوں میں اٹھایا، اپنی تپتی ہوئی چھاتی سے لگایا اور ہمارے لب ایک دوسرے میں ضم ہو گئے۔ وہ بوسہ اتنا گہرا اور پیاسا تھا کہ ہمیں دنیا و مافیہا کی خبر نہ رہی۔ 
+
+
+یش نے آہستہ سے مجھے بستر پر لٹایا اور میرے جسم کے ہر حصے پر اپنا قبضہ جما لیا۔ اس کے لب میرے گرد گھومنے لگے۔ اس نے میرے گردن سے شروع کیا اور آہستہ آہستہ نیچے کی طرف بڑھا۔ جب اس کی گرم زبان میرے تپتے ہوئے بھاری ابھار کے گرد گھومی اور پھر اس نے میری پنک نپلوں کو اپنے منہ میں بھر کر چوسنا شروع کیا، تو میں ایک زوردار کراہ کے ساتھ کمان کی طرح اوپر کو اٹھ گئی۔ 
+
+"یش... تم کتنے پیارے ہو، تمہارے لب کتنے گرم ہیں،" میں نے ہانپتے ہوئے کہا۔
+
+وہ رکنے والا نہیں تھا۔ اس نے میرے پیٹ سے ہوتے ہوئے نیچے کی طرف سفر شروع کیا۔ جب اس کی زبان میرے مخصوص حصے یعنی میری نازک جگہ کے دہانے کو چھوئی، تو میرا پورا جسم اکڑ گیا۔ اس نے نہایت مہارت سے میرے پنک ہونٹوں کو چاٹنا شروع کیا اور پھر اپنی زبان کی نوک سے میری نازک حصے کے اندر داخل ہونے لگا۔ اس کی زبان کا وہ لمس، وہ گیلا پن اور وہ چاٹنے کا انداز—میں پاگل ہو رہی تھی۔ میں نے اس کے سر کو مضبوطی سے پکڑ لیا اور اسے مزید گہرائی میں دھکیلنے لگی۔ میرا رس اس کے چہرے پر بہہ رہا تھا۔
+
+"تمہاری نازک جگہ کتنی میٹھی اور گرم ہے، اننیا،" اس نے میرے کان میں سرگوشی کی، اور اس کے بعد اس نے اپنا تپتا ہوا موٹا وجود میرے منہ کے سامنے کر دیا۔ میں نے جھک کر اس کے وجود کو اپنے پیاسے ہونٹوں میں لے لیا۔ اس کے وجود کا ذائقہ اور اس کی سختی نے مجھے ایک الگ ہی دنیا میں پہنچا دیا۔ میں اسے پوری شدت سے چوس رہی تھی، اس کے ہر جھٹکے کو اپنے حلق تک محسوس کر رہی تھی۔
+
+
+یش نے مجھے بستر پر گھٹنوں اور ہاتھوں کے بل لٹا دیا—میں گھوری بن چُکی تھی۔ یش نے پیچھے سے میرے جسم کو دیکھا اور میری کمر کو مضبوطی سے پکڑا۔ اس نے اپنے وجود کو میری بھیگی ہوئی نازک جگہ کے دہانے پر رگڑا اور پھر ایک ہی جھٹکے میں خود کو میرے اندر اتار دیا۔ "آہ! یش! تم بہت بڑے اور تگڑے ہو،" میں نے کراہتے ہوئے کہا۔ اس کے ہر وار کے ساتھ میرا جسم آگے پیچھے جھول رہا تھا اور اس کی سختی میری گہرائیوں کو چھو رہی تھی۔
+
+
+لذت کے اس مرحلے میں، میں نے خود کو اس کے اوپر پوزیشن میں لائی۔ میں اس کے اوپر بیٹھ گئی تاکہ میں اس کی رفتار اور گہرائی کو خود کنٹرول کر سکوں۔ میں نے اپنے دونوں ہاتھ اس کے سینے پر رکھے اور خود کو اس کے اوپر اوپر نیچے حرکت دینے لگی۔ "تمہارا وجود کتنا مضبوط ہے، اننیا، مجھے مکمل بھر لو،" اس نے میری کمر کو تھام کر مجھے اوپر نیچے کرنے میں مدد دی۔ میری نازک جگہ اس کے وجود کے گرد اس طرح لپٹ رہی تھی جیسے کوئی پیاسی زمین بارش کا انتظار کر رہی ہو۔
+
+
+اب ہم دونوں اس مقام پر تھے جہاں سے واپسی ممکن نہ تھی۔ ہم ایک دوسرے کے جسموں میں اس طرح ضم ہو چکے تھے کہ فرق کرنا مشکل تھا۔ ہم نے ایک دوسرے کو شدت سے چومنا شروع کیا، ایک دوسرے کے جسموں کی تعریف کی—"تمہاری جلد کتنی نرم ہے، تمہارا جسم کتنا پرکشش ہے"—اور پھر رفتار نے عروج پکڑ لیا۔ 
+
+کمرے میں صرف ہمارے جسموں کے ٹکرانے کی آوازیں اور ہماری ہانپتی ہوئی سانسیں تھیں۔ اچانک، ایک زوردار جھٹکے کے ساتھ، یش نے اپنا وجود میری گہرائیوں میں جما دیا اور اپنا گرم پانی میرے اندر خالی کر دیا۔ اسی لمحے، میں بھی ایک زوردار لہر کے ساتھ پھٹ پڑی اور میری نازک جگہ سے رس کا ایک طوفان نکلا۔ ہم دونوں پسینے میں شرابور، ایک دوسرے کے سینوں سے لگ کر لیٹ گئے، اس خفیہ رشتے کی تپش میں مکمل طور پر پگھل چکے تھے۔
+
+ہم دونوں پسینے میں شرابور، ایک دوسرے کے سینوں سے لگ کر لیٹ گئے، اس خفیہ رشتے کی تپش میں مکمل طور پر پگھل چکے تھے۔ اس رات نے ہماری زندگیوں کو ہمیشہ کے لیے بدل دیا تھا۔"
+
+دوستو اگر میری یہ کہانی آپ کو پسند آئی ہو تو اسے لائک کریں، شیئر کریں اور کمنٹ میں اپنی رائے ضرور دیں تاکہ مجھے پتہ چلے کہ آپ کو کیسا لگا۔ آپ کے پیار اور سپورٹ سے ہی مجھے حوصلہ ملتا ہے تاکہ میں اس کہانی کا اگلا پارٹ جلد از جلد آپ دوستوں کے ساتھ شیئر کر سکوں۔**
+
+اگلے پارٹ کا انتظار رہے گا!۔
+        </div>
+
+        <!-- 5. کمنٹ باکس (ہمیشہ لائیو اور کھلا) -->
+        <div class="comment-section">
+            <textarea class="comment-box" placeholder="اپنی رائے یہاں لکھیں..."></textarea>
+            <button class="comment-submit">کمنٹ پوسٹ کریں</button>
+        </div>
+
+        <!-- 6. ٹیلی گرام بٹن -->
+        <a href="https://t.me" class="telegram-btn">🔹 Join Telegram 🔹</a>
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+  
+  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+
+<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/khud-ko-barbad-kar-diya.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میں نے خود کو برباد کر دیا</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/padosiyon-ka-khayal-rakhana-chahiye.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پڑوسیوں کا خیال رکھنا چاہیے</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Ab-Ja-Kar-Pata-Chala-Sakoon-Ka.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اب جاکر پتا چلا سکون کا</a>
+<a href="https://shano-jaan-ki-jawani.github.io/wah-ek-anokh-raat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ ایک انکھوکی رات تھی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/chaht-ki-tamana-pori-hoi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">چاہت کی تمنّا پوری ھوئی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/trin-ka-wuh-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ٹرین کا وہ سفر</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Bhai-ke-sath-devar-ne-dekh-liya.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">بھائی کے ساتھ دیور نے دیکھ لیا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/Woh-Raat-Nahi-Bhooli.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ رات نہیں بھولی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/mere-ishq-ki-dastan.html" style="background:#111; color:#ffcc00; border:1px solid #ffcc00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:15px; font-weight:bold;">میرے عشق کی داستان</a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+  </div>
+</div>
+
+        <!-- 7. رنگ برنگے خوبصورت لیبلز کا سیٹ -->
+        <div class="labels-container">
+            <a href="#" class="label" style="background-color: #ff3366;">🔥 نئی کہانیاں</a>
+            <a href="#" class="label" style="background-color: #33ccff;">💖 رومانٹک</a>
+            <a href="#" class="label" style="background-color: #ff9933;">🤫 خفیہ راز</a>
+            <a href="#" class="label" style="background-color: #9933ff;">✨ سسپنس</a>
+        </div>
+
+        <!-- 8. ہوم پیج بٹن -->
+        <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
+    </div>
+
+    <script>
+        // کاپی اور سلیکشن لاک کرنے کا سیکیورٹی اسکرپٹ
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 'a' || e.key === 's')) {
+                e.preventDefault();
+            }
+        });
+
+        // لائک بٹن کا فنکشن
+        let count = 0;
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCount = document.getElementById('likeCount');
+        likeBtn.addEventListener('click', () => {
+            count++;
+            likeCount.innerText = count;
+        });
+
+        // جادوئی جاوا اسکرپٹ فلٹر: ہر 10 لائنوں/جملوں کے بعد خوبصورت پیراگراف بنانا
+        window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('storyContainer');
+            const rawText = container.innerText.trim();
+            
+            // جملوں کو الگ کرنا
+            const sentences = rawText.match(/[^\.!\?۔]+[\.!\?۔]+/g) || [rawText];
+            let formattedStory = "";
+            let currentParagraph = [];
+
+            sentences.forEach((sentence, index) => {
+                currentParagraph.push(sentence.trim());
+                // ہر 10 جملوں (لائنوں) کے بعد ایک مکمل پیراگراف بنانا
+                if (currentParagraph.length === 10 || index === sentences.length - 1) {
+                    formattedStory += `<p style="margin-bottom: 35px; text-align: center;">${currentParagraph.join(" ")}</p>`;
+                    currentParagraph = [];
+                }
+            });
+
+            container.innerHTML = formattedStory;
+        });
+    </script>
+</body>
+<script data-cfasync="false" src="https://bicea.org/14/d2c0f24bfdd5aa6bddd5698bec186a27"></script>
+</html>
