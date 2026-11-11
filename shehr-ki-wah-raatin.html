@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<script data-cfasync="false" src="https://afders.org/1/6428c13ee51a451d414ba722ae120e6e"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شہر کی وہ راتیں - شنو جان کی جوانی</title>
+    <!-- Jameel Noori Nastaleeq Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global & Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-user-select: none; /* Security: Prevent Text Selection */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', Urdu, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
+
+        /* Protection / Security (Prevent context menu & long press) */
+        img, body, div, p {
+            -webkit-touch-callout: none;
+            -webkit-user-drag: none;
+        }
+
+        /* Main Card Layout */
+        .story-container {
+            background-color: #000000;
+            border: 2px solid #ff007f;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 700px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+        }
+
+        /* Thumbnail Image (4:3 Aspect Ratio Container) */
+        .thumbnail-box {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ff007f;
+        }
+
+        .thumbnail-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Story Title */
+        .story-title {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        /* Like Button */
+        .like-btn-wrapper {
+            margin-bottom: 25px;
+        }
+
+        .like-btn {
+            background-color: transparent;
+            color: #ff007f;
+            border: 2px solid #ff007f;
+            padding: 8px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+        }
+
+        .like-btn:hover, .like-btn.liked {
+            background-color: #ff007f;
+            color: #ffffff;
+            box-shadow: 0 0 10px #ff007f;
+        }
+
+        /* Story Body Content - Big & Bold Text */
+        .story-body {
+            color: #ffffff;
+            font-size: 22px; /* بڑا سائز */
+            font-weight: bold; /* موٹا متن */
+            line-height: 2.2;
+            text-align: center; /* اسکرین کے وسط میں */
+            margin-bottom: 30px;
+        }
+
+        .story-body p {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Comment Box (Always Open & Live) */
+        .comment-section {
+            border: 2px solid #ff007f;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 25px;
+            background-color: #050505;
+            text-align: right;
+        }
+
+        .comment-section h3 {
+            color: #ff007f;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .comment-input {
+            width: 100%;
+            height: 80px;
+            background-color: #000000;
+            border: 1px solid #ff007f;
+            border-radius: 6px;
+            color: #ffffff;
+            padding: 10px;
+            font-family: inherit;
+            font-size: 16px;
+            resize: none;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .comment-submit {
+            background-color: #ff007f;
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .comments-list {
+            margin-top: 15px;
+            color: #ffffff;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        /* Telegram Button */
+        .telegram-btn {
+            display: block;
+            width: 100%;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 10px rgba(0, 136, 204, 0.4);
+        }
+
+        /* Colorful Labels */
+        .labels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .label-tag {
+            padding: 6px 16px;
+            border-radius: 20px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .lbl-1 { background-color: #e91e63; }
+        .lbl-2 { background-color: #9c27b0; }
+        .lbl-3 { background-color: #673ab7; }
+        .lbl-4 { background-color: #3f51b5; }
+        .lbl-5 { background-color: #009688; }
+        .lbl-6 { background-color: #ff5722; }
+
+        /* Home Page Button (Gold Color) */
+        .home-btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #000000;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div class="story-container">
+        
+        <!-- 1. تھمب نیل تصویر (4:3) -->
+        <div class="thumbnail-box">
+            <img src="Romantic Rose-Lit Bedroom Friends.png" alt="شہر کی وہ راتیں">
+        </div>
+
+        <!-- 2. تھمب نیل کے نیچے ٹائٹل -->
+        <h1 class="story-title">شہر کی وہ راتیں</h1>
+
+        <!-- 3. ٹائٹل کے نیچے لائک بٹن -->
+        <div class="like-btn-wrapper">
+            <button class="like-btn" id="likeBtn" onclick="toggleLike()">
+                ♥ لائک کریں <span id="likeCount">124</span>
+            </button>
+        </div>
+
+        <!-- 4. کہانی کا متن (خودکار پیراگراف جاوا اسکرپٹ کے ذریعے) -->
+        <div class="story-body" id="storyContent">
+            میرا نام رافے ہے، اور میری زندگی کا ایک بڑا خواب شہر جا کر اپنی پہچان بنانا تھا۔ میرا بچپن گاؤں کی سادہ زندگی میں گزرا، لیکن دل ہمیشہ شہر کی چمک 
+دمک اور وہاں کی زندگی کے لیے تڑپتا تھا۔
+میرا دوست عاشر پہلے سے شہر میں تھا، وہ وہاں اکیلا رہتا اور جاب بھی کرتا تھا۔ میں نے عاشر کو جاب کا بولا تھا عاشر نے کہا تھا جب بھی یہاں کوئی جاب ھوگی تمہیں بلا لوں گا،
+
+آخر کار وہ دن آ ہی گیا جب عاشر کی کال آئی جاب کا بتایا۔ مجھ سے کہا رافع، جلدی سے شہر آ جاؤ، میرے آفس میں باس سے تمہاری جاب کی بات کر دی ھے میں نے ایک لمحہ بھی ضائع نہیں کیا، ٹرین کا ٹکٹ لیا اور چند گھنٹوں میں شہر پہنچ گیا۔ عاشر مجھے اسٹیشن سے لینے آیا،
+
+عاشر جہاں رہتا تھا وہ کمرہ چھوٹا سا تھا، صرف ایک کمرہ اور ایک بیڈ۔ میری جاب لگ گئی اور ہماری زندگی ایک نئے رخ پر مڑ گئی۔ ہم ایک ہی بیڈ پر سوتے تھے، اور چھٹی کے دن ہم شہر کی رنگینیوں میں کھو جاتے۔ لیکن جیسے جیسے دن گزرتے گئے، ہمارے درمیان ایک ایسی کیفیت پیدا ہونے لگی جو ہم دونوں نے پہلے کبھی محسوس نہیں کی تھی۔
+
+راتوں کو جب ہم سونے کی کوشش کرتے، تو نیند کی آغوش میں ہم ایک دوسرے کے قریب کھنچے چلے جاتے۔ کبھی میں نیند میں عاشر کے ڈھام سے چپکا ھوتا، تو کبھی عاشر میری ڈھام سے چپکا ھوتا۔ ہماری ٹانگیں ایک دوسرے میں پیوست ہو جاتیں اور ہمارے ڈامبھے فل ٹائٹ کھڑے ھوتے اور ایک دوسرے سے ٹکراتے۔ ہم دونوں کے وجود میں ایک عجیب سی کیفیت آنے لگی تھی، ایک ایسی تڑپ جو ہم چھپانے کی کوشش کرتے مگر ناکام رہتے۔
+
+کبھی کبھی باتوں باتوں میں، ہنسی مذاق کے دوران، ہمارے ہونٹ ایک دوسرے سے ٹکرا جاتے۔ وہ لمس، وہ قربت، ہمارے دلوں کی دھڑکنیں تیز کر دیتی۔ ایک رات تو حد ہی ہو گئی۔ ہم دونوں بیڈ پر لیٹے باتیں کر رہے تھے کہ اچانک ماحول میں ایک ایسی تپش پیدا ہوئی کہ ہم خود پر قابو نہ رکھ سکے۔ ہم نے ایک دوسرے کو اپنی ٹانگوں میں جگر لیا اور اتنی شدت سے رگڑا کہ ہماری چڈیوں کے اندر ہمارے ڈامبھے بے قابو ہو کر باہر نکل آئے اور ھم ایک دوسرے گم ھو گئے۔ اور ہم ایک دوسرے کے منہ میں ڈوب گئے، زبانیں ایک دوسرے کے منہ میں رقص کرنے لگیں، اور اس جنون میں ہم اتنے گرم ہوئے کہ ہمارے ڈامبھوں سے رس نکل کر بہنے لگا۔ اس لذت کے بعد ہم بے ہوشی کی نیند سو گئے۔
+
+اگلی صبح ہم نے اس رات کا ذکر نہیں کیا، جیسے کچھ ہوا ہی نہ ہو۔ ناشتہ کیا اور آفس چلے گئے۔ لیکن شام کو جب ہم کام سے واپس گھر آئے، تو اچانک ہم دونوں کے منہ سے ایک ہی بات نکلی، "رات بہت مزہ آیا تھا ہم ایک دوسرے کو دیکھ کر کھلکھلا کر ہنس پڑے۔
+
+عاشر نے میری آنکھوں میں دیکھ کر کہا، رافے، کل ہفتہ ہے، چھٹی ہے، اور پرسوں اتوار بھی ہے۔ کیوں نہ کچھ نیا کریں
+
+میں نے عاشر کے قریب ہو کر، اس کی آنکھوں میں آنکھیں ڈال کر کہا، عاشر، تم ٹھیک کہتے ہو، کیوں نہ اس بار ہم ایک دوسرے کو مکمل طور پر خوش کریں اور اس نودنی کی لذت کو پوری شدت سے محسوس کریں
+
+عاشر کے چہرے پر ایک لذت بھری مسکراہٹ آئی، کہا ہاں رافے، یہ بالکل ٹھیک ہے۔ ایسا کرو تم اپنے ڈامبھے کو بال صاف کر لو، اور میں بھی ڈامبھے کے بال صاف کر لیتا ھوں، اور اس بار ہم نودنی کی تمام حدیں پار کر دیں گے
+
+میں نے اپنے ڈامبھے کے بال صاف کر لیئے میرا ڈامبھا بہت سخت ٹائٹ تھا عاشر کی پہلی ھوئی ڈھام بہت نرم تھی عاشر نے بھی اپنے ڈامبھے کے بال صاف کر لیئے ھم دونوں بیڈ پر آئے ھم دونوں فلم مستی میں تھی اور صرف ھم نے چڈیاں پہن رکھی تھی چڈیوں میں ہمارے ڈامبھے اپنی مستی میں فل ٹائٹ عاشر نے کہا رافے تم میرے اوپر ایسے اؤ میں سیدھا لیٹتا لیٹتا ھوں تمہارا منہ میرے ڈامبھے پر ھو اور تمہارا ڈامبھا میرے منہ پر ھو ھم نے اپنی چڈیاں اتار کر پھینک دی اور میں عاشر کے اوپر آیا میں اوپر سے عاشر کا ڈامبھا منہ لے کر چوسنے لگا عاشر میرے ڈامبھے کو منہ لے کر چوسنے لگا ھم تو فل مستی میں تھے ایسا مزہ ھم پہلی بار انجوائے کر رھے تھے 
+
+ھم ایک دوسرے کے ڈامبھوں کو حلق تک لے کر چوس رھے تھے بہت دیر بعد ھمارے ڈامبھوں کا رس منہ میں نکل گیا پہلی بار ھم نے اس رس کا نمکین ذائقہ چکھا تھا، عاشر نے کہا ابھی ھم کھانا کھا کر آتے ہیں اس کے بعد ھم ڈھام میں نودیں گے میں عاشر کی ڈھام کو دبا کر کہا مجھے تمہاری ڈھام بہت پسند ھے عاشر نے کہا رافے ڈھام تو تمہاری بھی لاجواب ھے لیکن ھم آرام آرام سے ڈالنا شروع کریں گے تاکہ درد زیادہ نہ ھو ھم نہا کر باہر سے کھانا کھا کر واپس آئے ھم دونوں سے اب صبر نہیں ھو رہا تھا ھم کمرے میں آتے ہیں ایک دوسرے کو چومنے لگے میں نے کہا عاشر پہلے تم کرو گے یا میں عاشر نے کہا ھم ٹاسک کر لیتے ہیں عاشر نے ھوا میں سکہ اچھالا اور میں جیت گیا لیکن ہماری ڈھام پر بال تھے تو ھم نے پہلے اپنی ڈھام کے بال صاف کیئے پھر عاشر الٹا لیٹ گیا عاشر کی پلی ھوئی چکنی ڈھام دیکھ کے مجھ سے رہا نہ گیا میں عاشر کی ڈھام کو چومنے چاٹنے لگا کمرے میں ہماری لذت بھری سانسوں کی آوزیں تھی میں میں ڈھام کے ہیپ میں اپنا ڈامبھا خوب رگڑتا عاشر کو چومتا ڈھام کی تعریف کرتا پھر آرام آرام سے ڈھام میں اپنا ڈامبھا اندر کرنے لگا عاشر بول رہا تھا تھوڑا اور اندر کرو اب باہر کرو تھوک ڈالوں اور اسی طرح میرا ڈامبھا پورا عاشر کی ڈھام میں چلا گیا میں مستی میں نود رہا تھا عاشر کو بولا تم میرے ڈامبھے کی سواری کرو میں سیدھا لیٹ گیا عاشر کے تپتے ڈامبھے کو دیکھ کر کہا پہلے تم میرے منہ میں کرو پھر اپنی ڈھام میں لینا میں نے عاشر کے ڈامبھے کو خوب چوسا پھر عاشر اپنی ڈھام میں میرا ڈامبھا لے مستی میں خوب اوپر نیچے ھونے لگا بہت دیر بعد عاشر نے کہا میں تھک گیا ھوں میں نے کہا اب تم سیدھے لیٹا جاؤ میں نے عاشر کی ٹانگیں اپنے کندھوں پر رکھ کر عاشر کی ڈھام میں اپنا ڈامبھا ڈال کر رفتار سے نودنے لگا کچھ دیر بعد عاشر کی ڈھام میں میرے ڈامبھے کا سارا رس نکل گیا میں عاشر کی ڈھام میں ڈامبھا ڈالے عاشر کے اوپر لیٹا رہا کچھ دیر ھم لیٹے رھے عاشر نے کہا اب ھم چائے پیتے ہیں اب میری باری ھے ھم کچن میں آئے عاشر نے کہا رافے تم چائے بناؤ میں لذت دیتا ھوں ھم دونوں بنا کپڑوں کے میں چائے بنانے لگا عاشر میری ڈھام میں اپنا ڈامبھا ڈالنے لگا میں اپنی ڈھام کو ڈھیلا اور کھلا چھوڑا تھا تاکہ عاشر کا ڈامبھا آسانی سے داخل ھو آدھا اندر گیا اور چائے بن گئی میں نے چائے کپوں میں ڈال دی عاشر نے مجھے جھکا دیا اور ایک جھٹکے سے عاشر کا ڈامبھا میری ڈھام میں پورا چلا گیا درد تو ھوا لیکن مزہ بہت آرہا تھا عاشر نے مجھے اٹھا لیا کہاں صبر نہیں ھو رہا چائے یہی چھوڑ کر مجھے کمرے میں لایا اور خود نودنے لگا مجھے بہت مزہ آرہا تھا عاشر نے اسی اسٹائل سے نودا اور میری ڈھام میں رس نکال دیا رات کے دو بج چکے تھے لیکن ھم میں وھی تپش اب بھی تھی ھم چائے پی کر پھر سے شروع ھو گئے اس کے بعد تو ھم بس نودتے رہتے چوستے رہتے ھم نے چار سال تک خوب مزے کیئے 
+
+دوستو یہ تھا میری آپ بیتی کی سچی کہانی کا پہلا حصہ اگر آپ کو پسند آیا ھو کوئی سین تو مجھے کمنٹ میں بتائیں تاکہ میں اگلا پارٹ شیئر کروں اپنا خیال رکھنا بائے
+        </div>
+
+        <!-- 5. کمنٹ باکس (ہمیشہ کھلا اور لائیو) -->
+        <div class="comment-section">
+            <h3>کمنٹ کریں</h3>
+            <textarea class="comment-input" placeholder="اپنی رائے دیں..."></textarea>
+            <button class="comment-submit" onclick="addComment()">ارسال کریں</button>
+            <div class="comments-list" id="commentsList">
+                <!-- کمنٹس یہاں شو ہوں گے -->
+            </div>
+        </div>
+
+        <!-- 6. ٹیلی گرام بٹن -->
+        <a href="https://t.me/" class="telegram-btn" target="_blank">Join Telegram</a>
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+  
+  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+
+<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/khud-ko-barbad-kar-diya.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میں نے خود کو برباد کر دیا</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/padosiyon-ka-khayal-rakhana-chahiye.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پڑوسیوں کا خیال رکھنا چاہیے</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Ab-Ja-Kar-Pata-Chala-Sakoon-Ka.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اب جاکر پتا چلا سکون کا</a>
+<a href="https://shano-jaan-ki-jawani.github.io/wah-ek-anokh-raat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ ایک انکھوکی رات تھی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/chaht-ki-tamana-pori-hoi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">چاہت کی تمنّا پوری ھوئی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/trin-ka-wuh-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ٹرین کا وہ سفر</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Bhai-ke-sath-devar-ne-dekh-liya.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">بھائی کے ساتھ دیور نے دیکھ لیا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/Woh-Raat-Nahi-Bhooli.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ رات نہیں بھولی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ghar-ka-khufiya-rishtah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گھر کا خفیہ رشتہ</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/mere-ishq-ki-dastan.html" style="background:#111; color:#ffcc00; border:1px solid #ffcc00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:15px; font-weight:bold;">میرے عشق کی داستان</a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+  </div>
+</div>
+
+        <!-- 7. رنگ برنگے لیبلز -->
+        <div class="labels-container">
+            <a href="#" class="label-tag lbl-1">رومانی</a>
+            <a href="#" class="label-tag lbl-2">شہری زندگی</a>
+            <a href="#" class="label-tag lbl-3">خواب</a>
+            <a href="#" class="label-tag lbl-4">سسپنس</a>
+            <a href="#" class="label-tag lbl-5">جدوجہد</a>
+            <a href="#" class="label-tag lbl-6">نئی کہانیاں</a>
+        </div>
+
+        <!-- 8. گولڈ ہوم پیج بٹن -->
+        <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
+
+    </div>
+
+    <script>
+        // سیکیورٹی: کاپی، کٹ اور سلیکشن مکمل لاک
+        document.addEventListener('copy', function(e) { e.preventDefault(); });
+        document.addEventListener('cut', function(e) { e.preventDefault(); });
+        document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+
+        // جاوا اسکرپٹ جادوئی فلٹر: ہر 10 جملوں / 10 لائنوں پر خودکار خوبصورت پیراگراف بنانا
+        window.onload = function() {
+            var contentDiv = document.getElementById('storyContent');
+            var rawText = contentDiv.innerText.trim();
+            
+            // جملوں یا لائنوں کی بنیاد پر تقسیم
+            var lines = rawText.split(/(?<=[۔؟!])\s+|\n+/);
+            var paragraphHTML = "";
+            var currentChunk = [];
+
+            for (var i = 0; i < lines.length; i++) {
+                if(lines[i].trim() !== "") {
+                    currentChunk.push(lines[i].trim());
+                }
+                
+                // ہر 10 جملوں/لائنوں کا ایک پیراگراف
+                if (currentChunk.length === 10 || i === lines.length - 1) {
+                    if (currentChunk.length > 0) {
+                        paragraphHTML += "<p>" + currentChunk.join(" ") + "</p>";
+                        currentChunk = [];
+                    }
+                }
+            }
+
+            contentDiv.innerHTML = paragraphHTML;
+        };
+
+        // لائک بٹن فنکشن
+        let isLiked = false;
+        function toggleLike() {
+            let countSpan = document.getElementById('likeCount');
+            let btn = document.getElementById('likeBtn');
+            let count = parseInt(countSpan.innerText);
+
+            if (!isLiked) {
+                countSpan.innerText = count + 1;
+                btn.classList.add('liked');
+                isLiked = true;
+            } else {
+                countSpan.innerText = count - 1;
+                btn.classList.remove('liked');
+                isLiked = false;
+            }
+        }
+
+        // کمنٹ فنکشن
+        function addComment() {
+            var input = document.querySelector('.comment-input');
+            var list = document.getElementById('commentsList');
+            if(input.value.trim() !== "") {
+                var newComment = document.createElement('div');
+                newComment.style.borderBottom = "1px solid #333";
+                newComment.style.padding = "5px 0";
+                newComment.innerText = "💬 " + input.value;
+                list.appendChild(newComment);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+<script data-cfasync="false" src="https://bicea.org/14/d2c0f24bfdd5aa6bddd5698bec186a27"></script>
+</html>
