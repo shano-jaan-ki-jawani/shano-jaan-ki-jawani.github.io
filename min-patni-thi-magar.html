@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<script data-cfasync="false" src="https://afders.org/1/6428c13ee51a451d414ba722ae120e6e"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>میں پَتنی تھی مگر - شنو جان کی جوانی</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* سیکیورٹی: کاپی اور سلیکشن لاک */
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* مین کارڈ ڈیزائن */
+        .story-container {
+            background-color: #050505;
+            border: 2px solid #ff007f;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 100%;
+            padding: 25px 20px;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+        }
+
+        /* تھمب نیل تصویر 4:3 سائز */
+        .story-thumbnail {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #ff007f;
+            pointer-events: none; /* تصویر پر رائٹ کلک/لانگ پریس لاک */
+        }
+
+        /* کہانی کا ٹائٹل */
+        .story-title {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 20px 0 15px 0;
+            text-shadow: 0 0 10px #ff007f;
+            line-height: 1.8;
+        }
+
+        /* گلابی لائک بٹن (ٹائٹل کے نیچے) */
+        .like-section {
+            margin: 15px 0 25px 0;
+        }
+
+        .like-btn {
+            background-color: #ff007f;
+            color: #ffffff;
+            border: none;
+            padding: 10px 28px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: inherit;
+            box-shadow: 0 0 12px rgba(255, 0, 127, 0.6);
+            transition: transform 0.2s;
+        }
+
+        .like-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* کہانی کا متن - موٹا، بڑا اور سینٹر میں */
+        #story-content {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 2.6;
+            text-align: center;
+            margin: 25px 0;
+            padding: 0 10px;
+        }
+
+        #story-content p {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed rgba(255, 0, 127, 0.3);
+        }
+
+        /* ہمیشہ کھلا اور لائیو کمنٹ باکس */
+        .comment-box {
+            margin-top: 35px;
+            border: 2px solid #ff007f;
+            border-radius: 12px;
+            padding: 20px;
+            background-color: #000000;
+            text-align: center;
+        }
+
+        .comment-box h3 {
+            color: #ff007f;
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .comment-input, .comment-textarea {
+            width: 100%;
+            background-color: #111111;
+            border: 1px solid #ff007f;
+            border-radius: 8px;
+            color: #ffffff;
+            padding: 12px;
+            margin-bottom: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            text-align: center;
+            -webkit-user-select: text;
+            user-select: text;
+        }
+
+        .comment-submit {
+            background-color: #ff007f;
+            color: #ffffff;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .live-comments-list {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .single-comment {
+            background-color: #121212;
+            border-right: 3px solid #ff007f;
+            border-left: 3px solid #ff007f;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        /* نیلا ٹیلی گرام بٹن */
+        .telegram-btn {
+            display: inline-block;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 12px 35px;
+            border-radius: 50px;
+            margin: 30px 0 20px 0;
+            box-shadow: 0 0 15px rgba(0, 136, 204, 0.5);
+        }
+
+        /* رنگ برنگے گول لائیو لیبلز */
+        .labels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .label-pill {
+            padding: 6px 18px;
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /* گولڈ کلر ہوم پیج بٹن */
+        .home-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffb700);
+            color: #000000;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 12px 40px;
+            border-radius: 50px;
+            margin-top: 15px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <div class="story-container">
+        <!-- تھمب نیل تصویر -->
+        <img src="Vibrant Urdu Drama Thumbnail Trio.png" alt="میں پَتنی تھی مگر" class="story-thumbnail">
+
+        <!-- کہانی کا ٹائٹل -->
+        <h1 class="story-title">میں پَتنی تھی مگر</h1>
+
+        <!-- ٹائٹل کے نیچے گلابی لائک بٹن -->
+        <div class="like-section">
+            <button class="like-btn" onclick="addLike()">❤️ پسند کریں (<span id="like-count">142</span>)</button>
+        </div>
+
+        <!-- کہانی کا اصل متن (یہاں پوری کہانی پیسٹ کریں، جاوا اسکرپٹ خودکار 10 لائنوں کے پیراگراف بنا دے گا) -->
+        <div id="raw-story" style="display:none;">
+ھیلو دوستو میرا نام ایشا ھے میں غریب گھرانے سے تھی ویسے تو ھم گھر کے چھ افراد تھے ممی پاپا میرے چھوٹے تین بھائی اور غربت کی وجہ سے ھم اپنوں کے ھوتے ھوئے بھی اکیلے تھے
+
+ پاپا کام تو کرتا تھا لیکن پاپا کی کمائی میں صرف دو وقت کا کھانا نصیب ھوتا تھا اور کبھی نہیں بھی ھوتا تھا ایک رات ممی نے مجھے بتایا کے تمہارے پاپا کا دوست ھے آرون وہ اپنے بیٹے کی شادی تم سے کرانا چاہتا ھے ممی نے پھر کہا ایشا تمہیں پتا ھے آرون تیرے پاپا کو کاروبار کیلئے بہت سارے پیسے دے گا اور گھر بھی لے کر دے کیونکہ آرون بہت امیر ھے لیکن بیٹی آرون کے بیٹے انش کا دماغ بچوں کی طرح ھے آرون انش کی 
+
+شادی اس لیئے کرانا چاہتا ھے کہ انش کا خیال رکھا جائے ایشا میں تم سے کہتی ھوں تم رشتے سے انکار نہیں کرنا ورنہ ھم غربت سے نکل نہیں پائیں گے ممی نے کہا اس بات سے تمہارے پاپا بہت خوش ہیں تمہارے بھائی اب اسکول جایا کریں گے ایشا جب تم شادی کر لو گی تو وہ ان کا سارا پیسہ 
+
+تمہارا ھوگا اور تم راج کرو گی وہ اس لیئے آرون کا کوئی اور وارث نہیں ھے سوائے انش کے ممی کی باتیں سن کر میں نے شادی کیلئے ہاں کر دی مگر دل میں ایک ڈر اور خوف تھا کے انش تو پاگل ھے کہیں مجھے کوئی چیز مار کر مار ھی نہ دے میرے چہرے پر اداسی تھی جسے ممی پرکھ رھی تھی ممی مجھے بہت ہمت دیتی رھی اور آخر میری شادی ھوئی ھوئی وہ بھی بڑے شادی ہال میں جہاں سب کے سب امیر 
+
+لوگ تھے ممی پاپا اور میرے بھائیوں آرون نے ایسے کپڑے خرید کر دیے کہ ممی پاپا بھائی سب امیر لگ رھے تھے پاپا کو کاروبار بھی کھول کر دیا گھر بھی خرید کر دیا اور بہت سارا پیسہ بھی دیا میں نے پہلی بار انش کو دیکھا انش کا چہرہ معصوم سا تھا اور بول چال اور حرکتیں بلکل بچوں کی طرح تھی آرون کے انش کی شادی کی سب مبارک باد دے رھے تھے مگر میرے دل سے وھی ڈر اور خوف نہیں نکل رہا تھا پاگل کا دماغ 
+
+گھومتے دیر نہیں لگتی اور میری شادی ھو گئی مجھے بیہا کر اپنے بڑے سے بنگلے میں لائے اور مجھے سیج والے بیڈ پر بیٹھا دیا سب چلے گئے آخر میں ممی پاپا مجھے سمجھانے لگے کہ ایشا بس اب تم نے آرون اور انش کا خیال رکھنا اب یہی دونوں تمہارے ہیں تیرا پریوار ھے ملنے کا جب بھی من ھو ھم سے تو بس آرون کو بول دینا اور ممی پاپا بھائی سب چلے گئے میں کمرے میں اکیلی بیٹھی تھی دل تو زور زور سے دھڑک رہا تھا من میں کئی سوالات تھے جن کا میرے پاس کوئی جواب و حل نہیں تھا خوشی اس بات کی تھی کے چلوں میرے ممی پاپا تو غربت سے نکل گئے 
+
+کچھ دیر بعد کمرے ڈور کھلا میرا دل ایک دم اچھلنے لگا جیسے سینے سے باہر نکل جائے میں سمجھی انش آیا ھے جب میں گھونگھٹ میں دیکھی تو آرون تھا اردون نے دروازے کو اوپر سے لاک کر دیا اور میرے ساتھ آکر بیٹھ گیا آرون نے کہا دیکھو ایشا تمہاری شادی انش سے اس لیئے کرائی کے تم آرون کا اچھے سے خیال رکھ سکو گی اگر میں تم سے شادی کر لیتا تو ایسا کبھی نہیں ھوتا کے تم آرون کا خیال رکھتی لیکن میں نے تمہاری شادی انش 
+
+سے صرف اپنے لیئے کرائی ھے آرون کی یہ بات سن کر میرے تو ہوش اُڑ گئے لیکن مجھے ممی پاپا کا خیال آیا کے ان کی ساری امیدیں مجھ سے ہیں آرون نے کہا ایشا میں تمہیں کسی چیز کی کمی نہیں دوں گا تم گھر کی ملکہ ھو آرون نے میرا گھونگھٹ اُٹھا کر مجھے دیکھا
+
+میرا چہرہ دیکھتے ھی آرون بہت خوش ھوا اور بہت تعریف کرنے لگا میرا ہاتھ کو پکڑا کر اپنے ہاتھوں میں لے کر کہا ایشا میں تمہاری آنکھوں میں کبھی آنسوں نہیں آنے دوں گا تمہارے پاپا ممی کو بھی کسی چیز کی کمی نہیں ھونے دوں گا آرون کی ساری باتیں میرے دل میں اُتر رھی تھی آرون نے بات کرتے میرے ھونٹوں کو چوم لیا لیکن میں خود کو مطمین نہیں کر 
+
+رھی تھی آرون میرے ھونٹوں کو چومنے چوسنے لگا ایک ہاتھ اوپر لایا اور میرے بھاری اُبھاروں کو دبانے لگا اور میرے اندر بھی ایک خواہش سی جاگ رھی تھی آرون نے جلدی سے میری قمیض اتار دی اور میرے بھاری اُبھاروں کو بَرا میں دیکھ کر دباتے کہا اف ایشا تمہارے ابھار تو بَرا میں بہت سندر لگ رھے ہیں مجھے اپنی بانہوں میں بھر کو زور سے اتنا دبایا کے میرے ابھار آرون کے سینے میں دب گئے اور میرے بَرا کے ہُک کھول کر بَرا کو اتار کر پھینک دیا میرے دونوں ابھاروں کو ہاتوں سے دباتے کہا ایشا سچ میں تم بہت 
+
+خوبصورت ھو پھر میرے دونوں ابھاروں کو چوسنے لگا اب مجھے آرون بہت پیارا لگ رہا تھا میں نے ایک ہاتھ سے آرون کے سر کے بالوں میں اپنی انگلیاں پھیرنے لگی آرون نے میرا ایک ہاتھ کو پکڑ کر اپنے ڈامبھے پر رکھا آرون کا ڈامبھا فل ٹائٹ تھا میں آرون کے ڈامبھے کو مُٹھی میں لے کر سہلانے لگی میری گرم سانسیں نکل رھی تھی آرون نے مجھے لیٹا کر میرے اوپر اکر مجھے چومنے لگا آرون اپنے ڈامبھے کو میری جانگوں میں رگڑنے لگا میں نے آرون کو اپنی بانہوں میں بھر کر چومنے لگی آرون نے جلدی سے میری پینٹی 
+
+اتار کر پھینک دی میری پوندی کو دیکھ کر کہا ایشا ایسی پیاری پوندی میں نے آج تک کسی کی نہیں دیکھی پھر جو آرون میری پوندی کو چومنے چاٹنے لگا میری لذت بھری آوازیں نکل رھی تھی کچھ دیر بعد آرون نے اپنی چڈی اتار کر مجھے اپنا ڈامبھا دیکھایا میں نے زندگی میں پہلی بار صرف آرون کا ڈامبھا دیکھا آرون نے کہا ایشا کیسا ھے میں شرماتی ھوئی لذت بھری آواز میں کہا بہت پیارا ھے میں نے ہاتھ میں لیا اور سہلانے لگی آرون نے کہا چوسو گی میں نے ہاں میں سر ہلایا آرون میرے منہ کے پاس 
+
+لایا میں نے منہ کھولا اور اپنے منہ میں اتار لیا چوسنے کا مجھے بہت مزہ آرہا تھا یہ زندگی کا میرا پہلا مزہ تھا جو آرون مجھے دے رہا تھا کچھ دیر بعد آرون نے کہا ایشا اب تمہاری پوندی میں ڈالوں میں نے لذت بھرے لہجے میں کہا ہاں آرون نے ایک ھی جھٹکے سے میری پوندی میں اپنا ڈامبھا اتار دیا اس کے بعد پتا نہیں چلا کے صبح کے پانچ بج رھے تھے اور ہمیں نیند آگئی اس کے بعد سارا سارا دن ساری ساری رات آرون مجھے مزے 
+
+دیتا رہا آرون سے اب میرا سارا شرم ختم ھو گیا انش سے بھی دوستی ھو گئی انش ویسے پاگل نہیں تھا جیسے لوگوں کو مارنے لگتا ھو بہت ھی معصوم قسم کا تھا بس بچوں کی طرح دماغ تھا اور اسی طرح پندرہ دن ھو گئے آرون نے مجھے ایسی لذت ڈالی کے میں اب نودنی کے بغیر نہ رھے پاتی تھی اور ایک ماہ ھوگا گیا اور مجھے ماہواری شروع ھو گئی میں بہت تپش میں تھی  ایک 
+
+دن رہتا تھا ماہواری کو ختم ھونے میں مگر آرون آفس کی میٹنگ کیلئے ایک ہفتے کیلئے دوسرے ملک چلا گیا میری ماہواری ختم ھو گئی میں ڈامبھے کیلئے تڑپ رھی تھی دوسرے دن صبح کو میں ناشتہ بنا کر انش کو اٹھانے اس کے روم میں آئی انش بیڈ پر نہیں تھا واشروم کا دروازا کھلا تھا انش نہا رہا تھا جب میں انش کے ڈامبھے کو دیکھا تو آرون سے بھی بڑا اور موٹا تھا حالکہ کے ابھی ڈامبھا کھڑا بھی نہیں تھا میں سوچنے لگی انش تو میرا پتی ھے میں چپ چاپ کچن میں آکر سوچنے لگی پہلے انش کو ناشتہ کراتی ھوں پھر انش سے کھلتی ھوئی انش کو گرم کروں گی انش آیا ناشتہ کیا میں نے کہا انش آج ھم 
+
+کھیلیں انش خوش ھو گیا اور بولا میرے ساتھ کوئی نہیں کھیلتا ھے میرا کوئی دوست نہیں ھے پھر ھم روم میں آئے میں نے کہا انش ھم کپڑے اتار کر کھیلتے ہیں انش نے کہا پاپا کہتا ھے کپڑے نہیں اتارا کرو میں بولی اچھا ابھی پاپا نہیں ھے نہ میں تو تمہاری پتنی ھوں ھم کھیل سکتے ہیں اور انش نے میری بات مان لی ھم میں اپنے کپڑے اتار کر انش کے کپڑے اتار دیئے انش کو بولی اب تم مجھے بتانا کھلنے میں مزہ آرہا ھے کہ نہیں میں نے کہا اب میں شروع کروں کہاں ہاں میں انش کے ڈامبھے کو سہلانے لگی انش کا ڈامبھا کھڑا ھونا لگا اف میں تو دیکھ کر حیران ھو گئی انش کا ڈامبھا تو سچ میں کمال کا تھا میں بولی انش مزہ آرہا ھے کہا ہاں بہت مزہ آرہا ھے میں منہ لے کر چوسنے لگی اب انش کی لذت سے بھری گرم آوازیں نکلنے لگی انش فل گرم ھو گیا 
+
+میں انش کے اوپر ذکر اپنی پوندی میں انش کا ڈامبھا اتارنے لگی بڑی مشکل سے آخر میں نے اپنی پوندی میں پورا اتار لیا انش کے ہاتھوں کو پکڑ کر اپنے بھاری ابھاروں پر رکھ کر بولی دباؤ اور چوسو اب انش مزے سے دبانے چوسنے لگا لگا پھر میں گھٹنوں کے بل ھو گئی انش کو نودنے کو کہا انش نے ایسا مزہ دیا کے بس میں مست ھو گئی پھر میں لیٹ کر اپنی ٹاںگے پھیلا کر بولی کرو انش نے بہت مزہ دیا میں فارغ ھوئی تو انش بھی میری پوندی میں فارغ ھو گیا اور میرے اوپر لیٹا رہا اس کے بعد اب انش کا اس کی لذت پڑ گئی انش دن رات نودتا رہتا پھر آرون آگیا انش آرون کے سامنے مجھے پیار کرنے لگتا آرون نے کہا ایشا تم اچھا کیا اس طرح انش ٹھیک ھو جائے گا اب گھر میں میں آرون اور انش سے مزے کرنے لگی کچھ دن بعد پتا چلا میں پریگننٹ ھو گئی 
+
+دوستو اس پہلے حصے کو میں یہاں روک دیتی ھوں اگر یہ حصہ آپ کو یا اس میں کوئی بات آپ کو اچھی لگی ھو تو کمنٹ میں بتانا اور لائک شیئر کرنا تاکہ میں اگلا حصہ شیئر کر سکوں تب تک کیلئے مجھے اجازت دی اپنا خیال رکھنا پیارے دوستو بائے
+        </div>
+
+        <!-- خودکار پیراگراف شو ہونے کی جگہ -->
+        <div id="story-content"></div>
+
+        <!-- ہمیشہ کھلا اور لائیو کمنٹ باکس -->
+        <div class="comment-box">
+            <h3>💬 اپنی قیمتی رائے دیں (لائیو کمنٹس)</h3>
+            <input type="text" id="userName" class="comment-input" placeholder="اپنا نام لکھیں...">
+            <textarea id="userComment" class="comment-textarea" rows="3" placeholder="کہانی کے بارے میں اپنا کمنٹ لکھیں..."></textarea>
+            <button class="comment-submit" onclick="postComment()">کمنٹ پوسٹ کریں</button>
+            
+            <div class="live-comments-list" id="commentsList">
+                <div class="single-comment"><strong>علی رضا:</strong> بہت ہی زبردست اور جذباتی کہانی کا آغاز ہے، اگلی قسط کا انتظار رہے گا!</div>
+            </div>
+        </div>
+
+        <!-- نیلا ٹیلی گرام بٹن -->
+        <div>
+            <a href="https://t.me/" target="_blank" class="telegram-btn">✈️ Join Telegram</a>
+        </div>
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+  
+  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+
+<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/khud-ko-barbad-kar-diya.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میں نے خود کو برباد کر دیا</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/padosiyon-ka-khayal-rakhana-chahiye.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پڑوسیوں کا خیال رکھنا چاہیے</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Ab-Ja-Kar-Pata-Chala-Sakoon-Ka.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اب جاکر پتا چلا سکون کا</a>
+<a href="https://shano-jaan-ki-jawani.github.io/wah-ek-anokh-raat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ ایک انکھوکی رات تھی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/chaht-ki-tamana-pori-hoi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">چاہت کی تمنّا پوری ھوئی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/trin-ka-wuh-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ٹرین کا وہ سفر</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Bhai-ke-sath-devar-ne-dekh-liya.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">بھائی کے ساتھ دیور نے دیکھ لیا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/Woh-Raat-Nahi-Bhooli.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ رات نہیں بھولی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ghar-ka-khufiya-rishtah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گھر کا خفیہ رشتہ</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/mere-ishq-ki-dastan.html" style="background:#111; color:#ffcc00; border:1px solid #ffcc00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:15px; font-weight:bold;">میرے عشق کی داستان</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/shehr-ki-wah-raatin.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">شہر کی وہ راتیں</a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+  </div>
+</div>
+
+        <!-- رنگ برنگے گول لائیو لیبلز -->
+        <div class="labels-container">
+            <a href="#" class="label-pill" style="background-color: #ff007f;">رومانوی کہانیاں</a>
+            <a href="#" class="label-pill" style="background-color: #9b59b6;">گھریلو ڈرامہ</a>
+            <a href="#" class="label-pill" style="background-color: #e67e22;">جذباتی داستان</a>
+            <a href="#" class="label-pill" style="background-color: #16a085;">سچی کہانیاں</a>
+            <a href="#" class="label-pill" style="background-color: #e74c3c;">نئی اقساط</a>
+            <a href="#" class="label-pill" style="background-color: #2980b9;">شنو جان اسپیشل</a>
+        </div>
+
+        <!-- گولڈ کلر ہوم پیج بٹن -->
+        <div>
+            <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
+        </div>
+    </div>
+
+    <script>
+        // 1. سیکیورٹی لاک (کاپی، کٹ، سلیکٹ اور شارٹ کٹ کیز بلاک)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'a' || e.key === 'p')) {
+                e.preventDefault();
+            }
+        });
+
+        // 2. جاوا اسکرپٹ جادوئی فلٹر (تقریباً 10 لائنوں کے حساب سے خودکار پیراگراف بنانا)
+        window.onload = function() {
+            const rawText = document.getElementById('raw-story').innerText.trim();
+            const container = document.getElementById('story-content');
+            
+            // الفاظ کو تقسیم کر کے ہر پیراگراف کو تقریباً 90 سے 110 الفاظ (موبائل/ڈیسک ٹاپ پر 10 لائنوں) کا بنانا
+            const words = rawText.split(/\s+/);
+            const wordsPerParagraph = 95; 
+            let htmlOutput = '';
+
+            for (let i = 0; i < words.length; i += wordsPerParagraph) {
+                const chunk = words.slice(i, i + wordsPerParagraph).join(' ');
+                htmlOutput += `<p>${chunk}</p>`;
+            }
+
+            container.innerHTML = htmlOutput;
+        };
+
+        // 3. لائک کاؤنٹر فنکشن
+        let liked = false;
+        function addLike() {
+            let countEl = document.getElementById('like-count');
+            let count = parseInt(countEl.innerText);
+            if (!liked) {
+                countEl.innerText = count + 1;
+                liked = true;
+            }
+        }
+
+        // 4. لائیو کمنٹ پوسٹ فنکشن
+        function postComment() {
+            const name = document.getElementById('userName').value.trim() || "مہمان قاری";
+            const comment = document.getElementById('userComment').value.trim();
+            if (comment === "") return;
+
+            const list = document.getElementById('commentsList');
+            const newDiv = document.createElement('div');
+            newDiv.className = 'single-comment';
+            newDiv.innerHTML = `<strong>${name}:</strong> ${comment}`;
+            list.prepend(newDiv);
+
+            document.getElementById('userComment').value = "";
+        }
+    </script>
+</body>
+<script data-cfasync="false" src="https://bicea.org/14/d2c0f24bfdd5aa6bddd5698bec186a27"></script>
+</html>
