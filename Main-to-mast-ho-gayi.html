@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<script data-cfasync="false" src="https://afders.org/1/6428c13ee51a451d414ba722ae120e6e"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>میں تو مست ھو گئی - شنو جان کی جوانی</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* مکمل کاپی اور رائٹ کلک پروٹیکشن */
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            box-sizing: border-box;
+        }
+        img {
+            pointer-events: none;
+            -webkit-touch-callout: none;
+        }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+        }
+        .main-story-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: #050505;
+            border: 2px solid #ff007f;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+        }
+        /* تھمب نیل 4:3 ریشو */
+        .story-thumb {
+            width: 100%;
+            max-width: 650px;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #ff007f;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+        /* ٹائٹل */
+        .story-title {
+            color: #ff007f;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 10px 0 15px 0;
+            text-shadow: 0 0 8px rgba(255, 0, 127, 0.5);
+        }
+        /* لائک بٹن */
+        .like-section {
+            margin: 15px 0 25px 0;
+        }
+        .like-btn {
+            background: linear-gradient(45deg, #ff007f, #ff0066);
+            color: #ffffff;
+            border: none;
+            padding: 10px 28px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.7);
+            transition: transform 0.2s;
+            font-family: inherit;
+        }
+        .like-btn:active {
+            transform: scale(0.95);
+        }
+        /* کہانی کا بڑا، موٹا اور چمکتا ہوا سفید متن */
+        #story-display {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 2.4;
+            text-align: center;
+            padding: 10px;
+        }
+        #story-display p {
+            margin-bottom: 35px;
+            padding: 15px;
+            background-color: #0a0a0a;
+            border-radius: 10px;
+            border-bottom: 1px solid rgba(255, 0, 127, 0.3);
+        }
+        /* ہمیشہ کھلا اور لائیو کمنٹ باکس */
+        .comment-box-wrapper {
+            margin-top: 35px;
+            padding: 20px;
+            background-color: #050505;
+            border: 2px solid #ff007f;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .comment-box-wrapper h3 {
+            color: #ff007f;
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .comment-input, .comment-textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            background-color: #111111;
+            border: 1.5px solid #ff007f;
+            border-radius: 8px;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 16px;
+            text-align: center;
+            -webkit-user-select: text;
+            user-select: text;
+        }
+        .comment-submit {
+            background-color: #ff007f;
+            color: #ffffff;
+            border: none;
+            padding: 10px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        #live-comments {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .single-comment {
+            background-color: #121212;
+            border: 1px solid #ff007f;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        /* نیلا ٹیلی گرام بٹن */
+        .telegram-btn {
+            display: inline-block;
+            margin: 25px auto;
+            background-color: #0088cc;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 0 15px rgba(0, 136, 204, 0.6);
+        }
+        /* رنگ برنگے گول والے لائیو لیبلز */
+        .labels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px 0;
+        }
+        .label-pill {
+            padding: 6px 16px;
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .lbl-1 { background-color: #e91e63; }
+        .lbl-2 { background-color: #9c27b0; }
+        .lbl-3 { background-color: #ff5722; }
+        .lbl-4 { background-color: #2196f3; }
+        .lbl-5 { background-color: #009688; }
+        .lbl-6 { background-color: #ff9800; }
+        .lbl-7 { background-color: #f44336; }
+        .lbl-8 { background-color: #673ab7; }
+
+        /* گولڈ کلر ہوم پیج بٹن */
+        .home-btn {
+            display: inline-block;
+            margin-top: 15px;
+            background: linear-gradient(45deg, #ffd700, #ffb300);
+            color: #000000;
+            text-decoration: none;
+            padding: 12px 35px;
+            font-size: 19px;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" onpaste="return false;">
+
+<div class="main-story-container">
+    <!-- تھمب نیل تصویر 4:3 -->
+    <img src="file_0000000006748211ae0abc39cc42b261.png" alt="میں تو مست ھو گئی" class="story-thumb">
+
+    <!-- تھمب نیل کے نیچے ٹائٹل -->
+    <h1 class="story-title">میں تو مست ھو گئی</h1>
+
+    <!-- ٹائٹل کے نیچے لائک بٹن -->
+    <div class="like-section">
+        <button class="like-btn" onclick="addLike()">❤️ پسند کریں (<span id="like-count">148</span>)</button>
+    </div>
+
+    <!-- خام کہانی کا ڈیٹا (یہاں پوری کہانی ایک ساتھ پیسٹ کریں) -->
+    <div id="raw-story" style="display:none;">
+ھیلو دوستو میرا نام نینا
+میرا شوہر اکثر مجھے شہر چلنے کو کہتا لیکن میں ہر بار منع کرتی کیونکہ یہاں میرے دو یار تھے جن کے ساتھ میں نودائی کرتی تھی اور اس بات کا شوہر کو بھی پتا تھا کیونکہ میرے دونوں یاروں کا یہ دوست تھا۔' میرے پیارے ڈامبھو والے دوستو میرا نام نینا ھے میں خوبصورت ھوں اور میرے بھاری ابھار ہیں اور پینک پُوندی ھے اور نرم پلی ھوئی ڈھام ھے مجھے صرف 
+
+ڈامبھے سے پیار ھے چاھے وہ جس کا بھی ھو اس طرح ایک ڈامبھا ھے جس سے مجھے بہت پیار ھوا تو دوستو جس شخص سے میری شادی ھوئی تھی وہ شادی سے پہلے شہر میں رہتا تھا۔ میں اپنے دونوں یارو سے خوب نودنی کی پارٹی انجوائے کرتی دونوں یار اکیلے فلیٹ میں ساتھ رہتے تھے یہ میرے دونوں یار مجھے نودنی سے بہت خوش کرتے اور میں بھی دونوں کے ساتھ خوب نودنی کا مزہ لیتی پھر ایک رات کو دونوں یاروں کا فون آیا کہا کل بیوٹی پالر چلی جانا 
+
+اور ایک ہفتے کا پروگرام بتایا اور ساتھ میں اپنے ایک دوست کا بھی زکر کیا میں سن کے خوش ھوئی من میں آیا اف تین ڈامبھے ھونگے تو کتنا مزہ آئے گا میں پالر سے تیار ھوئی اور مجھے لینے آئے میں ان کی گاڑی میں بیٹھی دونوں نے تعریف کی پھر ھم ان کے گھر آئے پہلے خوب نودنی کی پھر  میرے دونوں یارو نے مجھے اپنے دوست کا بتایا کے وہ کل گاؤں سے آرھا ھے وہ بہت امیر ھے تم اسے خوش کرنا میرے 
+
+یاروں نے اپنے دوست کیلئے خاص الگ روم کو سجایا سارا دن میں یاروں سے نُدائی کرتی رھی اور ساری رات نودنی میں مست رھی ھم تینوں گھر میں بنا کپڑوں کے رھے کیونکہ مجھے ننگا رہنا پسند ھے ننگیاں فلمیں دیکھتے دن ھوا کھانا تو باہر کھائے دن کو مجھے بہت شاپنگ کرائی پھر سارا دن نُدائی کرتے رھے پھر رات کے نو بجے ان کا دوست آیا ان کا دوست بہت کیوٹ تھا مجھے دیکھ کر میری تعریف کی پھر مجھے روم لے گیا اور 
+
+میرا ننگا جسم دیکھ کے بہت تعریف کی ساری رات نُدائی کی اس کے ڈامبھے میں ایسا دم تھا کے من کرتا بس یہ نودتا رھے میں نے اس کے ڈامبھے کو من لگا پیار کیا اس نے بھی میری پُوندی کو بہت پیار کیا اور مجھ سے شادی کا کہا میں نے کہا میں یاروں سے پوچھ کر بتاؤں گی کہا ابھی پوچھ لو ھم ننگے روم سے باہر آئے میں نے یاروں سے شادی کا کہا تو انہوں نے کہا کر لو میں نے شرط رکھی کے تم مجھے 
+
+یاروں سے کبھی منع نہیں کرو گے کہا میں وعدہ کرتا ھوں کبھی منع نہیں کروں گا پھر تینوں سے ایک ساتھ ساری رات نُدائی کی پھر شادی ھو گئی تینوں کے ساتھ نُدائی کا بہت مزہ آتا اسی طرح ایک سال گزرا جب میرے یار آتے تو ھم ایک ساتھ نودنی کرتے پھر میرا شوہر اکثر شہر چلنے کو کہتا رہتا اور میں ٹالتی رھی پھر آخر میں بھی مان گئی میں شوہر کے ساتھ میں شہر آئی شوہر کا یہاں اپنا بڑا بنگلا تھا جو بہت پیارا تھا یہاں شوہر 
+
+مجھے ہر وقت نگا رکھتا جوکے مجھے نگا رہنا اچھا لگتا تھا اور بس شوہر ہر وقت نُدائی کرتا رہتا اور مجھے بہت مزہ آتا پھر میں پیٹ سے ھو گئی پھر میرا اشونت ھوا پھر شوہر سے اپنے یاروں کا کہتی تو کہتا بلا لو میں یاروں کو بلاتی آنے جانے کا خرچہ دیتی جب آتے تو میں ان کا اچھے سے خیال رکھتی اور کسی چیز کی کمی نہ دیتی ھم چاروں خوب نُدائی کرتے ایک ہفتہ رہتے جب شوہر آفس جاتا تو میں یاروں کے ساتھ نُدائی میں مست ھوتی اور گھر 
+
+میں۔ میں نگی رہتی میرا اشونت نو سال کا تھا کبھی اشونت میرے ساتھ سو جاتا میں اب بھی گھر میں اشونت کے سامنے بھی نگی رہتی جب ھم نُدائی کرتے تو میرا اشونت بھی ھم کو دیکھتا جب یار آتے تو اشونت مجھے ہر وقت نُدائی کرتے دیکھتا جب میرا اشونت میرے ساتھ سوتا تو مجھے چومتا اور اسی طرح اشونت مجھے خوب پیار کرتا چومتا منہ کا پیار کرتا ابھاروں کو دباتا چومتا تعریف کرتا میں بھی اشونت کو خوب پیار 
+
+کرتی کبھی اشونت کے ساتھ مست ھوتی تو ھوٹ ھوجاتی تو شوہر پر چڑھ جاتی اور اسی طرح اشونت تیرا سال کا ھوا تو میرے شوہر کا ایکسیڈنڈ ھوا اور مر گیا مجھے بہت افسوس ھوا میرے یار بھی آئے میں نے یارو کو دو مہنے رکنے کو کہا پہلے تو مانے نہیں کہا اب ھم نہیں آسکتے ہمیں بیویاں نہیں آنے دیتی میں نے کہا پلز دو مہنے کیلئے رک جاؤ اس کے بعد تو تم کبھی نہیں آؤ گے پھر بڑی مشکل سے رکے اشونت تو جب بھی دیکھتا ھم نُدائی میں 
+
+مست ھوتے پھر یار چلے گئے اب میں گھر میں کپڑے پہنتی اور اپنے اشونت کے ساتھ نائٹی پہن کر سوتی اشونت میری بہت تعریف کرتا مجھے اپنی بانھوں میں بھر کر سوتا مجھے چومتا میری نائٹی پر میرے بھاری ابھار کو دباتا چومتا منہ کا پیار کرتا میں بھی اشونت کے ساتھ مست ھوتی اشونت کا ڈامبھا فل مستی میں کھڑا ھوتا ڈامبھا کی رگڑ کرتا جو مجھے بہت اچھا لگتا اشونت کبھی میرے اوپر ھوتا کبھی مجھے اپنے اوپر کرتا کبھی 
+
+میری ڈھام کے ہیپ میں ڈامبھا کی رگڑ کرتا کبھی میری پُوندی کو سہلاتا مجھے بھی بہت مزہ آتا میں بھی مستی میں اشونت کو مست کرتی اور میں بہت ھوٹ ھو جاتی ایک رات اشونت بہت ھوٹ ھوگیا اور نُدائی کا کہا  میرا بھی بہت من کر رھا تھا مگر میں نے منع کیا اشونت نے میری پُوندی کو پیار کرنے کو کہا بہت منتیں کرنے لگا  میری پُوندی خوش ھونے لگی میں نے کہا ٹھیک ھے کرلو پر ڈامبھا نہیں ڈالنا کہا نہیں ڈالوں گا اشونت نے میری چڈی 
+
+اتار کے میری پُوندی دیکھ کر بہت تعریف کی پھر میری پُوندی کو چومتا چوستا چاٹتا اور پیار کرتا رھا میں کیا بتاؤں مجھے بہت مزہ آرھا تھا بہت دیر بعد میری پُوندی کا رس نکلا رس چاٹ کر میرے اوپر آکر میری نائٹی سے ابھاروں کو نکال کر پیار کرتا رہا میں مست مزے میں تھی پھر ہر رات کو اشونت میرے بھاری ابھاروں کو خوب دباتا چومتا چوستا اور میری پُوندی کو پیار کرتا کبھی میں نگی ھوکر اشونت 
+
+کو کہتی آؤ مجھے پیار کرو اور میری پُوندی کو پیار کرو پھر ھم دن میں بہت بار مزے کرتے پھر ایک دن میں بہت ھوٹ تھی سوچا بہت دن ھو گئے ڈامبھے کو پیار نہیں کیا پھر سوچا اشونت کے ڈامبھے کو پیار کروں اشونت فلم دیکھ رھا تھا میں نے اشونت سے کہا اشونت روم میں چلو کہا پُوندی کو پیار کرنا ھے میں نے کہا نہں میں تیرے ڈامبھے کو پیار کرتی ھوں اشونت سن کے بہت خوش ھوا اور ھم روم میں آئے میں نے اشونت کا چڈا 
+
+اتار کر اشونت کا ڈامبھا دیکھا اشونت کا ڈامبھا تو مست تھا میرے یاروں اور شوہر کی ڈامبھوں سے زیادہ لمبا موٹا تھا واو کیا اور کہا اشونت تیرا ڈامبھا تو بہت پیارا ھے اور مجھ سے رھا نہیں گیا ڈامبھے کی تعریف کی پھر ڈامبھے کو پیار کیا مجھے اشونت کے ڈامبھے کو پیار کرنے میں شوہر کے ڈامبھے سے زیادہ مزہ آرہا تھا پھر بہت دیر بعد ڈامبھے کا پانی نکلا پی کر ھم سونےکیلئے لیٹے اشونت نے کہا تم نائٹی 
+
+اتارو ھم نگے تھوڑا پیار کریں میں نے اشونت کو چوم کر کہا ٹھیک ھے کیوں کے میں مستی میں تھی پھر ھم نگے ھوکر خوب پیار کیا میرے ابھاروں کو نودا میری ڈھام کے ہیپ میں ڈامبھے کی رگڑ کرتا پُوندی پر کرتا اسی طرح ھم پانی پانی ھوتے پشاب آتا تو کر کے شروع ھوتے ھم صبح تک مست رھے اب ہر رات کو میں اور اشونت مست رہتے اب اشونت نُدائی کا بہت کہتا میں منع کرتی ایک رات کو اشونت نے میری ایک نہ سنی اور میری 
+
+پُوندی میں ڈامبھا ڈال دیا جیسے اشونت کا ڈامبھا میری پُوندی گیا تو بس میں بہت ھوٹ ھوگئی پھر ھم نُدائی کرنے لگے مجھے پانی پانی کرتا رھا پھر اشونت نے ڈھام کا کہا میں نے منع کیا کے بہت درد ھوگا مگر اشونت اب میری کب سنتا تھا بس میری ڈھام میں ڈامبھا ڈال دیا اب اشونت مجھے ہر طرح سے مزے دیتا ایک بار اشونت کے ساتھ اشونت کا دوست آیا مجھے وہ بہت کیوٹ لگا اور میرا نُدائی کا موڈ بن گیا اشونت سے کہا 
+
+مجھے تیرے دوست کے ساتھ نودنی کرنی ھے کہا اسے تم خود کہو پھر میں نے اشونت کے دوست سے کہا میرے ساتھ نودنی کروگے اس نے کہا ہاں میں نے رات رکنے کا کہا وہ رک گیا پہلے تو اشونت نے نودا پھر میں اس کے روم گئی ساری رات نُدائی کی پھر صبح کو چلا گیا لڑکا میرا دیوانہ ھو گیا پھر ایک بار لڑکے کو بلایا نودنی کی تو لڑکے نے کہا مجھ سے شادی کر لو میں نے کہا کر تو لیتی مگر اشونت نہیں کرنے دےگا کہا کیوں میں نے کہا ھم 
+
+نُدائی کرتے ہیں کہا تم کسی طریقے سے مناؤ میں نے کہا پھر ایسا کرو تم اور اشونت ایک ساتھ نُدائی کرو پھر اسی وقت میں بات کروں گی کہا ٹھیک ھے میں نے کہا شادی کے بعد مجھے جو اچھا لگے گا میں اس سے نودنی کروں گی کہا ٹھیک ھے میں نے کہا تم رشتے کیلئے اپنے گھر والوں کو لانا کہا ٹھیک ھے میں نے کہا ابھی تم جاؤ میں رات کو اشونت کو ساتھ میں نودنی کرنے کا کہوں گی پھر چلا گیا رات کو اشونت اور میں نُدائی کر رھے تھے میں 
+
+نے سب بتایا اشونت نے کہا اس کی بہن بہت کیوٹ ھے میں نے کہا اس کے ساتھ کیا ھے کہا ہاں ایک دو بار چمہ چٹہ کی ھے میں نے کہا ٹھیک ھے میں تیری اس سے شادی کرا دوں گی پھر تو اشونت نے اسی نودا کی کے مجھے بہت مزہ آیا پھر رات کو لڑکا آیا اور اشونت کے ساتھ مل کر نُدائی کی اور اس کی بہن کی شادی کا کہا لڑکا مان گیا پھر میری شادی ھوئی دوسرے دن اشونت کی شادی ھوئی اب لڑکا میرا شوہر تھا لڑکے کا پاپا کیوٹ تھا سسر سے 
+
+نُدائی کی پھر شوہر کا بھائی دوبئی سے آیا اس سے نُدائی کی شوہر تو بہت نودوں تھا بس نُدائی کرتا اور مجھے بہت مزہ آتا پھر میں پیٹ سے ھوگئی پھر میری بیٹی ھوئی کچھ دنوں میں پھر پیٹ سے ھوگئی پھر بیٹی ھوئی اب اشونت الگ ھو گیا کیوں کے میری بہوں کو اچھا نہیں لگتا 
+
+تھا پھر کبھی کبھی آتا اپنی مجھے خوش کرتا پھر چار یار بنا لیئے ان کو کام کرنے کیلئے رکھ لیا مجھے بھی خوش کرتے تھے میرا ایک ڈامبھے سے گزارا نہیں ھوتا مجھے اب بھی اشونت کے ساتھ بہت مزہ آتا ھے اور اشونت بھی بڑے شوق سے نُدائی کرتا ھے میں اشونت کے ڈامبھے کو میں من لگا کر پیار کرتی ھوں
+    </div>
+
+    <!-- خودکار پیراگراف ڈسپلے ایریا -->
+    <div id="story-display"></div>
+
+    <!-- ہمیشہ کھلا اور لائیو کمنٹ باکس -->
+    <div class="comment-box-wrapper">
+        <h3>💬 لائیو کمنٹس (اپنی رائے دیں)</h3>
+        <input type="text" id="c-name" class="comment-input" placeholder="اپنا نام لکھیں...">
+        <textarea id="c-text" class="comment-textarea" rows="3" placeholder="کہانی کے بارے میں اپنا کمنٹ یہاں لکھیں..."></textarea>
+        <button class="comment-submit" onclick="postComment()">کمنٹ پوسٹ کریں</button>
+        <div id="live-comments"></div>
+    </div>
+
+    <!-- نیلا ٹیلی گرام بٹن -->
+    <div>
+        <a href="https://t.me/" target="_blank" class="telegram-btn">✈️ Join Telegram</a>
+    </div>
+<div style="background:#000; border:2px solid #ff0066; border-radius:15px; padding:16px; margin-top:35px;">
+  <p style="color:gold; text-align:center; font-weight:bold; font-size:18px; margin:0 0 14px 0;">📚 مزید کہانیاں پڑھیں</p>
+  
+  <div style="text-align:center; display:flex; flex-wrap:wrap; justify-content:center; gap:9px; line-height:36px;">
+
+<a href="https://shano-jaan-ki-jawani.github.io/wao-ya-to-asili-lagta-he.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">واؤ یہ تو اصلی لگتا ھے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/rasm-ka-ek-atot-bandhan.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:5px;">رسم کا ایک اٹوٹ بندھن</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/gaon-ki-saqt-garmi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گاؤں کی سخت گرمی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/khud-ko-barbad-kar-diya.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میں نے خود کو برباد کر دیا</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/meri-zandgi-ki-nayi-sabah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری زندگی کی نئی صُبح</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ashesh-ki-ek-adat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اشیش کی ایک عادت تھی</a>
+    <a href="https://shano-jaan-ki-jawani.github.io/ajeeb-sa-khuf-or-kashash.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">عجیب سا خوف اور کشش</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ameron-min-shadi.html" style="background:#111; color:#ffcc99; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">امیروں میں شادی</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/ek-din-papa-ghar-aaye.html" style="background:#111; color:#99ff99; border:1px solid #00c853; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ایک دن پاپا گھر آئے</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/padosiyon-ka-khayal-rakhana-chahiye.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پڑوسیوں کا خیال رکھنا چاہیے</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Ab-Ja-Kar-Pata-Chala-Sakoon-Ka.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">اب جاکر پتا چلا سکون کا</a>
+<a href="https://shano-jaan-ki-jawani.github.io/wah-ek-anokh-raat-thi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ ایک انکھوکی رات تھی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/chaht-ki-tamana-pori-hoi.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">چاہت کی تمنّا پوری ھوئی</a>
+<a href="https://shano-jaan-ki-jawani.github.io/trin-ka-wuh-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ٹرین کا وہ سفر</a>
+<a href="https://shano-jaan-ki-jawani.github.io/Bhai-ke-sath-devar-ne-dekh-liya.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">بھائی کے ساتھ دیور نے دیکھ لیا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/tanhi-ka-safar-or-adhora-lmas.html" style="background:#111; color:#80d8ff; border:1px solid #2979ff; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">تنہائی کا سفر اور ادھورا لمس</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/doctor-sufra-or-zuba.html" style="background:#111; color:#ffff99; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">ڈاکٹر صُفرا اور زُوبا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/meri-sahali-ka-cut-beta.html" style="background:#111; color:#ffb3ff; border:1px solid #d500f9; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میری سہیلی کا کیوٹ بیٹا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/maya-prakash-aur-main.html" style="background:#111; color:#99ffff; border:1px solid #00bfa5; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">مایا پرکاش اور میں</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/damad-ki-parm-para.html" style="background:#111; color:gold; border:1px solid gold; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">داماد کی پرم پرا</a>
+
+    <a href="https://shano-jaan-ki-jawani.github.io/papa-ke-guzarne-ke-baad.html" style="background:#111; color:#ff8a80; border:1px solid #ff3d00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">پاپا کے گزرنے کے بعد</a>
+<a href="https://shano-jaan-ki-jawani.github.io/ek-posheedah-khuahish.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 16px; border-radius:22px; text-decoration:none; font-size:14px; display:inline-block; margin:4px;">ایک پوشیدہ خواہش</a>
+<a href="https://shano-jaan-ki-jawani.github.io/talaq-ke-bad-min-ghar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">طلاق کے بعد میں گھر آگئی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/muhabbat-or-lazzat-ka-safar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">محبت اور لذت کا سفر</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/Woh-Raat-Nahi-Bhooli.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">وہ رات نہیں بھولی</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/ghar-ka-khufiya-rishtah.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">گھر کا خفیہ رشتہ</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/mere-ishq-ki-dastan.html" style="background:#111; color:#ffcc00; border:1px solid #ffcc00; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:15px; font-weight:bold;">میرے عشق کی داستان</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/shehr-ki-wah-raatin.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">شہر کی وہ راتیں</a>
+
+<a href="https://shano-jaan-ki-jawani.github.io/min-patni-thi-magar.html" style="background:#111; color:#ff99cc; border:1px solid #ff0066; padding:7px 15px; border-radius:22px; text-decoration:none; font-size:14px;">میں پتنی تھی مگر</a>
+
+  </div>
+
+  <div style="text-align:center; margin-top:20px;">
+    <a href="https://shano-jaan-ki-jawani.github.io/" style="background:gold; color:#000; padding:10px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:15px; display:inline-block;">🏠 ہوم پیج</a>
+  </div>
+</div>
+    <!-- تمام رنگ برنگے گول والے لائیو لیبلز -->
+    <div class="labels-container">
+        <a href="index.html?label=رومانوی" class="label-pill lbl-1">رومانوی کہانیاں</a>
+        <a href="index.html?label=جوانی" class="label-pill lbl-2">جوانی کی داستانیں</a>
+        <a href="index.html?label=شادی_شدہ" class="label-pill lbl-3">شادی شدہ زندگی</a>
+        <a href="index.html?label=دیسی" class="label-pill lbl-4">دیسی کہانیاں</a>
+        <a href="index.html?label=راز" class="label-pill lbl-5">چھپے راز</a>
+        <a href="index.html?label=گرم" class="label-pill lbl-6">گرم تحریریں</a>
+        <a href="index.html?label=نئی" class="label-pill lbl-7">نئی قسط</a>
+        <a href="index.html?label=مکمل" class="label-pill lbl-8">مکمل ناول</a>
+    </div>
+
+    <!-- گولڈ کلر ہوم پیج بٹن -->
+    <div>
+        <a href="index.html" class="home-btn">🏠 ہوم پیج</a>
+    </div>
+</div>
+
+<script>
+    // 1. خودکار پیراگراف فلٹر (ہر 10 لائنوں/جملوں کا ایک پیراگراف)
+    window.addEventListener('DOMContentLoaded', function() {
+        const rawText = document.getElementById('raw-story').innerText.trim();
+        const displayDiv = document.getElementById('story-display');
+        
+        // پہلے لائن بریک کے حساب سے توڑیں، اگر ایک ہی پیراگراف ہو تو جملوں کے حساب سے
+        let lines = rawText.split(/\n+/).map(l => l.trim()).filter(l => l.length > 0);
+        if (lines.length <= 2) {
+            lines = rawText.split(/(?<=[۔\.!\?])\s+/).map(l => l.trim()).filter(l => l.length > 0);
+        }
+
+        const linesPerParagraph = 10;
+        for (let i = 0; i < lines.length; i += linesPerParagraph) {
+            const chunk = lines.slice(i, i + linesPerParagraph);
+            const p = document.createElement('p');
+            p.innerHTML = chunk.join('<br>');
+            displayDiv.appendChild(p);
+        }
+    });
+
+    // 2. لائک بٹن کاؤنٹر
+    let liked = false;
+    function addLike() {
+        if (!liked) {
+            const countSpan = document.getElementById('like-count');
+            countSpan.innerText = parseInt(countSpan.innerText) + 1;
+            liked = true;
+        }
+    }
+
+    // 3. لائیو کمنٹ سسٹم
+    function postComment() {
+        const name = document.getElementById('c-name').value.trim() || 'مہمان قاری';
+        const text = document.getElementById('c-text').value.trim();
+        if (!text) return;
+
+        const commentList = document.getElementById('live-comments');
+        const div = document.createElement('div');
+        div.className = 'single-comment';
+        div.innerHTML = `<strong style="color:#ff007f;">${name}:</strong> <p style="margin:5px 0 0 0;">${text}</p>`;
+        commentList.prepend(div);
+
+        document.getElementById('c-text').value = '';
+    }
+
+    // 4. کی بورڈ کاپی شارٹ کٹ لاک
+    document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+            e.preventDefault();
+        }
+    });
+</script>
+
+</body>
+<script data-cfasync="false" src="https://bicea.org/14/d2c0f24bfdd5aa6bddd5698bec186a27"></script>
+</html>
